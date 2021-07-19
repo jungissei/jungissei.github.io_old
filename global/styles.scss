@@ -1,0 +1,29 @@
+@import "_destyle.scss";
+
+body{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  font-family: YuGothic, '游ゴシック', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.container{
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+main{
+  width: 70%;
+}
+
+aside{
+  width: 25%;
+}
