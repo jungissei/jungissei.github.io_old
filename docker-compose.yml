@@ -1,8 +1,9 @@
-version: "3.8"
+version: "3"
 services:
   httpd:
-    image: httpd
+    build: ./apache
+    container_name: apache
+    volumes:
+      - ./:/var/www/html
     ports:
       - "8087:80"
-    volumes:
-      - ./:/usr/local/apache2/htdocs

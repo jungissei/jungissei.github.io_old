@@ -1,29 +1,52 @@
 @import "_destyle.scss";
 
-body{
+body {
   font-size: 16px;
   line-height: 1.6;
   color: #000;
-  font-family: YuGothic, '游ゴシック', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+  font-family: YuGothic, "游ゴシック", "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
-.container{
-  width: 1170px;
+.container {
+  width: calc(100% - 30px);
   margin-right: auto;
   margin-left: auto;
 }
 
-#wrapper{
-  display: flex;
-  justify-content: space-between;
+#wrapper {
+  margin-top: 3em;
 }
 
-main{
-  width: 70%;
+.side_menu {
+  padding-left: 1.5em;
+  li {
+    list-style: disc;
+
+    ul {
+      padding-left: 1.5em;
+    }
+  }
 }
 
-aside{
-  width: 25%;
+@media screen and (min-width: 769px) {
+  #wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main {
+    width: 70%;
+  }
+
+  aside {
+    width: 25%;
+  }
+
+  .container {
+    max-width: 800px;
+  }
 }

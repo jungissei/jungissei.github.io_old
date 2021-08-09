@@ -2,29 +2,77 @@
 window.onload
 ---------------------------------------*/
 window.onload = function(){
-
-  add_breadcrumbs();
+  add_menu_to_aside();
 };
 
 
 /*--------------------------------------
-add breadcrumbs
----------------------------------------*/
-function add_breadcrumbs(){
-  const elem_html = `<div><a href="/">HOME</a> > </div>`;
-  document.getElementById("header").insertAdjacentHTML("afterbegin", elem_html);
-}
-
-/*--------------------------------------
 add sidebar menu
 ---------------------------------------*/
-function add_sidebar_menu(){
-  const menu_arr = [
-    {
-      title : "タブメニュー",
-      path : "js/tabumenu"
-    }
-  ]
+function add_menu_to_aside(){
+  const elem_html = get_html_aside_menu(
+    [
+      {
+        title : "タブメニュー",
+        path : "js/tabumenu"
+      },
+      // submenu
+      // {
+      //   title : "サブメニューあり",
+      //   sub : [
+      //     {
+      //       title : "トグル",
+      //       path : "js/tabumenu"
+      //     },
+      //     {
+      //       title : "ボタン",
+      //       path : "js/tabumenu"
+      //     }
+      //   ]
+      // },
+    ]
+  );
 
+  console.log(elem_html);
   document.getElementById("aside").insertAdjacentHTML("afterbegin", elem_html);
+}
+
+function get_html_aside_menu(arr_menu){
+  let elem_html = ``;
+  let temp_html;
+
+  arr_menu.forEach(function(val){
+    temp_html = ``;
+    temp_html += get_html_aside_menu_item(val);
+
+    if(val.sub)
+      temp_html += get_html_aside_menu_sub(val.sub);
+
+    elem_html += `<li>${temp_html}</li>`;
+  });
+
+  return `<ul class="side_menu">${elem_html}</ul>`;
+}
+
+function get_html_aside_menu_sub(menu_items){
+  let elem_html = ``;
+  let temp_html;
+
+  menu_items.forEach(function(val){
+    temp_html = ``;
+    temp_html += get_html_aside_menu_item(val);
+    elem_html += `<li>${temp_html}</li>`;
+  });
+  return `<ul>${elem_html}</ul>`;
+}
+
+function get_html_aside_menu_item(menu_item){
+  if(menu_item.path){
+    return `
+      <a href="${menu_item.path}">
+        ${menu_item.title}</a>
+    `;
+  }
+
+  return `<span>${menu_item.title}</span>`;
 }
