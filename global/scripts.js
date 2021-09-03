@@ -13,8 +13,13 @@ function add_menu_to_aside(){
   const elem_html = get_html_aside_menu(
     [
       {
-        title : "タブメニュー",
-        path : "js/tabumenu"
+        title : "基本",
+        sub : [
+          {
+            title : "ボタンリンク",
+            path : "/btn"
+          },
+        ]
       },
       // submenu
       // {

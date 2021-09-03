@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*---------------------------
+共通
+---------------------------*/
 /*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -475,30 +478,12 @@ body {
   font-weight: normal;
 }
 
-.container {
-  width: calc(100% - 30px);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-#wrapper {
-  margin-top: 3em;
-}
-
-.side_menu {
-  padding-left: 1.5em;
-}
-
-.side_menu li {
-  list-style: disc;
-}
-
-.side_menu li ul {
-  padding-left: 1.5em;
-}
-
-@media screen and (min-width: 769px) {
+/*---------------------------
+PC
+---------------------------*/
+@media print, screen and (min-width: 768px) {
   #wrapper {
+    margin-top: 3em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -514,6 +499,89 @@ body {
   }
   .container {
     max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
   }
+  /*h1 ここから*/
+  .elem_ttl {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1.5em;
+  }
+  /*h1 ここまで*/
+  /*サイドバーメニュー ここから*/
+  .side_menu {
+    padding-left: 1.5em;
+  }
+  .side_menu li {
+    list-style: disc;
+  }
+  .side_menu li ul {
+    padding-left: 1.5em;
+  }
+  /*サイドバーメニュー ここまで*/
+  /*参考スタイル ここから*/
+  .reference {
+    padding: 3em 0;
+  }
+  .reference .reference_ttl {
+    border-bottom: 1px solid #000;
+    margin-bottom: 7px;
+  }
+  .reference .reference_li {
+    padding-left: 1.5em;
+  }
+  .reference .reference_li li {
+    list-style: disc;
+  }
+  .reference .reference_li li a:hover {
+    text-decoration: underline;
+  }
+  /*参考スタイル ここまで*/
+}
+
+/*---------------------------
+SP
+---------------------------*/
+@media screen and (max-width: 767px) {
+  #wrapper {
+    margin-top: 3em;
+  }
+  .container {
+    width: calc(100% - 30px);
+  }
+  /*h1 ここから*/
+  .elem_ttl {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1.5em;
+  }
+  /*h1 ここまで*/
+  /*サイドバーメニュー ここから*/
+  .side_menu {
+    padding-left: 1.5em;
+  }
+  .side_menu li {
+    list-style: disc;
+  }
+  .side_menu li ul {
+    padding-left: 1.5em;
+  }
+  /*サイドバーメニュー ここまで*/
+  /*参考スタイル ここから*/
+  .reference {
+    padding: 3em 0;
+  }
+  .reference .reference_ttl {
+    border-bottom: 1px solid #000;
+    margin-bottom: 7px;
+  }
+  .reference .reference_li {
+    padding-left: 1.5em;
+  }
+  .reference .reference_li li {
+    list-style: disc;
+  }
+  /*参考スタイル ここまで*/
 }
 /*# sourceMappingURL=styles.css.map */

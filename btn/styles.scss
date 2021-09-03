@@ -1,0 +1,83 @@
+/*---------------------------
+PC
+---------------------------*/
+@media print, screen and (min-width: 768px) {
+  .btn {
+    text-align: center;
+
+    .btn_inner {
+      display: inline-block;
+      position: relative;
+      transition: all 0.2s;
+      border: 1px solid #000;
+      line-height: 1.1; //devise調整
+      padding: 10px 30px 10px 10px; //devise調整
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent #000;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        transition: all 0.2s;
+        border-width: 5px 0 5px 8.7px; //devise調整
+        right: 10px; //devise調整
+      }
+
+      &:hover {
+        background-color: #ccc;
+
+        &::after {
+          right: 5px; //devise調整
+        }
+      }
+    }
+
+    .btn_str {
+      font-weight: bold;
+      font-size: 16px; //devise調整
+    }
+  }
+}
+/*---------------------------
+SP
+---------------------------*/
+@media screen and (max-width: 767px) {
+  .btn {
+    text-align: center;
+
+    .btn_inner {
+      display: inline-block;
+      position: relative;
+      border: 1px solid #000;
+      line-height: 1.1; //devise調整
+      padding: 3% 9% 3% 3%; //devise調整
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent #000;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        border-width: 1.25vw 0 1.25vw 2vw; //devise調整
+        right: 7%; //devise調整
+      }
+    }
+
+    .btn_str {
+      font-weight: bold;
+      font-size: 3vw; //devise調整
+    }
+  }
+}
