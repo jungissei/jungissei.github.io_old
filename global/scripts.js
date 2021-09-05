@@ -21,6 +21,10 @@ function add_menu_to_aside(){
           },
         ]
       },
+      {
+        title : "グローバルメニュー",
+        path : "/global_menu"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",
@@ -38,8 +42,7 @@ function add_menu_to_aside(){
     ]
   );
 
-  console.log(elem_html);
-  document.getElementById("aside").insertAdjacentHTML("afterbegin", elem_html);
+  document.getElementById("js_sumally").insertAdjacentHTML("afterbegin", elem_html);
 }
 
 function get_html_aside_menu(arr_menu){

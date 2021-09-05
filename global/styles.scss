@@ -18,6 +18,10 @@ body {
 PC
 ---------------------------*/
 @media print, screen and (min-width: 768px) {
+  .sp {
+    display: none;
+  }
+
   #wrapper {
     margin-top: 3em;
     display: flex;
@@ -26,6 +30,29 @@ PC
 
   main {
     width: 70%;
+
+    /* mainタグ中のh2 ここから */
+    h2 {
+      position: relative;
+      padding-left: 1.25em;
+      border-bottom: 1px solid #000;
+      margin-bottom: 7.5px;
+      padding-bottom: 5px;
+      line-height: 1.2;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0.75em;
+        height: 0.75em;
+        background-color: #000;
+        position: absolute;
+        top: 0.1em;
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+    /* mainタグ中のh2 ここまで */
   }
 
   aside {
@@ -38,11 +65,23 @@ PC
     margin-left: auto;
   }
 
+  /*目次 ここから*/
+  .block_sumally {
+    .block_sumally_ttl {
+      font-weight: bold;
+      border-bottom: 1px solid #000;
+      margin-bottom: 0.5em;
+    }
+
+    margin-bottom: 1.5em;
+  }
+  /*目次 ここまで*/
+
   /*h1 ここから*/
   .elem_ttl {
     font-weight: bold;
     border-bottom: 1px solid #000;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
   }
   /*h1 ここまで*/
 
@@ -60,19 +99,18 @@ PC
   /*サイドバーメニュー ここまで*/
 
   /*参考スタイル ここから*/
-  .reference {
+  .block {
     padding: 3em 0;
 
-    .reference_ttl {
-      border-bottom: 1px solid #000;
-      margin-bottom: 7px;
-    }
-
-    .reference_li {
+    .block_li {
       padding-left: 1.5em;
 
       li {
         list-style: disc;
+
+        ul {
+          padding-left: 1.5em;
+        }
 
         a {
           &:hover {
@@ -88,13 +126,56 @@ PC
 SP
 ---------------------------*/
 @media screen and (max-width: 767px) {
+  .pc {
+    display: none;
+  }
+
   #wrapper {
     margin-top: 3em;
   }
 
+  main {
+    /* mainタグ中のh2 ここから */
+    h2 {
+      position: relative;
+      padding-left: 1.25em;
+      border-bottom: 1px solid #000;
+      margin-bottom: 7.5px;
+      line-height: 1.2;
+      padding-bottom: 5px;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0.75em;
+        height: 0.75em;
+        background-color: #000;
+        position: absolute;
+        top: 0.1em;
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+    /* mainタグ中のh2 ここまで */
+  }
+
   .container {
     width: calc(100% - 30px);
+    margin-right: auto;
+    margin-left: auto;
   }
+
+  /*目次 ここから*/
+  .block_sumally {
+    .block_sumally_ttl {
+      font-weight: bold;
+      border-bottom: 1px solid #000;
+      margin-bottom: 0.5em;
+    }
+
+    margin-bottom: 1.5em;
+  }
+  /*目次 ここまで*/
 
   /*h1 ここから*/
   .elem_ttl {
@@ -118,19 +199,18 @@ SP
   /*サイドバーメニュー ここまで*/
 
   /*参考スタイル ここから*/
-  .reference {
+  .block {
     padding: 3em 0;
 
-    .reference_ttl {
-      border-bottom: 1px solid #000;
-      margin-bottom: 7px;
-    }
-
-    .reference_li {
+    .block_li {
       padding-left: 1.5em;
 
       li {
         list-style: disc;
+
+        ul {
+          padding-left: 1.5em;
+        }
       }
     }
   }
