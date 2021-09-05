@@ -27,32 +27,34 @@ function toggle_hamburger_menu(){
 * ハンバーガーメニュー開閉時のスクロールコントール
 */
 function scroll_control(prevent_scroll){
-  // add/removeEventListenerでアロー関数として定義するとイベントが削除されない
-  let scrollControll = function(event) {
-    if ($(event.target).closest('.hamburger_menu_body').length > 0) {
-      event.stopPropagation();
-    } else {
-      event.preventDefault();
-    }
-  };
-
   if(prevent_scroll){
     //ページ全体のスクロール無効化
     $('html').css({ overflow: 'hidden' });
+
     document.addEventListener(
       'touchmove',
-      scrollControll,
-      { passive: false }
+      scroll_control_for_touchmove,
     );
   }else{
     //ページ全体のスクロール無効化解除
     $('html').css({ overflow: '' });
+
     document.removeEventListener(
       'touchmove',
-      scrollControll,
-      { passive: false }
+      scroll_control_for_touchmove,
     );
   }
 }
+
+/*
+* touchmoveイベントコントロール
+*/
+function scroll_control_for_touchmove(event) {
+  if ($(event.target).closest('.hamburger_menu_body').length > 0) {
+    event.stopPropagation();
+  } else {
+    event.preventDefault();
+  }
+};
 
 /* ハンバーガーメニュー ここまで */
