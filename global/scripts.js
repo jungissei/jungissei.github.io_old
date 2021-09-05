@@ -25,6 +25,10 @@ function add_menu_to_aside(){
         title : "グローバルメニュー",
         path : "/global_menu"
       },
+      {
+        title : "ハンバーガーメニュー",
+        path : "/hamburger_menu"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",
