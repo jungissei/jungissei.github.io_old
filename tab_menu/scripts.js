@@ -1,6 +1,5 @@
 /* タブメニュー ここから */
-$('#tab_menu .tab_menu_btn li').click(function() {
-
+$('#tab_menu .tab_menu_btn li').on('click', function(){
   let index = $('#tab_menu .tab_menu_btn li').index(this);
   $('#tab_menu .tab_menu_btn li').removeClass('active');
   $(this).addClass('active');

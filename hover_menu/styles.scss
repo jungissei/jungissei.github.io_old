@@ -1,0 +1,40 @@
+/*ホバーメニュー ここから*/
+#hover_menu {
+  display: flex;
+
+  .hover_menu_btn {
+    width: 30%;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+    li {
+      padding: 0.5em 0.75em;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #000;
+      }
+
+      &.active {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+
+  .hover_menu_body_wrp {
+    width: 70%;
+    border: 1px solid #000;
+    padding: 1em;
+
+    .hover_menu_body {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+/*ホバーメニュー ここまで*/

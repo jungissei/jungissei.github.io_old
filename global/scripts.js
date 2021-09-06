@@ -33,6 +33,10 @@ function add_menu_to_aside(){
         title : "タブメニュー",
         path : "/tab_menu"
       },
+      {
+        title : "ホバーメニュー",
+        path : "/hover_menu"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",
