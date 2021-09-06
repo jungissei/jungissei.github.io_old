@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
+  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
+  <title>タブメニュー - フロントエンド要素</title>
+</head>
+<body>
+
+
+  <div id="wrapper" class="container">
+    <main>
+      <h1 class="elem_ttl">タブメニュー</h1>
+
+      <!--タブメニュー ここから-->
+      <section id="tab_menu">
+        <ul class="tab_menu_btn">
+          <li class="active">アジア</li>
+          <li>ヨーロッパ</li>
+          <li>アフリカ</li>
+        </ul>
+
+        <div class="tab_menu_body_wrp">
+          <div class="tab_menu_body show">
+            <ul>
+              <li>大韓民国</li>
+              <li>タイ</li>
+              <li>日本</li>
+            </ul>
+          </div>
+          <div class="tab_menu_body">
+            <ul>
+              <li>イタリア</li>
+              <li>フランス</li>
+              <li>ドイツ</li>
+            </ul>
+          </div>
+          <div class="tab_menu_body">
+            <ul>
+              <li>ケニア</li>
+              <li>コートジボワール</li>
+              <li>ナイジェリア</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--タブメニュー ここまで-->
+
+    </main>
+    <aside>
+      <!--SUMMARY ここから-->
+      <div class="block_sumally">
+        <h2 class="block_sumally_ttl">SUMMARY</h2>
+        <div id="js_sumally" class="block_sumally_body"></div>
+      </div>
+      <!--SUMMARY ここまで-->
+    </aside>
+  </div>
+  <script type="text/javascript" src="/global/scripts.js"></script>
+
+
+  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>
