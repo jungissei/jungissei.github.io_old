@@ -45,6 +45,10 @@ function add_menu_to_aside(){
         title : "スムーススクロール",
         path : "/smooth_scroll"
       },
+      {
+        title : "画像アスペクト調整",
+        path : "/aspect_ratio"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",
