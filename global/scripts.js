@@ -37,6 +37,14 @@ function add_menu_to_aside(){
         title : "ホバーメニュー",
         path : "/hover_menu"
       },
+      {
+        title : "スライドショー",
+        path : "/slick"
+      },
+      {
+        title : "スムーススクロール",
+        path : "/smooth_scroll"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",

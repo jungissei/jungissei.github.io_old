@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
+  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
+  <title>スムーススクロール - フロントエンド要素</title>
+</head>
+<body>
+
+
+
+  <div id="wrapper" class="container">
+    <main>
+      <h1 class="elem_ttl">スムーススクロール</h1>
+
+      <!--機能 ここから-->
+      <div class="block">
+        <h2>【機能】</h2>
+        <ul class="block_li">
+          <li>アンカーリンクをクリックすると、スムーススクロール</li>
+          <li>ページ読込時にIDが存在すると、スムーススクロール</li>
+          <li>相対パス・絶対パスのアンカーリンクでもスムーススクロールする</li>
+          <li>ページに存在しないアンカーリンクを押下・読込してもエラーを出さない</li>
+        </ul>
+      </div>
+      <!--機能 ここまで-->
+
+
+
+      <!--スムーススクロール ここから-->
+      <div id="top">◆TOP</div>
+      <div><a href="#middle" style="text-decoration: underline;">→MIDDLEリンク</a></div>
+      <div><a href="#uso" style="text-decoration: underline;">→嘘リンク：このページに「#uso」というIDはありません。クリックしてもconsoleにエラーを出しません。</a></div>
+      <div style="height:1000px;"></div>
+      <div id="middle">◆MIDDLE</div>
+      <div><a href="/smooth_scroll/#bottom" style="text-decoration: underline;">→BOTTOMリンク：パス：/smooth_scroll/#bottom</a></div>
+      <div style="height:1000px;"></div>
+      <div id="bottom">◆BOTTOM</div>
+      <div><a href="#top" style="text-decoration: underline;">→TOPリンク</a></div>
+      <div style="height:1000px;"></div>
+      <!--スムーススクロール ここまで-->
+
+    </main>
+    <aside>
+      <!--SUMMARY ここから-->
+      <div class="block_sumally">
+        <h2 class="block_sumally_ttl">SUMMARY</h2>
+        <div id="js_sumally" class="block_sumally_body"></div>
+      </div>
+      <!--SUMMARY ここまで-->
+    </aside>
+  </div>
+  <script type="text/javascript" src="/global/scripts.js"></script>
+
+
+  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>
