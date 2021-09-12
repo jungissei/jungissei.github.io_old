@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
   <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
-  <title>画像アスペクト調整 - フロントエンド要素</title>
+  <title>画像関連処理 - フロントエンド要素</title>
 </head>
 <body>
 
@@ -15,20 +15,34 @@
 
   <div id="wrapper" class="container">
     <main>
-      <h1 class="elem_ttl">画像アスペクト調整</h1>
+      <h1 class="elem_ttl">画像関連処理</h1>
 
 
       <!--機能 ここから-->
       <div class="block">
-        <h2>【機能】画像アスペクト調整</h2>
+        <h2>【機能】画像関連処理</h2>
         <ul class="block_li">
-          <li>【参考】<a href="https://blog.8bit.co.jp/?p=13620" target="_blank">【怖くないJavaScript + jQuery】画像の縦横比を保ったままサイズを変更する処理</a></li>
+          <li>
+            <div>画面幅に応じて画像切替</div>
+            <ul>
+              <li>【参考】<a href="https://blog.8bit.co.jp/?p=13620" target="_blank">【怖くないJavaScript + jQuery】画像の縦横比を保ったままサイズを変更する処理</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>PC・SP画像切替</div>
+          </li>
+          <li>
+            <div>注意点</div>
+            <ul>
+              <li>読込順：「画面幅に応じて画像切替」→「PC・SP画像切替」とする。そうしないと、うまく動かない。</li>
+            </ul>
+          </li>
         </ul>
       </div>
       <!--機能 ここまで-->
 
 
-      <!--画像アスペクト調整 ここから-->
+      <!--画像関連処理 ここから-->
       <div class="post js_aspect_ratio">
         <div class="post_img">
           <div class="img_aspect"><img src="/global/img/dog-vertical1.jpg"></div>
@@ -61,7 +75,29 @@
           <div class="img_aspect"><img src="/global/img/dog5.jpg"></div>
         </div>
       </div>
-      <!--画像アスペクト調整 ここまで-->
+      <!--画像関連処理 ここまで-->
+
+      <div style="height:100px;"></div>
+
+      <!--画像関連処理 ここから-->
+      <div class="post js_aspect_ratio">
+        <div class="post_img">
+          <div class="img_aspect"><img src="/global/img/dog1.jpg" data-sp-src="/global/img/dog-vertical1.jpg"></div>
+        </div>
+        <div class="post_img">
+          <div class="img_aspect"><img src="/global/img/dog2.jpg" data-sp-src="/global/img/dog-vertical2.jpg"></div>
+        </div>
+        <div class="post_img">
+          <div class="img_aspect"><img src="/global/img/dog3.jpg" data-sp-src="/global/img/dog-vertical3.jpg"></div>
+        </div>
+        <div class="post_img">
+          <div class="img_aspect"><img src="/global/img/dog4.jpg" data-sp-src="/global/img/dog-vertical4.jpg"></div>
+        </div>
+        <div class="post_img">
+          <div class="img_aspect"><img src="/global/img/dog5.jpg" data-sp-src="/global/img/dog-vertical5.jpg"></div>
+        </div>
+      </div>
+      <!--画像関連処理 ここまで-->
 
     </main>
     <aside>
@@ -77,10 +113,5 @@
 
   <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./scripts.js"></script>
-  <script type="text/javascript">
-    $(window).on('load', function(){
-      add_class_aspect_ratio($('.js_aspect_ratio'));
-    });
-  </script>
 </body>
 </html>

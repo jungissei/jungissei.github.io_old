@@ -49,10 +49,6 @@ function add_menu_to_aside(){
         title : "画像アスペクト調整",
         path : "/aspect_ratio"
       },
-      {
-        title : "画面幅に応じて画像切替",
-        path : "/change_img_by_display_width"
-      },
       // submenu
       // {
       //   title : "サブメニューあり",
