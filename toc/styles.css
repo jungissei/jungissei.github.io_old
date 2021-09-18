@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*目次生成 ここから*/
+.toc_body {
+  border: 1px solid #000;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.toc_body .toc_chapter {
+  padding-left: 1em;
+}
+
+.toc_body .toc_chapter li {
+  list-style: disc;
+}
+
+/*目次生成 ここまで*/
+/*# sourceMappingURL=styles.css.map */

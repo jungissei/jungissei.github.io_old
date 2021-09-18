@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
+  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
+  <title>目次生成 - フロントエンド要素</title>
+</head>
+<body>
+
+
+
+  <div id="wrapper" class="container">
+    <main>
+      <h1 class="elem_ttl">目次生成・追従</h1>
+      <!--機能 ここから-->
+      <div class="block">
+        <h2>【機能】目次生成・追従</h2>
+        <ul class="block_li">
+          <li>
+            <div>【機能】目次生成</div>
+            <ul>
+              <li>【参考】<a href="https://creatorclip.info/2015/10/jquery-table-of-contents-for-wordpress/" target="_blank">【jQuery】記事の見出しを自動取得して目次を作ってみよう！</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>【機能】目次追従【PC・SP】</div>
+          </li>
+        </ul>
+      </div>
+      <!--機能 ここまで-->
+
+
+      <!--目次生成 ここから-->
+      <section id="js_toc">
+      </section>
+
+      <section id="js_toc_content">
+        <h2>タイトル1</h2>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h2>タイトル2</h2>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h3>タイトル3</h3>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h4>タイトル4</h4>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h5>タイトル5</h5>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h6>タイトル6</h6>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h2>タイトル7</h2>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h3>タイトル8</h3>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h3>タイトル9</h3>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h4>タイトル10</h4>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h2>タイトル11</h2>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+        <h2>タイトル12</h2>
+        <p>テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　テキスト　</p>
+      </section>
+      <!--目次生成 ここまで-->
+
+      <div style="height: 1500px;"></div>
+    </main>
+    <aside>
+      <!--SUMMARY ここから-->
+      <div class="block_sumally">
+        <h2 class="block_sumally_ttl">SUMMARY</h2>
+        <div id="js_sumally" class="block_sumally_body"></div>
+      </div>
+      <!--SUMMARY ここまで-->
+      <!--目次生成 ここから-->
+      <section id="js_toc2">
+      </section>
+      <!--目次生成 ここまで-->
+    </aside>
+  </div>
+  <script type="text/javascript" src="/global/scripts.js"></script>
+
+  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>

@@ -49,6 +49,10 @@ function add_menu_to_aside(){
         title : "画像アスペクト調整",
         path : "/aspect_ratio"
       },
+      {
+        title : "目次生成",
+        path : "/toc"
+      },
       // submenu
       // {
       //   title : "サブメニューあり",

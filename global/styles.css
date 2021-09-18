@@ -502,28 +502,6 @@ PC
   }
   main {
     width: 70%;
-    /* mainタグ中のh2 ここから */
-    /* mainタグ中のh2 ここまで */
-  }
-  main h2 {
-    position: relative;
-    padding-left: 1.25em;
-    border-bottom: 1px solid #000;
-    margin-bottom: 7.5px;
-    padding-bottom: 5px;
-    line-height: 1.2;
-  }
-  main h2::before {
-    content: "";
-    display: block;
-    width: 0.75em;
-    height: 0.75em;
-    background-color: #000;
-    position: absolute;
-    top: 0.1em;
-    left: 0;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
   }
   aside {
     width: 25%;
@@ -577,6 +555,26 @@ PC
   .block .block_li li a:hover {
     text-decoration: underline;
   }
+  .block h2 {
+    position: relative;
+    padding-left: 1.25em;
+    border-bottom: 1px solid #000;
+    margin-bottom: 7.5px;
+    padding-bottom: 5px;
+    line-height: 1.2;
+  }
+  .block h2::before {
+    content: "";
+    display: block;
+    width: 0.75em;
+    height: 0.75em;
+    background-color: #000;
+    position: absolute;
+    top: 0.1em;
+    left: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
   /*参考スタイル ここまで*/
 }
 
@@ -589,30 +587,6 @@ SP
   }
   #wrapper {
     padding-top: 3em;
-  }
-  main {
-    /* mainタグ中のh2 ここから */
-    /* mainタグ中のh2 ここまで */
-  }
-  main h2 {
-    position: relative;
-    padding-left: 1.25em;
-    border-bottom: 1px solid #000;
-    margin-bottom: 7.5px;
-    line-height: 1.2;
-    padding-bottom: 5px;
-  }
-  main h2::before {
-    content: "";
-    display: block;
-    width: 0.75em;
-    height: 0.75em;
-    background-color: #000;
-    position: absolute;
-    top: 0.1em;
-    left: 0;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
   }
   .container {
     width: calc(100% - 30px);
@@ -659,6 +633,26 @@ SP
   }
   .block .block_li li ul {
     padding-left: 1.5em;
+  }
+  .block h2 {
+    position: relative;
+    padding-left: 1.25em;
+    border-bottom: 1px solid #000;
+    margin-bottom: 7.5px;
+    line-height: 1.2;
+    padding-bottom: 5px;
+  }
+  .block h2::before {
+    content: "";
+    display: block;
+    width: 0.75em;
+    height: 0.75em;
+    background-color: #000;
+    position: absolute;
+    top: 0.1em;
+    left: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   /*参考スタイル ここまで*/
 }
