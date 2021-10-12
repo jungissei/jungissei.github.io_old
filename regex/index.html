@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
+  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
+  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+  <title>正規表現 - フロントエンド要素</title>
+</head>
+<body>
+
+
+  <div id="wrapper" class="container">
+    <main>
+      <h1 class="elem_ttl">正規表現</h1>
+
+      <!--正規表現 ここから-->
+      <h2 class="regex_h2">抽出</h2>
+      <section>
+        <h3 class="regex_h3">括弧の中身だけを抽出</h3>
+        <div class="txt_ctl">
+          <div class="txt_origin">
+            <h4>オリジナル</p>
+            <p id="txt_origin_1">チャーシュー味噌ラーメン(豚骨変更できます)</p>
+          </div>
+          <div class="txt_changed">
+            <h4>正規表現</h4>
+            <p id="txt_regex_1"></p>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+            let origin_txt = $('#txt_origin_1').text();
+            console.log(origin_txt.match(/(.*?)/));
+            $('#txt_regex_1').text(
+              origin_txt.match(/(?<=\().*?(?=\))/)
+            );
+          });
+        </script>
+      </section>
+      <!--正規表現 ここまで-->
+
+    </main>
+    <aside>
+      <!--SUMMARY ここから-->
+      <div class="block_sumally">
+        <h2 class="block_sumally_ttl">SUMMARY</h2>
+        <div id="js_sumally" class="block_sumally_body"></div>
+      </div>
+      <!--SUMMARY ここまで-->
+    </aside>
+  </div>
+  <script type="text/javascript" src="/global/scripts.js"></script>
+
+
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>
