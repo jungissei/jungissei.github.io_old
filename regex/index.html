@@ -18,26 +18,88 @@
       <h1 class="elem_ttl">正規表現</h1>
 
       <!--正規表現 ここから-->
-      <h2 class="regex_h2">抽出</h2>
+      <h2 class="regex_h2">括弧</h2>
       <section>
-        <h3 class="regex_h3">括弧の中身だけを抽出</h3>
+        <h3 class="regex_h3">括弧を含めて抽出</h3>
         <div class="txt_ctl">
           <div class="txt_origin">
-            <h4>オリジナル</p>
-            <p id="txt_origin_1">チャーシュー味噌ラーメン(豚骨変更できます)</p>
+            <h4>オリジナル</h4>
+            <p id="txt_origin_1">犬と散歩する(鳥は飛ぶ)</p>
           </div>
           <div class="txt_changed">
             <h4>正規表現</h4>
             <p id="txt_regex_1"></p>
           </div>
+          <div class="ref_box">
+            <ul>
+              <li><a href="https://hodade.com/seiki/page.php?s_kakko" target="_blank">かっこで囲まれた文字を検索する</a></li>
+              <li><a href="https://www-creators.com/archives/5462" target="_blank">正規表現：括弧の中身だけをマッチする表現</a></li>
+            </ul>
+          </div>
         </div>
         <script type="text/javascript">
           $(function() {
-            let origin_txt = $('#txt_origin_1').text();
-            console.log(origin_txt.match(/(.*?)/));
-            $('#txt_regex_1').text(
-              origin_txt.match(/(?<=\().*?(?=\))/)
-            );
+            let origin_txt = $('#txt_origin_1').text(),
+                regex_txt = origin_txt.match(/\(.+?\)/);
+            // console.log(regex_txt);
+            $('#txt_regex_1').text(regex_txt);
+          });
+        </script>
+      </section>
+
+
+      <section>
+        <h3 class="regex_h3">括弧の中身だけを抽出</h3>
+        <div class="txt_ctl">
+          <div class="txt_origin">
+            <h4>オリジナル</h4>
+            <p id="txt_origin_2">犬と散歩する(鳥は飛ぶ)</p>
+          </div>
+          <div class="txt_changed">
+            <h4>正規表現</h4>
+            <p id="txt_regex_2"></p>
+          </div>
+          <div class="ref_box">
+            <ul>
+              <li><a href="https://www-creators.com/archives/5462" target="_blank">正規表現：括弧の中身だけをマッチする表現</a></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+            let origin_txt = $('#txt_origin_2').text(),
+                regex_txt = origin_txt.match(/(?<=\().+?(?=\))/);
+            // console.log(regex_txt);
+            $('#txt_regex_2').text(regex_txt);
+          });
+        </script>
+      </section>
+
+
+      <h2 class="regex_h2">先頭から</h2>
+      <section>
+        <h3 class="regex_h3">先頭から特定の文字より前を抽出</h3>
+        <div class="txt_ctl">
+          <div class="txt_origin">
+            <h4>オリジナル</h4>
+            <p id="txt_origin_3">犬と散歩する(鳥は飛ぶ)</p>
+          </div>
+          <div class="txt_changed">
+            <h4>正規表現</h4>
+            <p id="txt_regex_3"></p>
+          </div>
+          <div class="ref_box">
+            <ul>
+              <li><a href="https://www-creators.com/archives/5462" target="_blank">正規表現：括弧の中身だけをマッチする表現</a></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+            let origin_txt = $('#txt_origin_3').text(),
+                regex_txt = origin_txt.match(/(.*)(?=o)/);
+            console.log(regex_txt);
+            $('#txt_regex_3').text(regex_txt);
           });
         </script>
       </section>

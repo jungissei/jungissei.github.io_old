@@ -23,15 +23,27 @@
 .txt_ctl {
   padding: 15px;
   background-color: #eee;
+  margin-bottom: 1.5em;
 
   .txt_origin,
   .txt_changed {
     h4 {
       font-weight: bold;
     }
+
+    margin-bottom: 1em;
   }
 
-  .txt_origin {
-    margin-bottom: 10px;
+  .ref_box {
+    ul {
+      padding-left: 1.5em;
+
+      li {
+        list-style: disc;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

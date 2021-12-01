@@ -23,6 +23,12 @@
 .txt_ctl {
   padding: 15px;
   background-color: #eee;
+  margin-bottom: 1.5em;
+}
+
+.txt_ctl .txt_origin,
+.txt_ctl .txt_changed {
+  margin-bottom: 1em;
 }
 
 .txt_ctl .txt_origin h4,
@@ -30,7 +36,15 @@
   font-weight: bold;
 }
 
-.txt_ctl .txt_origin {
-  margin-bottom: 10px;
+.txt_ctl .ref_box ul {
+  padding-left: 1.5em;
+}
+
+.txt_ctl .ref_box ul li {
+  list-style: disc;
+}
+
+.txt_ctl .ref_box ul li a {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=styles.css.map */
