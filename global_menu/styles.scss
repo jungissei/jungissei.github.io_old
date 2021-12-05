@@ -1,156 +1,173 @@
+/*
+ * ページロード時にメガメニュー・アコーディオンメニューが動くため
+ * ロード後jQueryでクラス削除
+ */
+body.preload * {
+  transition: none !important;
+}
+
 /*---------------------------
 PC
 ---------------------------*/
 @media print, screen and (min-width: 768px) {
+  /*エリアヘッダー ここから*/
+  #area_header {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    position: relative;
+
+    .container {
+      .content_width {
+        .area_header_row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .area_header_col1 {
+            width: 4em;
+          }
+          .area_header_col2 {
+            width: calc(100% - 4em);
+          }
+        }
+      }
+    }
+
+    .area_header_logo {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    /*スクロール追従 ここから*/
+    &.sticky {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    }
+    /*スクロール追従 ここまで*/
+  }
+  /*エリアヘッダー ここから*/
+
   /*グローバルメニュー ここから*/
   #global_menu {
-    //グローバルメニュー基本スタイル
-    .global_menu_bg {
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
-      background-color: #fff;
+    display: flex;
+    justify-content: space-around;
 
-      .global_menu_items {
-        display: flex;
-        justify-content: space-around;
+    > li {
+      flex: 1 1 auto;
 
-        > li {
-          flex: 1 1 auto;
+      .global_menu_name {
+        display: block;
+        padding: 1.5em 0;
+        text-align: center;
+        cursor: pointer;
+      }
 
-          .global_menu_item_name {
+      &:not(:last-child) {
+        .global_menu_name {
+          position: relative;
+
+          &::after {
+            content: "";
             display: block;
-            padding: 0.5em 0;
-            text-align: center;
-            cursor: pointer;
-          }
-
-          &:not(:last-child) {
-            .global_menu_item_name {
-              position: relative;
-
-              &::after {
-                content: "";
-                display: block;
-                width: 1px;
-                height: 80%;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin-top: auto;
-                margin-bottom: auto;
-                border-right: 1px dotted #333;
-              }
-            }
+            width: 1px;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            border-right: 1px dotted #333;
           }
         }
       }
     }
 
-    //各アイテムホバーアクション・「.current」付与時
-    .global_menu_bg {
-      .global_menu_items {
-        > li {
-          &.current {
-            .global_menu_item_name {
-              background-color: #ccc;
-            }
-          }
-
-          .global_menu_item_name {
-            transition: all 0.2s;
-          }
-
-          &:hover {
-            .global_menu_item_name {
-              background-color: #ccc;
-            }
-          }
-        }
-      }
-    }
-
-    //サブメニュー
-    .global_menu_bg {
-      .global_menu_items {
-        > li {
-          &.sub_menu {
-            position: relative;
-
-            .sub_menu_body {
-              position: absolute;
-              top: 100%;
-              width: 220px;
-              background-color: #ccc;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-              z-index: 1;
-
-              li {
-                a {
-                  display: block;
-                  padding: 10px;
-                  background-color: #ccc;
-                  transition: all 0.2s;
-
-                  &:hover {
-                    background-color: #eee;
-                  }
-                }
-
-                &:not(:last-child) {
-                  a {
-                    border-bottom: 1px dotted #333;
-                  }
-                }
-              }
-            }
-          }
-
-          &:last-child {
-            .sub_menu_body {
-              right: 0;
-            }
-          }
-        }
-      }
-    }
-
-    //メガメニュー
-    .global_menu_bg {
-      position: relative;
-
-      .global_menu_items {
-        > li {
-          &.mega_menu {
-            .global_mega_menu_body {
-              position: absolute;
-              left: 0;
-              top: 100%;
-              width: 100%;
-              background-color: #ccc;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-              background-color: #ccc;
-              padding: 1em 0;
-              z-index: 1;
-            }
-          }
-        }
-      }
-    }
-
-    //スクロール追従
-    .global_menu_bg {
-      &.sticky {
-        position: fixed;
-        top: 0;
-        right: 0;
+    /*メガメニュー ここから*/
+    > .mega_menu {
+      .mega_menu_body {
+        position: absolute;
         left: 0;
-        margin-right: auto;
-        margin-left: auto;
-        z-index: 1;
+        top: 100%;
+        width: 100%;
+        background-color: #ccc;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        padding: 1em 0;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.9) perspective(1000);
+        transform-origin: top center;
+        transition: all 0.2s;
+      }
+
+      &.is_show {
+        .mega_menu_body {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
       }
     }
+    /*メガメニュー ここまで*/
+
+    /*アコーディオンメニュー ここから*/
+    > li {
+      &.accordion_menu {
+        position: relative;
+
+        .accordion_menu_body {
+          position: absolute;
+          top: 90%;
+          width: 220px;
+          background-color: #ccc;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+          z-index: 1;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s;
+
+          li {
+            a {
+              display: block;
+              padding: 10px;
+              background-color: #ccc;
+
+              &:hover {
+                background-color: #eee;
+              }
+            }
+
+            &:not(:last-child) {
+              a {
+                border-bottom: 1px dotted #333;
+              }
+            }
+          }
+        }
+
+        &.is_show {
+          .accordion_menu_body {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &:last-child {
+        .accordion_menu_body {
+          right: 0;
+        }
+      }
+    }
+    /*アコーディオンメニュー ここまで*/
   }
-  /*グローバルメニュー ここまで*/
 }

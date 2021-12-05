@@ -1,121 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
-  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
-  <title>グローバルメニュー - フロントエンド要素</title>
-</head>
-<body>
-
-
-  <div class="container" style="padding:1em 0;">ここにヘッダーロゴなどが入ります。</div>
-
-
-  <!--グローバルメニュー ここから-->
-  <section id="global_menu" class="pc">
-    <div class="global_menu_bg">
-      <div class="container">
-        <ul id="global_menu_items" class="global_menu_items">
-          <li><a href="#" class="global_menu_item_name">最新情報</a></li>
-          <li data-slug="btn"><a href="/btn" class="global_menu_item_name">ボタンリンク</a></li>
-          <li data-slug="global_menu"><a href="/global_menu" class="global_menu_item_name">グローバルメニュー</a></li>
-          <li class="mega_menu js_toggle_by_hover">
-            <span class="global_menu_item_name">メガメニュー</span>
-            <div class="global_mega_menu_body js_toggle_by_hover_content" style="display: none; opacity: 0;">
-              <div class="container">
-                <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
-                <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
-                <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
-                <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
-              </div>
-            </div>
-          </li>
-          <li class="sub_menu js_toggle_by_hover">
-            <span class="global_menu_item_name">サブメニュー</span>
-            <ul class="sub_menu_body js_toggle_by_hover_content" style="display: none; opacity: 0;">
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-            </ul>
-          </li>
-          <li class="sub_menu js_toggle_by_hover">
-            <span class="global_menu_item_name">サブメニュー</span>
-            <ul class="sub_menu_body js_toggle_by_hover_content" style="display: none; opacity: 0;">
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-              <li><a href="#">アイテム</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>グローバルメニュー - フロントエンド要素</title>
+  </head>
+  <body class="preload">
+    <div class="container" style="padding: 1em 0">
+      ここにヘッダーロゴなどが入ります。
     </div>
-  </section>
-  <!--グローバルメニュー ここまで-->
 
-
-
-  <div id="wrapper" class="container" style="height:3000px;">
-    <main>
-      <h1 class="elem_ttl">グローバルメニュー</h1>
-
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>【機能】表示ページURLの第一階層と一致するグローバルメニューのアイテムに「.active」付与</h2>
-        <ul class="block_li">
-          <li>jQueryで動かしている</li>
-          <li>
-            <div>URLの構造で、URL取得の方法が変わるので、そのときは下記を参照</div>
-            <ul>
-              <li>【参考】<a href="https://designsupply-web.com/media/knowledgeside/1592/" target="_blank">jQueryでURLを取得してページごとに条件分岐させる</a></li>
-            </ul>
-          </li>
-        </ul>
+    <!--エリアヘッダー ここから-->
+    <section id="area_header">
+      <div class="container">
+        <div class="content_width">
+          <div class="area_header_row">
+            <div class="area_header_col1">
+              <a class="area_header_logo" href="#">ロゴ</a>
+            </div>
+            <div class="area_header_col2 pc">
+              <ul id="global_menu">
+                <li>
+                  <a href="#" class="global_menu_name">最新情報</a>
+                </li>
+                <li>
+                  <a href="/btn" class="global_menu_name">ボタンリンク</a>
+                </li>
+                <li>
+                  <a href="/global_menu" class="global_menu_name">
+                    グローバルメニュー
+                  </a>
+                </li>
+                <li class="mega_menu">
+                  <span class="global_menu_name">メガメニュー</span>
+                  <div class="mega_menu_body">
+                    <div class="container">
+                      <div class="content_width">
+                        <p>
+                          ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。
+                        </p>
+                        <p>
+                          ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。
+                        </p>
+                        <p>
+                          ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。
+                        </p>
+                        <p>
+                          ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordion_menu">
+                  <span class="global_menu_name">サブメニュー</span>
+                  <ul class="accordion_menu_body">
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                  </ul>
+                </li>
+                <li class="accordion_menu">
+                  <span class="global_menu_name">サブメニュー</span>
+                  <ul class="accordion_menu_body">
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                    <li><a href="#">アイテム</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <!--機能 ここまで-->
+    </section>
+    <!--エリアヘッダー ここまで-->
 
+    <div id="wrapper" class="container" style="height: 3000px">
+      <main>
+        <h1 class="elem_ttl">グローバルメニュー</h1>
 
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>【機能】サブメニュー</h2>
-      </div>
-      <!--機能 ここまで-->
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>
+            【機能】表示ページURLの第一階層と一致するグローバルメニューのアイテムに「.active」付与
+          </h2>
+          <ul class="block_li">
+            <li>jQueryで動かしている</li>
+            <li>
+              <div>
+                URLの構造で、URL取得の方法が変わるので、そのときは下記を参照
+              </div>
+              <ul>
+                <li>
+                  【参考】<a
+                    href="https://designsupply-web.com/media/knowledgeside/1592/"
+                    target="_blank"
+                    >jQueryでURLを取得してページごとに条件分岐させる</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--機能 ここまで-->
 
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>【機能】メガメニュー</h2>
-      </div>
-      <!--機能 ここまで-->
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>【機能】サブメニュー</h2>
+        </div>
+        <!--機能 ここまで-->
 
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>【機能】スクロールしたら追従</h2>
-        <p></p>
-        <ul class="block_li">
-          <li>ディスプレイ上のラインが、グローバルメニューを越したら追従</li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>【機能】メガメニュー</h2>
+        </div>
+        <!--機能 ここまで-->
 
-    </main>
-    <aside>
-      <!--SUMMARY ここから-->
-      <div class="block_sumally">
-        <h2 class="block_sumally_ttl">SUMMARY</h2>
-        <div id="js_sumally" class="block_sumally_body"></div>
-      </div>
-      <!--SUMMARY ここまで-->
-    </aside>
-  </div>
-  <script type="text/javascript" src="/global/scripts.js"></script>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>【機能】スクロールしたら追従</h2>
+          <p></p>
+          <ul class="block_li">
+            <li>ディスプレイ上のラインが、グローバルメニューを越したら追従</li>
+          </ul>
+        </div>
+        <!--機能 ここまで-->
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
 
-
-  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./scripts.js"></script>
-</body>
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
 </html>
