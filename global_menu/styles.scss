@@ -12,47 +12,64 @@ PC
 @media print, screen and (min-width: 768px) {
   /*エリアヘッダー ここから*/
   #area_header {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background-color: #fff;
-    position: relative;
+    .area_header_inner {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      background-color: #fff;
+      position: relative;
 
-    .container {
-      .content_width {
-        .area_header_row {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+      .container {
+        .content_width {
+          .area_header_row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-          .area_header_col1 {
-            width: 4em;
+            .area_header_col1 {
+              width: 4em;
+            }
+            .area_header_col2 {
+              width: calc(100% - 4em);
+            }
           }
-          .area_header_col2 {
-            width: calc(100% - 4em);
+        }
+      }
+
+      .area_header_logo {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+  }
+  /*エリアヘッダー ここから*/
+
+  /*エリアヘッダー：スクロール追従 ここから*/
+  #area_header {
+    //.area_header_wrpの高さ
+    height: 75px;
+
+    .area_header_inner {
+      &.sticky {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+
+        #global_menu {
+          > li {
+            .global_menu_name {
+              padding: 1em 0;
+            }
           }
         }
       }
     }
-
-    .area_header_logo {
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-
-    /*スクロール追従 ここから*/
-    &.sticky {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-      z-index: 1;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    }
-    /*スクロール追従 ここまで*/
   }
-  /*エリアヘッダー ここから*/
+  /*エリアヘッダー：スクロール追従 ここから*/
 
   /*グローバルメニュー ここから*/
   #global_menu {
@@ -67,6 +84,8 @@ PC
         padding: 1.5em 0;
         text-align: center;
         cursor: pointer;
+
+        transition: all 0.2s;
       }
 
       &:not(:last-child) {

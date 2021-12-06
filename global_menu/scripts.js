@@ -14,7 +14,7 @@ $(window).on('load', function(){
 
 /**
  * サブメニューアイテムにクラス名追加
- * @param {string} arg
+ * @param {object} arg
  */
 function global_nav_sub_menu(arg){
   let show_class_name = arg.show_class_name;
@@ -134,49 +134,44 @@ function add_class_global_nav_sub_menu(params) {
 /**------------------------------------------------------
  * エリアヘッダー：スクロール追従
  *------------------------------------------------------*/
-/*
-* スクロール追従
-*/
 $(function(){
 
-  //グローバルメニューセレクター
-  let global_menu_bg = $('#global_menu>.global_menu_bg');
-
-  //親要素の高さ固定
-  let height_num = global_menu_bg.outerHeight(true);
-  $('#global_menu').height(height_num);
-
-  //グローバルメニュー座標取得
-  let position = $('#global_menu').offset().top + height_num;
-
-  //固定動作
-  $(window).on('scroll', function(){
-    if(position < $(window).scrollTop()){
-
-      if(global_menu_bg.hasClass('sticky')){
-        return;
-      }
-
-      global_menu_bg.addClass('sticky');
-      global_menu_bg.css('top', - height_num);
-      global_menu_bg.animate(
-        { top: 0 },
-        { queue: false, duration: 300 }
-      );
-    }else{
-      if(!global_menu_bg.hasClass('sticky')){
-        return;
-      }
-
-      $('#global_menu>.global_menu_bg').removeClass('sticky');
-    }
+  toggle_sticky_area_header({
+    'elem' : $('#area_header'),//追従要素の親要素
+    'elem_inner' : $('#area_header .area_header_inner'),//追従要素
+    'sticky_class' : 'sticky'//追従に追加するクラス名
   });
 
   //スクロールイベント
   $(window).trigger('scroll');
 });
 
+/**
+ * エリアヘッダー：スクロール追従
+ * @param {object} params
+ */
+function toggle_sticky_area_header(params) {
+  let elem = params.elem;
+  let elem_inner = params.elem_inner;
+  let sticky_class = params.sticky_class;
+  let elem_offset = elem.offset().top;
 
+  $(window).on('scroll', function(){
+    if(elem_offset < $(window).scrollTop()){
+      if(elem_inner.hasClass(sticky_class)){
+        return;
+      }
+
+      elem_inner.addClass(sticky_class);
+    }else{
+      if(!elem_inner.hasClass(sticky_class)){
+        return;
+      }
+
+      elem_inner.removeClass(sticky_class);
+    }
+  });
+}
 
 
 /* グローバルメニュー ここまで */

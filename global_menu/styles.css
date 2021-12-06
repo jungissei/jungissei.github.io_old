@@ -13,15 +13,13 @@ PC
 ---------------------------*/
 @media print, screen and (min-width: 768px) {
   /*エリアヘッダー ここから*/
-  #area_header {
+  #area_header .area_header_inner {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     background-color: #fff;
     position: relative;
-    /*スクロール追従 ここから*/
-    /*スクロール追従 ここまで*/
   }
-  #area_header .container .content_width .area_header_row {
+  #area_header .area_header_inner .container .content_width .area_header_row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -32,17 +30,22 @@ PC
         -ms-flex-align: center;
             align-items: center;
   }
-  #area_header .container .content_width .area_header_row .area_header_col1 {
+  #area_header .area_header_inner .container .content_width .area_header_row .area_header_col1 {
     width: 4em;
   }
-  #area_header .container .content_width .area_header_row .area_header_col2 {
+  #area_header .area_header_inner .container .content_width .area_header_row .area_header_col2 {
     width: calc(100% - 4em);
   }
-  #area_header .area_header_logo {
+  #area_header .area_header_inner .area_header_logo {
     font-size: 1.2em;
     font-weight: bold;
   }
-  #area_header.sticky {
+  /*エリアヘッダー ここから*/
+  /*エリアヘッダー：スクロール追従 ここから*/
+  #area_header {
+    height: 75px;
+  }
+  #area_header .area_header_inner.sticky {
     position: fixed;
     top: 0;
     right: 0;
@@ -53,7 +56,10 @@ PC
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   }
-  /*エリアヘッダー ここから*/
+  #area_header .area_header_inner.sticky #global_menu > li .global_menu_name {
+    padding: 1em 0;
+  }
+  /*エリアヘッダー：スクロール追従 ここから*/
   /*グローバルメニュー ここから*/
   #global_menu {
     display: -webkit-box;
@@ -76,6 +82,8 @@ PC
     padding: 1.5em 0;
     text-align: center;
     cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   #global_menu > li:not(:last-child) .global_menu_name {
     position: relative;
