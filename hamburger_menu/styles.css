@@ -1,6 +1,14 @@
 @charset "UTF-8";
+/**
+ * bodyタグにwidth: 100%;を付与すること
+ * 付与しないと、スクロール無効化が動かない
+ */
+body {
+  width: 100%;
+}
+
 /*ハンバーガーメニュー ここから*/
-#hamburger_menu .hamburger_menu_btn {
+#hamburger_menu .menu_btn {
   position: fixed;
   background-color: #eeeeee;
   -webkit-transition: all 0.2s;
@@ -8,16 +16,16 @@
   cursor: pointer;
   top: 20px;
   right: 20px;
-  width: 60px;
-  padding: 30px 0;
+  width: 50px;
+  padding: 25px 0;
   z-index: 3;
 }
 
-#hamburger_menu .hamburger_menu_btn:hover {
+#hamburger_menu .menu_btn:hover {
   background-color: #cecccc;
 }
 
-#hamburger_menu .hamburger_menu_btn span {
+#hamburger_menu .menu_btn span {
   background-color: #333;
   display: block;
   position: absolute;
@@ -29,18 +37,18 @@
   height: 1px;
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_top {
+#hamburger_menu .menu_btn .menu_btn_top {
   top: 30%;
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_middle {
+#hamburger_menu .menu_btn .menu_btn_middle {
   top: 0;
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_bottom {
+#hamburger_menu .menu_btn .menu_btn_bottom {
   bottom: 30%;
 }
 
@@ -59,12 +67,12 @@
   background-color: #ccc;
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_top {
-  -webkit-animation: hamburger_menu_btn_top 0.75s forwards;
-          animation: hamburger_menu_btn_top 0.75s forwards;
+#hamburger_menu .menu_btn .menu_btn_top {
+  -webkit-animation: menu_btn_top 0.75s forwards;
+          animation: menu_btn_top 0.75s forwards;
 }
 
-@-webkit-keyframes hamburger_menu_btn_top {
+@-webkit-keyframes menu_btn_top {
   0% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -82,7 +90,7 @@
   }
 }
 
-@keyframes hamburger_menu_btn_top {
+@keyframes menu_btn_top {
   0% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -100,18 +108,18 @@
   }
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_middle {
+#hamburger_menu .menu_btn .menu_btn_middle {
   -webkit-transition: all 0.25s 0.25s;
   transition: all 0.25s 0.25s;
   opacity: 1;
 }
 
-#hamburger_menu .hamburger_menu_btn .hamburger_menu_btn_bottom {
-  -webkit-animation: hamburger_menu_btn_bottom 0.75s forwards;
-          animation: hamburger_menu_btn_bottom 0.75s forwards;
+#hamburger_menu .menu_btn .menu_btn_bottom {
+  -webkit-animation: menu_btn_bottom 0.75s forwards;
+          animation: menu_btn_bottom 0.75s forwards;
 }
 
-@-webkit-keyframes hamburger_menu_btn_bottom {
+@-webkit-keyframes menu_btn_bottom {
   0% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -129,7 +137,7 @@
   }
 }
 
-@keyframes hamburger_menu_btn_bottom {
+@keyframes menu_btn_bottom {
   0% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -147,12 +155,12 @@
   }
 }
 
-#hamburger_menu .hamburger_menu_btn.opened .hamburger_menu_btn_top {
-  -webkit-animation: opened_hamburger_menu_btn_top 0.75s forwards;
-          animation: opened_hamburger_menu_btn_top 0.75s forwards;
+#hamburger_menu .menu_btn.is_opened .menu_btn_top {
+  -webkit-animation: opened_menu_btn_top 0.75s forwards;
+          animation: opened_menu_btn_top 0.75s forwards;
 }
 
-@-webkit-keyframes opened_hamburger_menu_btn_top {
+@-webkit-keyframes opened_menu_btn_top {
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -170,7 +178,7 @@
   }
 }
 
-@keyframes opened_hamburger_menu_btn_top {
+@keyframes opened_menu_btn_top {
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -188,16 +196,16 @@
   }
 }
 
-#hamburger_menu .hamburger_menu_btn.opened .hamburger_menu_btn_middle {
+#hamburger_menu .menu_btn.is_opened .menu_btn_middle {
   opacity: 0;
 }
 
-#hamburger_menu .hamburger_menu_btn.opened .hamburger_menu_btn_bottom {
-  -webkit-animation: opened_hamburger_menu_btn_bottom 0.75s forwards;
-          animation: opened_hamburger_menu_btn_bottom 0.75s forwards;
+#hamburger_menu .menu_btn.is_opened .menu_btn_bottom {
+  -webkit-animation: opened_menu_btn_bottom 0.75s forwards;
+          animation: opened_menu_btn_bottom 0.75s forwards;
 }
 
-@-webkit-keyframes opened_hamburger_menu_btn_bottom {
+@-webkit-keyframes opened_menu_btn_bottom {
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -215,7 +223,7 @@
   }
 }
 
-@keyframes opened_hamburger_menu_btn_bottom {
+@keyframes opened_menu_btn_bottom {
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);

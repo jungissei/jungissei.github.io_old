@@ -1,15 +1,28 @@
+/**
+ * bodyタグにwidth: 100%;を付与すること
+ * 付与しないと、スクロール無効化が動かない
+ */
+body {
+  width: 100%;
+}
+
 /*ハンバーガーメニュー ここから*/
 #hamburger_menu {
+  $menu_btn_with: 50px;
+  $menu_btn_height: 50px;
+
+  $open_class: ".is_opened";
+
   //ハンバーガーメニューボタン：基本スタイル
-  .hamburger_menu_btn {
+  .menu_btn {
     position: fixed;
     background-color: rgb(238, 238, 238);
     transition: all 0.2s;
     cursor: pointer;
     top: 20px;
     right: 20px;
-    width: 60px;
-    padding: 30px 0;
+    width: $menu_btn_with;
+    padding: $menu_btn_height/2 0;
     z-index: 3;
 
     &:hover {
@@ -28,18 +41,18 @@
       height: 1px;
     }
 
-    .hamburger_menu_btn_top {
+    .menu_btn_top {
       top: 30%;
     }
 
-    .hamburger_menu_btn_middle {
+    .menu_btn_middle {
       top: 0;
       bottom: 0;
       margin-top: auto;
       margin-bottom: auto;
     }
 
-    .hamburger_menu_btn_bottom {
+    .menu_btn_bottom {
       bottom: 30%;
     }
   }
@@ -61,10 +74,10 @@
   }
 
   //ハンバーガーメニューボタン：ページ表示アニメーション
-  .hamburger_menu_btn {
-    .hamburger_menu_btn_top {
-      animation: hamburger_menu_btn_top 0.75s forwards;
-      @keyframes hamburger_menu_btn_top {
+  .menu_btn {
+    .menu_btn_top {
+      animation: menu_btn_top 0.75s forwards;
+      @keyframes menu_btn_top {
         0% {
           transform: rotate(45deg);
           top: 50%;
@@ -80,14 +93,14 @@
       }
     }
 
-    .hamburger_menu_btn_middle {
+    .menu_btn_middle {
       transition: all 0.25s 0.25s;
       opacity: 1;
     }
 
-    .hamburger_menu_btn_bottom {
-      animation: hamburger_menu_btn_bottom 0.75s forwards;
-      @keyframes hamburger_menu_btn_bottom {
+    .menu_btn_bottom {
+      animation: menu_btn_bottom 0.75s forwards;
+      @keyframes menu_btn_bottom {
         0% {
           transform: rotate(-45deg);
           bottom: 50%;
@@ -104,12 +117,12 @@
     }
   }
 
-  //ハンバーガーメニューボタン：押下時アニメーション
-  .hamburger_menu_btn {
-    &.opened {
-      .hamburger_menu_btn_top {
-        animation: opened_hamburger_menu_btn_top 0.75s forwards;
-        @keyframes opened_hamburger_menu_btn_top {
+  //ボタン押下時アニメーション
+  .menu_btn {
+    &#{$open_class} {
+      .menu_btn_top {
+        animation: opened_menu_btn_top 0.75s forwards;
+        @keyframes opened_menu_btn_top {
           0% {
             transform: rotate(0);
             top: 30%;
@@ -125,13 +138,13 @@
         }
       }
 
-      .hamburger_menu_btn_middle {
+      .menu_btn_middle {
         opacity: 0;
       }
 
-      .hamburger_menu_btn_bottom {
-        animation: opened_hamburger_menu_btn_bottom 0.75s forwards;
-        @keyframes opened_hamburger_menu_btn_bottom {
+      .menu_btn_bottom {
+        animation: opened_menu_btn_bottom 0.75s forwards;
+        @keyframes opened_menu_btn_bottom {
           0% {
             transform: rotate(0);
             bottom: 30%;

@@ -26,7 +26,7 @@ function global_nav_sub_menu(arg){
 
     sub_menu_selector.on('click', function(){
 
-      if(flag != true) return;
+      if(flag == false) return;
       flag = false;
       setTimeout(function(){ flag = true; }, 500);
 
