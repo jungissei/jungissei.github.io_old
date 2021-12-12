@@ -1,14 +1,7 @@
 @charset "UTF-8";
-/**
- * bodyタグにwidth: 100%;を付与すること
- * 付与しないと、スクロール無効化が動かない
- */
-body {
-  width: 100%;
-}
-
 /*ハンバーガーメニュー ここから*/
-#hamburger_menu .menu_btn {
+/* ハンバーガーメニューボタン ここから*/
+#hamburger_menu_btn {
   position: fixed;
   background-color: #eeeeee;
   -webkit-transition: all 0.2s;
@@ -21,11 +14,7 @@ body {
   z-index: 3;
 }
 
-#hamburger_menu .menu_btn:hover {
-  background-color: #cecccc;
-}
-
-#hamburger_menu .menu_btn span {
+#hamburger_menu_btn span {
   background-color: #333;
   display: block;
   position: absolute;
@@ -37,29 +26,31 @@ body {
   height: 1px;
 }
 
-#hamburger_menu .menu_btn .menu_btn_top {
+#hamburger_menu_btn .menu_btn_top {
   top: 30%;
 }
 
-#hamburger_menu .menu_btn .menu_btn_middle {
+#hamburger_menu_btn .menu_btn_middle {
   top: 0;
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-#hamburger_menu .menu_btn .menu_btn_bottom {
+#hamburger_menu_btn .menu_btn_bottom {
   bottom: 30%;
 }
 
-#hamburger_menu .hamburger_menu_body {
+/* ハンバーガーメニューボタン ここまで*/
+/* ハンバーガーメニューキャンバス ここから*/
+#hamburger_menu_canvas {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  z-index: 2;
+  z-index: 3;
   overflow-y: scroll;
   padding: 1em 0;
   width: 100%;
@@ -67,7 +58,19 @@ body {
   background-color: #ccc;
 }
 
-#hamburger_menu .menu_btn .menu_btn_top {
+#hamburger_menu_off_canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+/* ハンバーガーメニューキャンバス ここまで*/
+/* ハンバーガーメニューボタン：ページロード時アニメーション ここから*/
+#hamburger_menu_btn .menu_btn_top {
   -webkit-animation: menu_btn_top 0.75s forwards;
           animation: menu_btn_top 0.75s forwards;
 }
@@ -76,12 +79,12 @@ body {
   0% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(0);
@@ -94,12 +97,12 @@ body {
   0% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(0);
@@ -108,13 +111,13 @@ body {
   }
 }
 
-#hamburger_menu .menu_btn .menu_btn_middle {
+#hamburger_menu_btn .menu_btn_middle {
   -webkit-transition: all 0.25s 0.25s;
   transition: all 0.25s 0.25s;
   opacity: 1;
 }
 
-#hamburger_menu .menu_btn .menu_btn_bottom {
+#hamburger_menu_btn .menu_btn_bottom {
   -webkit-animation: menu_btn_bottom 0.75s forwards;
           animation: menu_btn_bottom 0.75s forwards;
 }
@@ -123,12 +126,12 @@ body {
   0% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(0);
@@ -141,12 +144,12 @@ body {
   0% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(0);
@@ -155,7 +158,9 @@ body {
   }
 }
 
-#hamburger_menu .menu_btn.is_opened .menu_btn_top {
+/* ハンバーガーメニューボタン：ページロード時アニメーション ここまで*/
+/* ハンバーガーメニューボタン：ボタン押下時アニメーション ここから*/
+#hamburger_menu_btn.is_opened .menu_btn_top {
   -webkit-animation: opened_menu_btn_top 0.75s forwards;
           animation: opened_menu_btn_top 0.75s forwards;
 }
@@ -169,12 +174,12 @@ body {
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
 }
 
@@ -187,20 +192,20 @@ body {
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 50%;
+    top: calc(50% - (1px / 2));
   }
 }
 
-#hamburger_menu .menu_btn.is_opened .menu_btn_middle {
+#hamburger_menu_btn.is_opened .menu_btn_middle {
   opacity: 0;
 }
 
-#hamburger_menu .menu_btn.is_opened .menu_btn_bottom {
+#hamburger_menu_btn.is_opened .menu_btn_bottom {
   -webkit-animation: opened_menu_btn_bottom 0.75s forwards;
           animation: opened_menu_btn_bottom 0.75s forwards;
 }
@@ -214,12 +219,12 @@ body {
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
 }
 
@@ -232,14 +237,15 @@ body {
   50% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
   100% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: 50%;
+    bottom: calc(50% - (1px / 2));
   }
 }
 
+/* ハンバーガーメニューボタン：ボタン押下時アニメーション ここまで*/
 /*ハンバーガーメニュー ここまで*/
 /*# sourceMappingURL=styles.css.map */
