@@ -1,0 +1,63 @@
+@charset "UTF-8";
+#wrapper {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+header,
+footer {
+  padding: 80px;
+  text-align: center;
+  background-color: #ccc;
+  width: 100%;
+}
+
+footer {
+  position: relative;
+}
+
+/* ページトップへ戻る ここから */
+#arrow_to_top {
+  right: 40px;
+  bottom: 40px;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#arrow_to_top .arrow_to_top_inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  position: relative;
+  display: block;
+}
+
+#arrow_to_top .arrow_to_top_inner img {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 5%;
+  left: 0;
+  margin: auto;
+}
+
+#arrow_to_top.is_fixed {
+  opacity: 1;
+  visibility: visible;
+}
+
+#arrow_to_top.is_absolute {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  bottom: auto;
+  top: -20px;
+}
+
+/* ページトップへ戻る ここまで */
+/*# sourceMappingURL=styles.css.map */
