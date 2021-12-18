@@ -53,6 +53,10 @@ function add_menu_to_aside(){
         title : "目次生成",
         path : "/toc"
       },
+      {
+        title : "ページトップへ戻る",
+        path : "/page_top"
+      }
       // submenu
       // {
       //   title : "サブメニューあり",

@@ -1,0 +1,64 @@
+#wrapper {
+  flex-wrap: wrap;
+}
+
+header,
+footer {
+  padding: 80px;
+  text-align: center;
+  background-color: #ccc;
+  width: 100%;
+}
+
+footer {
+  position: relative; //フッターにかける場合はこれを付与
+}
+
+/* ページトップへ戻る ここから */
+#arrow_to_top {
+  $btn_right_position: 40px;
+  $btn_bottom_position: 40px;
+  $btn_width: 40px;
+  $btn_height: 40px;
+  $btn_color: #000;
+
+  right: $btn_right_position;
+  bottom: $btn_bottom_position;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+
+  .arrow_to_top_inner {
+    width: $btn_width;
+    height: $btn_height;
+    border-radius: 50%;
+    background-color: $btn_color;
+    position: relative;
+    display: block;
+
+    img {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 5%;
+      left: 0;
+      margin: auto;
+    }
+  }
+
+  &.is_fixed {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is_absolute {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    bottom: auto;
+    top: -#{$btn_height/2};
+  }
+}
+/* ページトップへ戻る ここまで */
