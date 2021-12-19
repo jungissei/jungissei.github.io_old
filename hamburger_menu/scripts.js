@@ -1,3 +1,8 @@
+$(window).on('load', function(){
+  $('body').removeClass('preload');
+});
+
+
 /*----------------------------------------------------------------------------
  * ハンバーガーメニュー
  *----------------------------------------------------------------------------*/
@@ -6,8 +11,9 @@ $(window).on('load', function(){
     'btn' : '#hamburger_menu_btn',//ボタン
     'menu_anchor' : '#hamburger_menu_canvas a[href]',//メニューアンカ
     'canvas' : '#hamburger_menu_canvas',//キャンバス
-    'off_canvas' : '#hamburger_menu_off_canvas',//オフキャンバス
-    'open_class' : 'is_opened'//開閉クラス
+    'off_canvas' : '#hamburger_menu_canvas .hamburger_menu_canvas_off',//オフキャンバス
+    'open_class' : 'is_opened',//開閉クラス
+    'animation_item' : '#hamburger_menu_canvas .menu_animation_item'//アニメーションアイテム
   }
 
   let flag = true;
@@ -42,130 +48,78 @@ $(window).on('load', function(){
 
     hamburger_menu_toggle_canvas(arg);
   });
+
+  //ハンバーグメニュー内のanimation-delay追加
+  add_humburger_inner_menu_animation_delay(arg.animation_item);
 });
 
 
 /**
  * キャンバス・オフキャンバス：トグル
- * @param arg {object} クラス名配列
+ * @param {object} arg クラス名配列
  */
 function hamburger_menu_toggle_canvas(arg){
-  $(arg.btn).toggleClass(arg.open_class);
-
-  hamburger_menu_canvas_fade_toggle(arg);
+  $(arg.btn + ',' + arg.canvas).toggleClass(arg.open_class);
   hamburger_menu_scroll_control(arg.btn, arg.open_class);
 }
 
 /**
  * ページ全体のスクロールコントロール
- * @param btn {string} ボタンクラス名
- * @param open_class {string} メニューを開いた時に付与するクラス名
+ * @param {string} btn ボタンクラス名
+ * @param {string} open_class メニューを開いた時に付与するクラス名
  */
 function hamburger_menu_scroll_control(btn, open_class){
+
   if($(btn).hasClass(open_class)){
-    //ページ全体のスクロール無効化
-    $('body').css('overflow' , 'hidden');
+
+    let scroll_bar_width = parseInt(window.innerWidth - $(window).width());
+
+    //body：ページ全体のスクロール無効化
+    $('body').css({
+      'overflow' : 'hidden',
+      'padding-right' : scroll_bar_width,
+    });
+
+    //ハンバーガーメニュー ボタン
+    $(btn).css({
+      'right' : parseInt($(btn).css('right')) + scroll_bar_width
+    });
+
     return;
   }
 
   //ページ全体のスクロール無効化解除
-  $('body').css('overflow' , '');
+  $('body').css({
+    'overflow' : '',
+    'padding-right' : '',
+  });
+
+  //ハンバーガーメニュー ボタン
+  $(btn).css({
+    'right' : ''
+  });
 }
 
 /**
- * キャンバス表示アニメーション フェードトグル
- * @param arg {object} クラス名配列
+ * ハンバーグメニュー内のanimation-delay追加
+ * @param {string} animation_item アニメーションアイテム
  */
-function hamburger_menu_canvas_fade_toggle(arg){
-  if($(arg.btn).hasClass(arg.open_class)){
-    $(arg.canvas + ',' + arg.off_canvas).fadeIn();
-    return;
-  }
+function add_humburger_inner_menu_animation_delay(animation_item) {
+  let cur_deley = 0,
+      increment_deley = 0.05;
 
-  $(arg.canvas + ',' + arg.off_canvas).fadeOut();
+  $(animation_item).each(function(){
+    $(this).css('transition-delay', cur_deley + 's');
+    cur_deley = get_humburger_inner_menu_animation_delay(cur_deley, increment_deley);
+  });
 }
 
 /**
- * キャンバススライドトグル(上から)
- * @param arg {object} クラス名配列
+ * animation-delay追加
+ * @param {int} cur_deley 現在の遅延秒数
+ * @param {int} increment_deley 遅延秒数
  */
-function hamburger_menu_canvas_slide_toggle_from_top(arg){
-  $(arg.canvas).slideToggle();
-  $(arg.off_canvas).fadeToggle();
+function get_humburger_inner_menu_animation_delay(cur_deley, increment_deley) {
+  return cur_deley + increment_deley;
 }
 
-/**
- * キャンバス表示アニメーション スライドトグル(左から)
- * @param arg {object} クラス名配列
- */
-function hamburger_menu_canvas_slide_toggle_from_left(arg){
-  let speed = 300;
-
-  if($(arg.btn).hasClass(arg.open_class)){
-    $(arg.canvas).css({
-      'left': '-100%',
-      'right': 'auto',
-      'opacity': '0',
-      'display': ''
-    });
-
-    $(arg.canvas).animate({
-      'opacity': '1',
-      'left': '0'
-    }, speed, 'linear');
-
-    $(arg.off_canvas).fadeIn();
-  }else{
-    $(arg.canvas).animate({
-      'opacity': '0',
-      'left': '-100%'
-    }, speed, 'linear', function(){
-      $(arg.canvas).css({
-        'left' : '',
-        'right' : '',
-        'opacity': '',
-        'display' : 'none'
-      });
-    });
-
-    $(arg.off_canvas).fadeOut();
-  }
-}
-
-/**
- * キャンバス表示アニメーション スライドトグル(右から)
- * @param arg {object} クラス名配列
- */
-function hamburger_menu_canvas_slide_toggle_from_right(arg){
-  let speed = 300;
-
-  if($(arg.btn).hasClass(arg.open_class)){
-    $(arg.canvas).css({
-      'right': '-100%',
-      'left': 'auto',
-      'opacity': '0',
-      'display': ''
-    });
-
-    $(arg.canvas).animate({
-      'opacity': '1',
-      'right': '0'
-    }, speed, 'linear');
-
-    $(arg.off_canvas).fadeIn();
-  }else{
-    $(arg.canvas).animate({
-      'opacity': '0',
-      'right': '-100%'
-    }, speed, 'linear', function(){
-      $(arg.canvas).css({
-        'left' : '',
-        'right' : '',
-        'opacity': '',
-        'display' : 'none'
-      });
-    });
-
-    $(arg.off_canvas).fadeOut();
-  }
-}
