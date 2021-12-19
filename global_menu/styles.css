@@ -3,7 +3,7 @@
  * ページロード時にメガメニュー・アコーディオンメニューが動くため
  * ロード後jQueryでクラス削除
  */
-body.preload * {
+body.preload #global_menu .accordion_menu_body {
   -webkit-transition: none !important;
   transition: none !important;
 }
