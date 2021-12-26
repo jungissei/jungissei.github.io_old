@@ -1,37 +1,5 @@
 @charset "UTF-8";
 /*---------------------------
-共通
----------------------------*/
-/*画像アスペクト調整 ここから*/
-.img_aspect {
-  padding: 50% 0;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.img_aspect img {
-  position: absolute;
-  top: -100%;
-  right: -100%;
-  bottom: -100%;
-  left: -100%;
-  margin: auto;
-  max-width: none;
-}
-
-.img_aspect img.img_hor {
-  width: auto;
-  height: 100%;
-}
-
-.img_aspect img.img_ver {
-  width: 100%;
-  height: auto;
-}
-
-/*画像アスペクト調整 ここまで*/
-/*---------------------------
 PC
 ---------------------------*/
 @media print, screen and (min-width: 768px) {
@@ -49,6 +17,10 @@ PC
   .post .post_img {
     width: 49%;
     margin-bottom: 1em;
+  }
+  .post .post_img .post_img_inner {
+    padding: 50% 0;
+    width: 100%;
   }
   /*レイアウト ここまで*/
 }
@@ -71,6 +43,10 @@ SP
   .post .post_img {
     width: 100%;
     margin-bottom: 1em;
+  }
+  .post .post_img .post_img_inner {
+    padding: 50% 0;
+    width: 100%;
   }
   /*レイアウト ここまで*/
 }

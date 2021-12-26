@@ -1,123 +1,182 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
-  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
-  <title>画像関連処理 - フロントエンド要素</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>画像関連処理 - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">画像関連処理</h1>
 
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>【機能】画像関連処理</h2>
+          <ul class="block_li">
+            <li>
+              <div>画面幅に応じて画像切替</div>
+              <ul>
+                <li>
+                  【参考】<a
+                    href="https://blog.8bit.co.jp/?p=13620"
+                    target="_blank"
+                    >【怖くないJavaScript +
+                    jQuery】画像の縦横比を保ったままサイズを変更する処理</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>PC・SP画像切替</div>
+            </li>
+            <li>
+              <div>注意点</div>
+              <ul>
+                <li>
+                  読込順：「画面幅に応じて画像切替」→「PC・SP画像切替」とする。そうしないと、うまく動かない。
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--機能 ここまで-->
 
+        <!--画像関連処理 ここから-->
+        <div class="block">
+          <h2>アスペクト調整</h2>
+        </div>
+        <div class="post js_aspect_ratio">
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog-vertical1.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog1.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog-vertical2.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog2.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog-vertical3.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog3.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog-vertical4.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog4.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog-vertical5.jpg" />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img src="/global/img/dog5.jpg" />
+            </div>
+          </div>
+        </div>
+        <!--画像関連処理 ここまで-->
 
-  <div id="wrapper" class="container">
-    <main>
-      <h1 class="elem_ttl">画像関連処理</h1>
+        <div style="height: 100px"></div>
 
+        <!--画像関連処理 ここから-->
+        <div class="block">
+          <h2>アスペクト調整(SP・PC画像切替処理有)</h2>
+        </div>
+        <div class="post js_aspect_ratio">
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img
+                src="/global/img/dog1.jpg"
+                data-sp-src="/global/img/dog-vertical1.jpg"
+              />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img
+                src="/global/img/dog2.jpg"
+                data-sp-src="/global/img/dog-vertical2.jpg"
+              />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img
+                src="/global/img/dog3.jpg"
+                data-sp-src="/global/img/dog-vertical3.jpg"
+              />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img
+                src="/global/img/dog4.jpg"
+                data-sp-src="/global/img/dog-vertical4.jpg"
+              />
+            </div>
+          </div>
+          <div class="post_img">
+            <div class="post_img_inner img_liquid_fill">
+              <img
+                src="/global/img/dog5.jpg"
+                data-sp-src="/global/img/dog-vertical5.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <!--画像関連処理 ここまで-->
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
 
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>【機能】画像関連処理</h2>
-        <ul class="block_li">
-          <li>
-            <div>画面幅に応じて画像切替</div>
-            <ul>
-              <li>【参考】<a href="https://blog.8bit.co.jp/?p=13620" target="_blank">【怖くないJavaScript + jQuery】画像の縦横比を保ったままサイズを変更する処理</a></li>
-            </ul>
-          </li>
-          <li>
-            <div>PC・SP画像切替</div>
-          </li>
-          <li>
-            <div>注意点</div>
-            <ul>
-              <li>読込順：「画面幅に応じて画像切替」→「PC・SP画像切替」とする。そうしないと、うまく動かない。</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
-
-
-      <!--画像関連処理 ここから-->
-      <div class="block">
-        <h2>アスペクト調整</h2>
-      </div>
-      <div class="post js_aspect_ratio">
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog-vertical1.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog1.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog-vertical2.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog2.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog-vertical3.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog3.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog-vertical4.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog4.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog-vertical5.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog5.jpg"></div>
-        </div>
-      </div>
-      <!--画像関連処理 ここまで-->
-
-      <div style="height:100px;"></div>
-
-      <!--画像関連処理 ここから-->
-      <div class="block">
-        <h2>アスペクト調整(SP・PC画像切替処理有)</h2>
-      </div>
-      <div class="post js_aspect_ratio">
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog1.jpg" data-sp-src="/global/img/dog-vertical1.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog2.jpg" data-sp-src="/global/img/dog-vertical2.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog3.jpg" data-sp-src="/global/img/dog-vertical3.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog4.jpg" data-sp-src="/global/img/dog-vertical4.jpg"></div>
-        </div>
-        <div class="post_img">
-          <div class="img_aspect"><img src="/global/img/dog5.jpg" data-sp-src="/global/img/dog-vertical5.jpg"></div>
-        </div>
-      </div>
-      <!--画像関連処理 ここまで-->
-
-    </main>
-    <aside>
-      <!--SUMMARY ここから-->
-      <div class="block_sumally">
-        <h2 class="block_sumally_ttl">SUMMARY</h2>
-        <div id="js_sumally" class="block_sumally_body"></div>
-      </div>
-      <!--SUMMARY ここまで-->
-    </aside>
-  </div>
-  <script type="text/javascript" src="/global/scripts.js"></script>
-
-  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./scripts.js"></script>
-</body>
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./plugins/imgLiquid-min.js"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
 </html>
