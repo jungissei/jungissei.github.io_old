@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>YouTube - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">YouTube</h1>
+        <div class="block">
+          <ul class="block_li">
+            <li>
+              <a
+                href="https://github.com/jungissei/jungissei.github.io/wiki/YouTube"
+                target="_blank"
+                >Wiki</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h2>【機能】</h2>
+          <ul class="block_li">
+            <li>自動再生</li>
+            <li>ループ再生</li>
+            <li>コントロール非表示</li>
+            <li>音声ミュート</li>
+            <li>YouTubeロゴ・動画URLリンク非表示</li>
+          </ul>
+        </div>
+
+        <div class="youtube_area">
+          <div
+            id="youtube_play"
+            data-property="{
+              videoURL: 'https://www.youtube.com/watch?v=CLxntu0QIFA',
+              containment: '.youtube_area',
+              mute: true,
+              loop: true,
+              autoPlay: true,
+              startAt: 0,
+              showControls: false,
+              showYTLogo: false
+            }"
+          ></div>
+        </div>
+
+        <div style="height: 3em"></div>
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+        <!--YouTube ここから-->
+        <section id="js_toc2"></section>
+        <!--YouTube ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
+
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./jquery.mb.YTPlayer.min.js"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>

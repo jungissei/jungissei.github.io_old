@@ -56,6 +56,10 @@ function add_menu_to_aside(){
       {
         title : "ページトップへ戻る",
         path : "/page_top"
+      },
+      {
+        title : "YouTube",
+        path : "/ytp"
       }
       // submenu
       // {
