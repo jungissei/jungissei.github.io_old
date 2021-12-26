@@ -1,197 +1,363 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <link rel="stylesheet"  href="/global/styles.min.css" type="text/css" media="all" />
-  <link rel="stylesheet"  href="./slick/slick.css" type="text/css" media="all" />
-  <link rel="stylesheet"  href="./styles.min.css" type="text/css" media="all" />
-  <title>スライドショー - フロントエンド要素</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./slick/slick.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>スライドショー - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">スライドショー</h1>
 
-
-
-  <div id="wrapper" class="container">
-    <main>
-      <h1 class="elem_ttl">スライドショー</h1>
-
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>公式サイト</h2>
-        <ul class="block_li">
-          <li><a href="https://kenwheeler.github.io/slick/" target="_blank">slick - the last carousel you'll ever need</a></li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
-
-
-      <!--スライドショー ここから-->
-
-      <div style="padding-top:1.5em;"></div>
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>ページングアロー</h2>
-      </div>
-      <!--機能 ここまで-->
-      <div id="slick01" class="slick slick_paging_arrow">
-        <div class="slick_main">
-          <ul class="slick_items">
-            <li><img src="/global/img/dog1.jpg"></li>
-            <li><img src="/global/img/dog2.jpg"></li>
-            <li><img src="/global/img/dog3.jpg"></li>
-            <li><img src="/global/img/dog4.jpg"></li>
-            <li><img src="/global/img/dog5.jpg"></li>
-            <li><img src="/global/img/dog6.jpg"></li>
-            <li><img src="/global/img/dog7.jpg"></li>
-            <li><img src="/global/img/dog8.jpg"></li>
-            <li><img src="/global/img/dog9.jpg"></li>
-            <li><img src="/global/img/dog10.jpg"></li>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>公式サイト</h2>
+          <ul class="block_li">
+            <li>
+              <a href="https://kenwheeler.github.io/slick/" target="_blank"
+                >slick - the last carousel you'll ever need</a
+              >
+            </li>
           </ul>
         </div>
-      </div>
+        <!--機能 ここまで-->
 
+        <!--スライドショー ここから-->
 
-      <div style="padding-top:1.5em;"></div>
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>ページングドット</h2>
-      </div>
-      <!--機能 ここまで-->
-      <div id="slick02" class="slick slick_paging_dotted">
-        <div class="slick_main">
+        <div style="padding-top: 1.5em"></div>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>ページングアロー・ページングドット</h2>
+        </div>
+        <!--機能 ここまで-->
+        <div id="slick01">
           <ul class="slick_items">
-            <li><img src="/global/img/dog1.jpg"></li>
-            <li><img src="/global/img/dog2.jpg"></li>
-            <li><img src="/global/img/dog3.jpg"></li>
-            <li><img src="/global/img/dog4.jpg"></li>
-            <li><img src="/global/img/dog5.jpg"></li>
-            <li><img src="/global/img/dog6.jpg"></li>
-            <li><img src="/global/img/dog7.jpg"></li>
-            <li><img src="/global/img/dog8.jpg"></li>
-            <li><img src="/global/img/dog9.jpg"></li>
-            <li><img src="/global/img/dog10.jpg"></li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog1.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog2.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog3.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog4.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog5.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog6.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog7.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog8.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog9.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog10.jpg" />
+              </span>
+            </li>
           </ul>
         </div>
-      </div>
 
-
-      <div style="padding-top:1.5em;"></div>
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>ページング画像</h2>
-        <ul class="block_li">
-          <li><a href="https://www.nxworld.net/jquery-plugin-slick-image-paging.html" target="_blank">slickのページングにjQueryを使ってイメージを設定する方法</a></li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
-      <div id="slick03" class="slick slick_paging_thumb">
-        <div class="slick_main">
-          <ul class="slick_items">
-            <li><img src="/global/img/dog1.jpg"></li>
-            <li><img src="/global/img/dog2.jpg"></li>
-            <li><img src="/global/img/dog3.jpg"></li>
-            <li><img src="/global/img/dog4.jpg"></li>
-            <li><img src="/global/img/dog5.jpg"></li>
-            <li><img src="/global/img/dog6.jpg"></li>
-            <li><img src="/global/img/dog7.jpg"></li>
-            <li><img src="/global/img/dog8.jpg"></li>
-            <li><img src="/global/img/dog9.jpg"></li>
-            <li><img src="/global/img/dog10.jpg"></li>
-            <li><img src="/global/img/dog11.jpg"></li>
-            <li><img src="/global/img/dog12.jpg"></li>
+        <div style="padding-top: 1.5em"></div>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>ページング画像</h2>
+          <ul class="block_li">
+            <li>
+              <a
+                href="https://www.nxworld.net/jquery-plugin-slick-image-paging.html"
+                target="_blank"
+                >slickのページングにjQueryを使ってイメージを設定する方法</a
+              >
+            </li>
           </ul>
         </div>
-      </div>
-
-
-      <div style="padding-top:1.5em;"></div>
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>連動ページング画像</h2>
-        <ul class="block_li">
-          <li>
-            <div>【機能】連動ページング画像</div>
-            <ul>
-              <li>【参考】<a href="https://www.nxworld.net/jquery-plugin-slick-image-paging.html" target="_blank">slickのページングにjQueryを使ってイメージを設定する方法</a></li>
-            </ul>
-          </li>
-          <li>
-            <div>【機能】SP時ページング画像の枚数減らす</div>
-            <ul>
-              <li>【参考】<a href="https://morobrand.net/mororeco/web/jquery/slick/" target="_blank">使い勝手の良いslick.jsスライダー（レスポンシブ対応）</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
-      <div id="slick04" class="slick slick_paging_thumb_combinate">
-        <div class="slick_main">
+        <!--機能 ここまで-->
+        <div id="slick02">
           <ul class="slick_items">
-            <li><img src="/global/img/dog1.jpg"></li>
-            <li><img src="/global/img/dog2.jpg"></li>
-            <li><img src="/global/img/dog3.jpg"></li>
-            <li><img src="/global/img/dog4.jpg"></li>
-            <li><img src="/global/img/dog5.jpg"></li>
-            <li><img src="/global/img/dog6.jpg"></li>
-            <li><img src="/global/img/dog7.jpg"></li>
-            <li><img src="/global/img/dog8.jpg"></li>
-            <li><img src="/global/img/dog9.jpg"></li>
-            <li><img src="/global/img/dog10.jpg"></li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog1.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog2.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog3.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog4.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog5.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog6.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog7.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog8.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog9.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog10.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog11.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog12.jpg" />
+              </span>
+            </li>
           </ul>
         </div>
-      </div>
 
-
-
-      <div style="padding-top:1.5em;"></div>
-      <!--機能 ここから-->
-      <div class="block">
-        <h2>アスペクト調整(1枚目縦長画像)</h2>
-        <ul class="block_li">
-          <li>【参考】<a href="https://blog.8bit.co.jp/?p=13620" target="_blank">【怖くないJavaScript + jQuery】画像の縦横比を保ったままサイズを変更する処理</a></li>
-        </ul>
-      </div>
-      <!--機能 ここまで-->
-      <div id="slick05" class="slick slick_aspect">
-        <div class="slick_main">
-          <ul class="slick_items">
-            <li><img src="/global/img/dog-vertical1.jpg"></li>
-            <li><img src="/global/img/dog1.jpg"></li>
-            <li><img src="/global/img/dog-vertical2.jpg"></li>
-            <li><img src="/global/img/dog2.jpg"></li>
-            <li><img src="/global/img/dog-vertical3.jpg"></li>
-            <li><img src="/global/img/dog3.jpg"></li>
-            <li><img src="/global/img/dog-vertical4.jpg"></li>
-            <li><img src="/global/img/dog4.jpg"></li>
-            <li><img src="/global/img/dog-vertical5.jpg"></li>
-            <li><img src="/global/img/dog5.jpg"></li>
+        <div style="padding-top: 1.5em"></div>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>連動ページング画像</h2>
+          <ul class="block_li">
+            <li>
+              <div>【機能】連動ページング画像</div>
+              <ul>
+                <li>
+                  【参考】<a
+                    href="https://www.nxworld.net/jquery-plugin-slick-image-paging.html"
+                    target="_blank"
+                    >slickのページングにjQueryを使ってイメージを設定する方法</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>【機能】SP時ページング画像の枚数減らす</div>
+              <ul>
+                <li>
+                  【参考】<a
+                    href="https://morobrand.net/mororeco/web/jquery/slick/"
+                    target="_blank"
+                    >使い勝手の良いslick.jsスライダー（レスポンシブ対応）</a
+                  >
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
-      </div>
+        <!--機能 ここまで-->
+        <div id="slick03">
+          <ul class="slick_items">
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog1.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog2.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog3.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog4.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog5.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog6.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog7.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog8.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog9.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog10.jpg" />
+              </span>
+            </li>
+          </ul>
+        </div>
 
+        <div style="padding-top: 1.5em"></div>
+        <!--機能 ここから-->
+        <div class="block">
+          <h2>3つ画像を出し、左右の画像を小さく</h2>
+        </div>
+        <!--機能 ここまで-->
+        <div id="slick04">
+          <ul class="slick_items">
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog1.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog2.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog3.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog4.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog5.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog6.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog7.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog8.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog9.jpg" />
+              </span>
+            </li>
+            <li class="slick_item">
+              <span class="slick_item_inner img_liquid_fill">
+                <img src="/global/img/dog10.jpg" />
+              </span>
+            </li>
+          </ul>
+        </div>
 
-      <!--スライドショー ここまで-->
+        <div style="padding-top: 10em"></div>
+        <!--スライドショー ここまで-->
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
 
-    </main>
-    <aside>
-      <!--SUMMARY ここから-->
-      <div class="block_sumally">
-        <h2 class="block_sumally_ttl">SUMMARY</h2>
-        <div id="js_sumally" class="block_sumally_body"></div>
-      </div>
-      <!--SUMMARY ここまで-->
-    </aside>
-  </div>
-  <script type="text/javascript" src="/global/scripts.js"></script>
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
 
-  <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="./slick/slick.min.js"></script>
 
+    <script
+      type="text/javascript"
+      src="/aspect_ratio/plugins/imgLiquid-min.js"
+    ></script>
+    <script src="/aspect_ratio/scripts.js"></script>
 
-  <script src="./slick/slick.min.js"></script>
-  <script src="/aspect_ratio/scripts.js"></script>
-  <script type="text/javascript" src="./scripts.js"></script>
-</body>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
 </html>

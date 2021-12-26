@@ -1,206 +1,253 @@
-/*ホバーメニュー ここから*/
-.slick {
-  /*ページングアロー ここから*/
-  &.slick_paging_arrow {
-    .slick-arrow {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      width: 30px;
-      height: 100%;
-      z-index: 1;
+/**------------------------------------------------------
+ * 他サイトに機能を追加する場合はmixin中の記述をコピペする
+ *
+ * # Slick TOC
+ * ## 機能一覧
+ * - アスペクト調整
+ * - ページングアロー
+ * - ページングドット
+ * - ページング画像
+ * ## 各スライドショー
+ * - ページングアロー・ページングドット
+ * - ページング画像
+ * - 連動ページング画像
+ * - 3つ画像を出し、左右の画像を小さく
+ *------------------------------------------------------*/
 
-      &.prev_arrow {
-        left: 0;
-
-        span {
-          transform: rotate(-135deg);
-          right: 0;
-        }
+/**------------------------------------------------------
+ * ## 機能一覧
+ *------------------------------------------------------*/
+/**---------------------------
+ * アスペクト調整
+*---------------------------*/
+@mixin slick_aspect() {
+  .slick_items {
+    .slick_item {
+      .slick_item_inner {
+        display: block;
+        padding: 30% 0;
       }
+    }
+  }
+}
 
-      &.next_arrow {
-        right: 0;
+/**---------------------------
+ * ページングアロー
+*---------------------------*/
+@mixin slick_paging_arrow() {
+  /**
+   * アローエリアの高さ
+   * - ページングドットがある時にアローが
+   *   中央寄せにならない時があるので、この値で調整。
+   */
+  $arrow_area_height: calc(100% - 27.77px);
 
-        span {
-          transform: rotate(45deg);
-          left: 0;
-        }
-      }
+  .slick-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: $arrow_area_height;
+    z-index: 1;
+
+    &.prev_arrow {
+      left: 0;
 
       span {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-        display: block;
-        border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
-        width: 20px;
-        height: 20px;
+        transform: rotate(-135deg);
+        right: 0;
       }
     }
+
+    &.next_arrow {
+      right: 0;
+
+      span {
+        transform: rotate(45deg);
+        left: 0;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      display: block;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      width: 20px;
+      height: 20px;
+    }
   }
-  /*ページングアロー ここまで*/
+}
 
-  /*ページングドット ここから*/
-  &.slick_paging_dotted {
-    .slick-dotted.slick-slider {
-      margin-bottom: 30px;
+/**---------------------------
+ * ページングドット
+*---------------------------*/
+@mixin slick_paging_dotted() {
+  $default_color: #ccc;
+  $hover_color: #000;
+  $active_color: #000;
+  $dotted_size: 10px;
+  $dotted_right_left_margin: 5px;
 
-      .slick-dots {
-        position: absolute;
-        bottom: -25px;
-        display: block;
-        width: 100%;
+  .slick-dotted.slick-slider {
+    .slick-dots {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 8px 0;
+      list-style: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+
+      li {
+        position: relative;
+        margin: 0 $dotted_right_left_margin;
         padding: 0;
-        margin: 0;
-        list-style: none;
-        text-align: center;
+        cursor: pointer;
+        vertical-align: middle;
 
-        li {
-          position: relative;
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-          margin: 0 5px;
-          padding: 0;
+        button {
+          font-size: 0;
+          line-height: 0;
+          display: block;
           cursor: pointer;
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
 
-          button {
-            font-size: 0;
-            line-height: 0;
+          &::before {
+            content: "";
+            width: $dotted_size;
+            height: $dotted_size;
             display: block;
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-            cursor: pointer;
-            color: transparent;
-            border: 0;
+            background-color: $default_color;
+            border-radius: 50%;
+          }
+
+          &:hover,
+          &:focus {
             outline: none;
-            background: transparent;
 
             &::before {
-              content: "";
-              width: 10px;
-              height: 10px;
-              position: absolute;
-              top: 0;
-              left: 0;
-              background-color: #ccc;
-              border-radius: 50%;
-            }
-
-            &:hover,
-            &:focus {
-              outline: none;
-
-              &::before {
-                background-color: #000;
-              }
+              background-color: $hover_color;
             }
           }
+        }
 
-          &.slick-active {
-            button {
-              &::before {
-                background-color: #000;
-              }
+        &.slick-active {
+          button {
+            &::before {
+              background-color: $active_color;
             }
           }
         }
       }
     }
   }
-  /*ページングドット ここまで*/
-
-  /*ページング画像 ここから*/
-  &.slick_paging_thumb {
-    .slick-dotted.slick-slider {
-      .slick-dots {
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        li {
-          width: 20%;
-          padding: 0.5%;
-          cursor: pointer;
-
-          &.slick-active {
-            background-color: #ccc;
-          }
-        }
-
-        div {
-          width: 20%;
-        }
-      }
-    }
-  }
-  /*ページング画像 ここまで*/
-
-  /*アスペクト調整 ここから*/
-  &.slick_aspect {
-    .slick_main {
-      width: 100%;
-      overflow: hidden;
-      padding: 50% 0;
-      position: relative;
-
-      .slick_items {
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        .slick-list {
-          width: 100%;
-          height: 100%;
-
-          .slick-track {
-            width: 100%;
-            height: 100%;
-
-            li {
-              width: 100%;
-              height: 100%;
-              position: relative;
-
-              img {
-                position: absolute;
-                top: -100%;
-                right: -100%;
-                bottom: -100%;
-                left: -100%;
-                margin: auto;
-                max-width: none;
-
-                &.img_hor {
-                  width: auto;
-                  height: 100%;
-                }
-
-                &.img_ver {
-                  width: 100%;
-                  height: auto;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  /*アスペクト調整 ここまで*/
 }
-/*ホバーメニュー ここまで*/
+
+/**---------------------------
+ * ページング画像
+*---------------------------*/
+@mixin slick_paging_thumb() {
+  .slick-dotted.slick-slider {
+    .slick-dots {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        width: 20%;
+        padding: 0.5%;
+        cursor: pointer;
+
+        &.slick-active {
+          background-color: #ccc;
+        }
+      }
+
+      div {
+        width: 20%;
+      }
+    }
+  }
+}
+
+/**---------------------------
+ * 3つ画像を出し、左右の画像を小さく
+*---------------------------*/
+@mixin slick_side_image_make_small() {
+  .slick_items {
+    .slick-slide {
+      transition: 0.3s ease;
+      transform: scale(0.55);
+      margin: 0 15px;
+    }
+
+    .slick-current {
+      transform: scale(1);
+      transform-origin: 50% 50%;
+    }
+
+    /**
+     * 左右の画像を両端揃えにしたい場合は下記をコメントアウト
+     * ※SP時は中央揃えにする→左右が見えなくなるため
+     */
+    .slick-slide {
+      transform-origin: 100% 50%;
+    }
+
+    .slick-current {
+      + .slick-slide {
+        transform-origin: 0 50%;
+      }
+    }
+  }
+}
+
+/**------------------------------------------------------
+ * ## 各スライドショー
+ *------------------------------------------------------*/
+/**---------------------------
+ * ページングアロー・ページングドット
+*---------------------------*/
+#slick01 {
+  @include slick_aspect;
+  @include slick_paging_arrow;
+  @include slick_paging_dotted;
+}
+
+/**---------------------------
+ * ページング画像
+*---------------------------*/
+#slick02 {
+  @include slick_aspect;
+  @include slick_paging_thumb;
+}
+
+/**---------------------------
+ * 連動ページング画像
+*---------------------------*/
+#slick03 {
+  @include slick_aspect;
+}
+
+/**---------------------------
+ * 3つ画像を出し、左右の画像を小さく
+*---------------------------*/
+#slick04 {
+  @include slick_aspect;
+  @include slick_side_image_make_small;
+}

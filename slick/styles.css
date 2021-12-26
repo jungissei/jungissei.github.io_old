@@ -1,46 +1,86 @@
 @charset "UTF-8";
-/*ホバーメニュー ここから*/
-.slick {
-  /*ページングアロー ここから*/
-  /*ページングアロー ここまで*/
-  /*ページングドット ここから*/
-  /*ページングドット ここまで*/
-  /*ページング画像 ここから*/
-  /*ページング画像 ここまで*/
-  /*アスペクト調整 ここから*/
-  /*アスペクト調整 ここまで*/
+/**------------------------------------------------------
+ * 他サイトに機能を追加する場合はmixin中の記述をコピペする
+ *
+ * # Slick TOC
+ * ## 機能一覧
+ * - アスペクト調整
+ * - ページングアロー
+ * - ページングドット
+ * - ページング画像
+ * ## 各スライドショー
+ * - ページングアロー・ページングドット
+ * - ページング画像
+ * - 連動ページング画像
+ * - 3つ画像を出し、左右の画像を小さく
+ *------------------------------------------------------*/
+/**------------------------------------------------------
+ * ## 機能一覧
+ *------------------------------------------------------*/
+/**---------------------------
+ * アスペクト調整
+*---------------------------*/
+/**---------------------------
+ * ページングアロー
+*---------------------------*/
+/**---------------------------
+ * ページングドット
+*---------------------------*/
+/**---------------------------
+ * ページング画像
+*---------------------------*/
+/**---------------------------
+ * 3つ画像を出し、左右の画像を小さく
+*---------------------------*/
+/**------------------------------------------------------
+ * ## 各スライドショー
+ *------------------------------------------------------*/
+/**---------------------------
+ * ページングアロー・ページングドット
+*---------------------------*/
+#slick01 {
+  /**
+   * アローエリアの高さ
+   * - ページングドットがある時にアローが
+   *   中央寄せにならない時があるので、この値で調整。
+   */
 }
 
-.slick.slick_paging_arrow .slick-arrow {
+#slick01 .slick_items .slick_item .slick_item_inner {
+  display: block;
+  padding: 30% 0;
+}
+
+#slick01 .slick-arrow {
   cursor: pointer;
   position: absolute;
   top: 0;
   width: 30px;
-  height: 100%;
+  height: calc(100% - 27.77px);
   z-index: 1;
 }
 
-.slick.slick_paging_arrow .slick-arrow.prev_arrow {
+#slick01 .slick-arrow.prev_arrow {
   left: 0;
 }
 
-.slick.slick_paging_arrow .slick-arrow.prev_arrow span {
+#slick01 .slick-arrow.prev_arrow span {
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
   right: 0;
 }
 
-.slick.slick_paging_arrow .slick-arrow.next_arrow {
+#slick01 .slick-arrow.next_arrow {
   right: 0;
 }
 
-.slick.slick_paging_arrow .slick-arrow.next_arrow span {
+#slick01 .slick-arrow.next_arrow span {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   left: 0;
 }
 
-.slick.slick_paging_arrow .slick-arrow span {
+#slick01 .slick-arrow span {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -53,38 +93,33 @@
   height: 20px;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider {
-  margin-bottom: 30px;
-}
-
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots {
-  position: absolute;
-  bottom: -25px;
+#slick01 .slick-dotted.slick-slider .slick-dots {
   display: block;
   width: 100%;
-  padding: 0;
   margin: 0;
+  padding: 8px 0;
   list-style: none;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li {
+#slick01 .slick-dotted.slick-slider .slick-dots li {
   position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
   margin: 0 5px;
   padding: 0;
   cursor: pointer;
+  vertical-align: middle;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button {
+#slick01 .slick-dotted.slick-slider .slick-dots li button {
   font-size: 0;
   line-height: 0;
   display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
   cursor: pointer;
   color: transparent;
   border: 0;
@@ -92,30 +127,36 @@
   background: transparent;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button::before {
+#slick01 .slick-dotted.slick-slider .slick-dots li button::before {
   content: "";
   width: 10px;
   height: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   background-color: #ccc;
   border-radius: 50%;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button:hover, .slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button:focus {
+#slick01 .slick-dotted.slick-slider .slick-dots li button:hover, #slick01 .slick-dotted.slick-slider .slick-dots li button:focus {
   outline: none;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button:hover::before, .slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li button:focus::before {
+#slick01 .slick-dotted.slick-slider .slick-dots li button:hover::before, #slick01 .slick-dotted.slick-slider .slick-dots li button:focus::before {
   background-color: #000;
 }
 
-.slick.slick_paging_dotted .slick-dotted.slick-slider .slick-dots li.slick-active button::before {
+#slick01 .slick-dotted.slick-slider .slick-dots li.slick-active button::before {
   background-color: #000;
 }
 
-.slick.slick_paging_thumb .slick-dotted.slick-slider .slick-dots {
+/**---------------------------
+ * ページング画像
+*---------------------------*/
+#slick02 .slick_items .slick_item .slick_item_inner {
+  display: block;
+  padding: 30% 0;
+}
+
+#slick02 .slick-dotted.slick-slider .slick-dots {
   display: block;
   width: 100%;
   padding: 0;
@@ -132,72 +173,65 @@
           justify-content: space-between;
 }
 
-.slick.slick_paging_thumb .slick-dotted.slick-slider .slick-dots li {
+#slick02 .slick-dotted.slick-slider .slick-dots li {
   width: 20%;
   padding: 0.5%;
   cursor: pointer;
 }
 
-.slick.slick_paging_thumb .slick-dotted.slick-slider .slick-dots li.slick-active {
+#slick02 .slick-dotted.slick-slider .slick-dots li.slick-active {
   background-color: #ccc;
 }
 
-.slick.slick_paging_thumb .slick-dotted.slick-slider .slick-dots div {
+#slick02 .slick-dotted.slick-slider .slick-dots div {
   width: 20%;
 }
 
-.slick.slick_aspect .slick_main {
-  width: 100%;
-  overflow: hidden;
-  padding: 50% 0;
-  position: relative;
+/**---------------------------
+ * 連動ページング画像
+*---------------------------*/
+#slick03 .slick_items .slick_item .slick_item_inner {
+  display: block;
+  padding: 30% 0;
 }
 
-.slick.slick_aspect .slick_main .slick_items {
-  width: 100%;
-  height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
+/**---------------------------
+ * 3つ画像を出し、左右の画像を小さく
+*---------------------------*/
+#slick04 .slick_items .slick_item .slick_item_inner {
+  display: block;
+  padding: 30% 0;
 }
 
-.slick.slick_aspect .slick_main .slick_items .slick-list {
-  width: 100%;
-  height: 100%;
+#slick04 .slick_items {
+  /**
+     * 左右の画像を両端揃えにしたい場合は下記をコメントアウト
+     * ※SP時は中央揃えにする→左右が見えなくなるため
+     */
 }
 
-.slick.slick_aspect .slick_main .slick_items .slick-list .slick-track {
-  width: 100%;
-  height: 100%;
+#slick04 .slick_items .slick-slide {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transform: scale(0.55);
+          transform: scale(0.55);
+  margin: 0 15px;
 }
 
-.slick.slick_aspect .slick_main .slick_items .slick-list .slick-track li {
-  width: 100%;
-  height: 100%;
-  position: relative;
+#slick04 .slick_items .slick-current {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
 
-.slick.slick_aspect .slick_main .slick_items .slick-list .slick-track li img {
-  position: absolute;
-  top: -100%;
-  right: -100%;
-  bottom: -100%;
-  left: -100%;
-  margin: auto;
-  max-width: none;
+#slick04 .slick_items .slick-slide {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
 }
 
-.slick.slick_aspect .slick_main .slick_items .slick-list .slick-track li img.img_hor {
-  width: auto;
-  height: 100%;
+#slick04 .slick_items .slick-current + .slick-slide {
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
 }
-
-.slick.slick_aspect .slick_main .slick_items .slick-list .slick-track li img.img_ver {
-  width: 100%;
-  height: auto;
-}
-
-/*ホバーメニュー ここまで*/
 /*# sourceMappingURL=styles.css.map */
