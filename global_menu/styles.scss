@@ -3,7 +3,8 @@
  * ロード後jQueryでクラス削除
  */
 body.preload {
-  #global_menu .accordion_menu_body {
+  #global_menu .accordion_menu_body,
+  #global_menu .mega_menu_body {
     transition: none !important;
   }
 }

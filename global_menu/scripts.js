@@ -1,19 +1,37 @@
-/**------------------------------------------------------
- * グローバルナビ：サブメニュー
- *------------------------------------------------------*/
 $(window).on('load', function(){
-
-  global_nav_sub_menu({
-    'show_class_name' : 'is_show',//追加クラス
-    'sub_menu_selector' : '#global_menu .mega_menu , #global_menu .accordion_menu',//サブメニューアイテムセレクター
-    'mouseleave_selector' : '#area_header'//初期化させるホバーアウトのセレクター
-  });
-
   $('body').removeClass('preload');
 });
 
+/**------------------------------------------------------
+ * エリアヘッダー
+ * # グローバルナビ：アコーディオンメニュー関連
+ * - アコーディオンメニュー：トグル
+ * - アコーディオンメニュー：テキストを改行させない
+ *
+ * # エリアヘッダー：スクロール追従
+ *------------------------------------------------------*/
+
+/**---------------------------
+ * グローバルナビ：アコーディオンメニュー関連
+ *---------------------------*/
+$(window).on('load', function(){
+
+  //アコーディオンメニュー：トグル
+  global_nav_sub_menu({
+    'show_class_name' : 'is_show',//追加クラス
+    'sub_menu_selector' : '#global_menu .mega_menu , #global_menu .accordion_menu',//アコーディオンメニューアイテムセレクター
+    'mouseleave_selector' : '#area_header'//初期化させるホバーアウトのセレクター
+  });
+
+  //アコーディオンメニュー：テキストを改行させない
+  disable_txt_line_break();
+});
+
 /**
- * サブメニューアイテムにクラス名追加
+ * アコーディオンメニュー：トグル
+ *---------------------------*/
+/**
+ * アコーディオンメニューアイテムにクラス名追加
  * @param {object} arg
  */
 function global_nav_sub_menu(arg){
@@ -57,10 +75,8 @@ function global_nav_sub_menu(arg){
   });
 }
 
-
-
 /**
- * サブメニュー初期化
+ * アコーディオンメニュー初期化
  * @param {object} arg
  */
 function initialize_global_nav_sub_menu(arg){
@@ -76,8 +92,6 @@ function initialize_global_nav_sub_menu(arg){
     $(this).removeClass(show_class_name);
   });
 }
-
-
 
 /**
  * タッチ対応ディスプレイの真偽を返す
@@ -97,9 +111,8 @@ function is_touch_display(){
   return false;
 }
 
-
 /**
- * クリックイベントのトグルでサブメニュー表示切替
+ * クリックイベントのトグルでアコーディオンメニュー表示切替
  * @param {object} params
  */
 function toggle_class_global_nav_sub_menu(params) {
@@ -114,7 +127,7 @@ function toggle_class_global_nav_sub_menu(params) {
 }
 
 /**
- * マウスオーバーイベントでサブメニュー表示
+ * マウスオーバーイベントでアコーディオンメニュー表示
  * @param {object} params
  */
 function add_class_global_nav_sub_menu(params) {
@@ -128,12 +141,81 @@ function add_class_global_nav_sub_menu(params) {
   $(params.event_elem).addClass(params.show_class_name);
 }
 
+/**
+ * アコーディオンメニュー：テキストを改行させない
+ *---------------------------*/
+/**
+ * アコーディオンメニューが改行しないpx幅を追加
+ */
+function disable_txt_line_break() {
+  let accordion_menu_li = $('#global_menu .accordion_menu_body li');
+      font_size = accordion_menu_li.css('font-size'),
+      letter_spacing = accordion_menu_li.css('letter-spacing'),
+      padding_right = accordion_menu_li.find('a').css('padding-right');
+      padding_left = accordion_menu_li.find('a').css('padding-left');
+
+  $('#global_menu .accordion_menu_body').each(function(){
+    let accordion_menu_width = get_global_nav_sub_menu_width(
+      $(this).children('li'),
+      {
+        'font_size' : font_size,
+        'letter_spacing' : letter_spacing,
+        'padding_left' : padding_right,
+        'padding_right' : padding_left
+      }
+    );
+
+    $(this).css('width', accordion_menu_width);
+  });
+}
+
+/**
+ * アコーディオンメニューが改行しない幅を返す
+ * (※最小・最大値有り)
+ * @param {object} list_items セレクタ
+ * @param {object} css_obj CSS情報
+ */
+function get_global_nav_sub_menu_width(list_items, css_obj){
+  let width = 200,//最小px幅
+      max_width = 240;//最大px幅
+
+  list_items.each(function(){
+
+    let span = document.createElement('span');
+    $(span).css({
+      'font-size' : css_obj.font_size,
+      'letter-spacing' : css_obj.letter_spacing,
+      'padding-left' : css_obj.padding_left,
+      'padding-right' : css_obj.padding_right,
+      'display' : 'none',
+      'white-space' : 'nowrap'
+    });
+
+    $(span).append($(this).text());
+    $('body').append(span);
+
+    //小数点が切捨てられるため
+    let span_outer_width = $(span).outerWidth();
+
+    if(width < span_outer_width){
+      width = span_outer_width;
+    }
+
+    if(max_width < span_outer_width){
+      width = max_width;
+      return;
+    }
+
+    $(span).remove();
+  });
+
+  return width;
+}
 
 
-
-/**------------------------------------------------------
+/**---------------------------
  * エリアヘッダー：スクロール追従
- *------------------------------------------------------*/
+ *---------------------------*/
 $(function(){
 
   toggle_sticky_area_header({
@@ -172,6 +254,3 @@ function toggle_sticky_area_header(params) {
     }
   });
 }
-
-
-/* グローバルメニュー ここまで */
