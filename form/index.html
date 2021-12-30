@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+
+    <title>フォーム - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">フォーム</h1>
+        <div class="block">
+          <ul class="block_li">
+            <li>
+              <a
+                href="https://github.com/jungissei/jungissei.github.io/wiki/form"
+                target="_blank"
+                >Wiki</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h2>【機能】</h2>
+          <ul class="block_li"></ul>
+        </div>
+
+        <div class="form_wrp">
+          <form id="area_form" action="#" method="get">
+            <table class="form_table">
+              <tbody>
+                <tr>
+                  <th class="require">
+                    <label for="your_name" class="form_table_label">
+                      お名前
+                    </label>
+                  </th>
+                  <td>
+                    <input
+                      id="your_name"
+                      name="your_name"
+                      type="text"
+                      class="form_control"
+                      placeholder="田中 太郎"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th class="require">
+                    <label for="your_mail" class="form_table_label">
+                      メールアドレス
+                    </label>
+                  </th>
+                  <td>
+                    <input
+                      id="your_mail"
+                      name="your_mail"
+                      type="mail"
+                      class="form_control"
+                      placeholder="taro@example.com"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="your_phone" class="form_table_label">
+                      電話番号
+                    </label>
+                  </th>
+                  <td>
+                    <input
+                      id="your_phone"
+                      name="your_phone"
+                      type="text"
+                      class="form_control"
+                      placeholder="012-3456-7890"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label class="form_table_label">お問い合わせ種別1</label>
+                  </th>
+                  <td>
+                    <ul class="form_radio form_item_inline_block_pc">
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            name="your_subject1"
+                            value="制作依頼に関するお問合せ"
+                            checked="checked"
+                          />
+                          <span class="form_list_item_label">
+                            サービスに関するお問い合わせ
+                          </span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            name="your_subject1"
+                            value="その他のお問合せ"
+                          />
+                          <span class="form_list_item_label">
+                            その他のお問い合わせ
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label class="form_table_label">お問い合わせ種別2</label>
+                  </th>
+                  <td>
+                    <ul class="form_radio form_item_block_pc">
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            name="your_subject2"
+                            value="制作依頼に関するお問合せ"
+                            checked="checked"
+                          />
+                          <span class="form_list_item_label">
+                            サービスに関するお問い合わせ
+                          </span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            name="your_subject2"
+                            value="その他のお問合せ"
+                          />
+                          <span class="form_list_item_label">
+                            その他のお問い合わせ
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label class="form_table_label">好きなケーキ</label>
+                  </th>
+                  <td>
+                    <ul class="form_check form_item_block_pc">
+                      <li>
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your_fav_cake[]"
+                            value="チーズケーキ"
+                          />
+                          <span class="form_list_item_label">チーズケーキ</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your_fav_cake[]"
+                            value="ショートケーキ"
+                          />
+                          <span class="form_list_item_label">
+                            ショートケーキ
+                          </span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="your_fav_cake[]"
+                            value="モンブランケーキ"
+                          />
+                          <span class="form_list_item_label">
+                            モンブランケーキ
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="fav_animal" class="form_table_label">
+                      好きな動物
+                    </label>
+                  </th>
+                  <td>
+                    <div class="form_select">
+                      <select id="fav_animal" name="fav_animal">
+                        <option value="" selected>選択する</option>
+                        <option value="1">cat</option>
+                        <option value="2">dog</option>
+                        <option value="3">rabbit</option>
+                        <option value="4">squirrel</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="pic" class="form_table_label">記念写真</label>
+                  </th>
+                  <td>
+                    <div class="form_file">
+                      <input
+                        type="file"
+                        id="pic"
+                        name="pic"
+                        accept=".jpg,.gif,.png"
+                      />
+                      <label class="form_file_label" for="pic">
+                        ファイルを選択
+                      </label>
+                      <label class="form_file_name" for="pic"></label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="your_postal_code" class="form_table_label">
+                      住所
+                    </label>
+                  </th>
+                  <td>
+                    <div class="form_group h-adr">
+                      <input
+                        type="hidden"
+                        class="p-country-name"
+                        value="Japan"
+                      />
+                      <div class="form_group_row">
+                        <label for="your_postal_code" class="form_group_ttl">
+                          郵便番号
+                        </label>
+                        <div class="form_group_field">
+                          <div class="form_postal_code">
+                            <input
+                              type="text"
+                              id="your_postal_code"
+                              name="your_postal_code"
+                              class="form_control p-postal-code"
+                              size="8"
+                              maxlength="8"
+                              placeholder="1234567"
+                            />
+                            <div id="ajaxzip3_btn">
+                              <span class="btn_inner postal-search">
+                                住所検索
+                              </span>
+                            </div>
+                          </div>
+
+                          <ul class="form_remark">
+                            <li>ハイフンなしで入力</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="form_group_row">
+                        <input
+                          type="text"
+                          id="your_address"
+                          name="your_address"
+                          class="
+                            form_control
+                            p-region
+                            p-locality
+                            p-street-address
+                            p-extended-address
+                          "
+                          placeholder="東京都新宿区西新宿2-8-1"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="your_birthday" class="form_table_label">
+                      生年月日
+                    </label>
+                  </th>
+                  <td>
+                    <input
+                      id="your_birthday"
+                      name="your_birthday"
+                      type="date"
+                      class="form_control"
+                      placeholder="2021/01/01"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="your_message" class="form_table_label">
+                      お問い合わせ内容
+                    </label>
+                  </th>
+                  <td>
+                    <textarea
+                      name="your_message"
+                      id="your_message"
+                      cols="40"
+                      rows="5"
+                      class="form_control"
+                      placeholder="お問い合わせ内容を入力"
+                    ></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btn_submit">
+              <input class="btn_inner" type="submit" value="送信" />
+            </div>
+          </form>
+        </div>
+        <div style="height: 3em"></div>
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+        <!--フォーム ここから-->
+        <section id="js_toc2"></section>
+        <!--フォーム ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
+
+    <!--yubinbango ここから-->
+    <script
+      type="text/javascript"
+      src="./yubinbango/yubinbango.js"
+      charset="UTF-8"
+    ></script>
+    <!--yubinbango ここまで-->
+
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+
+    <!--flatpicker ここから-->
+    <link
+      rel="stylesheet"
+      href="./flatpicker/flatpickr.min.css"
+      type="text/css"
+      media="all"
+    />
+    <script type="text/javascript" src="./flatpicker/flatpickr.js"></script>
+    <script type="text/javascript" src="./flatpicker/ja.js"></script>
+    <!--flatpicker ここまで-->
+
+    <!--jquery-validation ここから-->
+    <script
+      type="text/javascript"
+      src="./jquery-validation/jquery.validate.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./jquery-validation/additional-methods.min.js"
+    ></script>
+    <!--jquery-validation ここまで-->
+
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>

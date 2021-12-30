@@ -1,0 +1,506 @@
+/**------------------------------------------------------
+ * # フォームTOC
+ *
+ * ## フォームテーブル
+ * ## フォームレイアウト
+ * - リスト ブロック要素
+ * - リスト インラインブロック要素
+ * ## フォームアイテム
+ * - テキスト入力欄
+ * - ラジオボタン
+ * - チェックボックス
+ * - セレクトボックス
+ * - 郵便番号
+ * - ajaxzip3ボタン
+ * - ファイル選択
+ * - submitボタン
+ * - エラーメッセージ
+ * - カレンダー
+ *------------------------------------------------------*/
+
+/**------------------------------------------------------
+ * フォームテーブル
+ *------------------------------------------------------*/
+/* 変数定義 ここから */
+$require_txt: "\5FC5\9808";
+$require_color: #fd9495;
+$optional_txt: "\4EFB\610F";
+$optional_color: #95cafd;
+/* 変数定義 ここまで */
+.form_wrp {
+  .form_table {
+    width: 100%;
+    margin: 0 auto 30px;
+
+    tbody {
+      tr {
+        display: block;
+
+        th,
+        td {
+          font-weight: normal;
+          display: block;
+          width: 100%;
+        }
+
+        &:not(:last-child) {
+          td {
+            padding-bottom: 30px;
+          }
+        }
+
+        th {
+          padding: 0 0 10px 52px;
+          position: relative;
+
+          &::before {
+            color: #fff;
+            font-size: 13px;
+            padding: 2px 8px;
+            font-weight: 700;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          &:not(.require) {
+            &::before {
+              background-color: $optional_color;
+              content: $optional_txt;
+            }
+          }
+
+          &.require {
+            &::before {
+              background-color: $require_color;
+              content: $require_txt;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form_table_row1 {
+    display: flex;
+    justify-content: space-between;
+
+    .form_table_col {
+      width: 50%;
+      padding: 1%;
+    }
+  }
+}
+
+/**------------------------------------------------------
+ * フォームレイアウト
+ *------------------------------------------------------*/
+/* リスト ブロック要素 */
+.form_item_inline_block_sp {
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+/* リスト インラインブロック要素 */
+.form_item_block_sp {
+  li {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/* フォームテーブル内のレイアウト */
+.form_group {
+  .form_group_row {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:first-child {
+      .form_group_ttl {
+        padding-top: 15px;
+      }
+    }
+
+    .form_group_ttl {
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
+
+/* 補足文 */
+.form_remark {
+  padding-top: 8px;
+
+  li {
+    position: relative;
+    font-size: 14px;
+    padding-left: 1.4em;
+    line-height: 1.2;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      content: "※";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/**------------------------------------------------------
+ * フォームアイテム
+ *------------------------------------------------------*/
+/* 変数定義 ここから */
+$input_txt_color: #212529;
+$txt_placeholder_color: #ccc;
+$focus_color: #81c3e2;
+$border_color: #ced4da;
+
+@mixin form_control {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: $input_txt_color;
+  background-color: #fff;
+  border: 1px solid $border_color;
+  appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  display: block;
+  width: 100%;
+
+  &::placeholder {
+    color: $txt_placeholder_color;
+  }
+
+  &:focus {
+    border: 1px solid $focus_color;
+    box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+  }
+}
+
+/* 変数定義 ここまで */
+.form_wrp {
+  /*---------------------------
+   * テキスト入力欄
+   *---------------------------*/
+  input,
+  textarea {
+    &.form_control {
+      @include form_control;
+    }
+  }
+
+  textarea.form_control {
+    resize: vertical;
+  }
+
+  /*---------------------------
+   * ラジオボタン
+   *---------------------------*/
+  .form_radio {
+    padding-top: 15px;
+
+    li {
+      label {
+        cursor: pointer;
+        position: relative;
+
+        input[type="radio"] {
+          display: none;
+
+          + .form_list_item_label {
+            line-height: 1.65;
+            padding-left: 1.5em;
+            position: relative;
+            display: inline-block;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              border: 1px solid $border_color;
+              border-radius: 50%;
+              background: #fff;
+            }
+
+            &::after {
+              content: "";
+              width: 1em;
+              height: 1em;
+              position: absolute;
+              top: 7px;
+              left: 4px;
+              width: 12px;
+              height: 12px;
+              transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+              transform: scale(0, 0);
+              border-radius: 50%;
+              background: $focus_color;
+            }
+          }
+
+          &:checked {
+            + .form_list_item_label {
+              &::after {
+                transform: scale(1, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------
+   * チェックボックス
+   *---------------------------*/
+  .form_check {
+    li {
+      label {
+        cursor: pointer;
+        position: relative;
+
+        input[type="checkbox"] {
+          display: none;
+
+          + .form_list_item_label {
+            line-height: 1.65;
+            padding-left: 1.5em;
+            position: relative;
+            display: inline-block;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              border: 1px solid $border_color;
+              background: #fff;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 6px;
+              display: block;
+              width: 8px;
+              height: 15px;
+              border-right: 3px solid $focus_color;
+              border-bottom: 3px solid $focus_color;
+              transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+              transform: scale(0, 0) rotate(43deg);
+            }
+          }
+
+          &:checked {
+            + .form_list_item_label {
+              &::after {
+                transform: scale(1, 1) rotate(43deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------
+   * セレクトボックス
+   *---------------------------*/
+  .form_select {
+    position: relative;
+
+    select {
+      @include form_control;
+      position: relative;
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 8px 0 8px;
+      border-color: $border_color transparent transparent transparent;
+      position: absolute;
+      top: calc(50% - 4px);
+      right: 8px;
+    }
+  }
+
+  /*---------------------------
+   * 郵便番号
+   *---------------------------*/
+  .form_postal_code {
+    &::before {
+      content: "\3012";
+      float: left;
+      padding: 14px 8px 0 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    input {
+      width: 10em;
+      float: left;
+    }
+  }
+
+  /*---------------------------
+   * ajaxzip3ボタン
+   *---------------------------*/
+  #ajaxzip3_btn {
+    padding: 12px 0 0 8px;
+    float: left;
+
+    .btn_inner {
+      font-size: 14px;
+      border: 1px solid $border_color;
+      padding: 8px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid $focus_color;
+        box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+      }
+    }
+  }
+
+  /*---------------------------
+   * ファイル選択
+   *---------------------------*/
+  .form_file {
+    font-size: 14px;
+    padding-top: 5px;
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    input {
+      outline: 0;
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .form_file_label {
+      border: 1px solid $border_color;
+      padding: 8px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      cursor: pointer;
+      float: left;
+      width: 116px;
+      text-align: center;
+    }
+
+    .form_file_name {
+      padding: 13px 8px 0;
+      line-height: 1.2;
+      cursor: pointer;
+      float: left;
+      width: calc(100% - 116px);
+    }
+
+    &:hover {
+      .form_file_label {
+        border: 1px solid $focus_color;
+        box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+      }
+    }
+  }
+
+  /*---------------------------
+   * submitボタン
+   *---------------------------*/
+  .btn_submit {
+    .btn_inner {
+      display: block;
+      line-height: 1;
+      padding: 1em 4em;
+      margin-right: auto;
+      margin-left: auto;
+      transition: all 0.2s;
+      font-weight: bold;
+      font-size: 16px;
+      min-width: 200px;
+      text-align: center;
+      border: 1px solid $focus_color;
+      background-color: $focus_color;
+      color: #fff;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  /*---------------------------
+   * エラーメッセージ
+   *---------------------------*/
+  label.error {
+    color: #cc0000;
+    padding: 1% 2%;
+    background: #f4e4e4;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
+}
+
+/*---------------------------
+ * カレンダー
+ *---------------------------*/
+.flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-weekdays
+  .flatpickr-weekday:nth-child(7n + 1),
+.flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n
+    + 1) {
+  color: red;
+}
+
+/* 土曜日：青 */
+.flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-weekdays
+  .flatpickr-weekday:nth-child(7),
+.flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
+  color: blue;
+}

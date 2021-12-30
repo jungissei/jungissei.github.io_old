@@ -60,6 +60,10 @@ function add_menu_to_aside(){
       {
         title : "YouTube",
         path : "/ytp"
+      },
+      {
+        title : "フォーム",
+        path : "/form"
       }
       // submenu
       // {
