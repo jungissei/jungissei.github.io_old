@@ -1,0 +1,213 @@
+/*---------------------------*
+ * アコーディオン メニュー
+ *---------------------------*/
+@mixin plus_minus {
+  /* プラス・マイナス ここから */
+  > li {
+    > span.menu_inner {
+      padding-right: 45px;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        top: calc(50% - 1px);
+        right: 12px;
+        background-color: #000;
+      }
+
+      &::after {
+        transform: rotate(90deg);
+        transition: all 0.2s;
+      }
+    }
+
+    &.is_open {
+      > span.menu_inner {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  /* プラス・マイナス ここまで */
+}
+
+@mixin arrow_right1 {
+  /* 矢印(右)1 ここから */
+  > li {
+    > a.menu_inner {
+      padding-right: 60px;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: calc(50% - 7.5px);
+        right: 18px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        transform: rotate(-45deg);
+        transition: right 0.2s;
+      }
+
+      &:hover {
+        &::after {
+          right: 10px;
+        }
+      }
+    }
+  }
+  /* 矢印(右)1 ここまで */
+}
+
+@mixin arrow_right2 {
+  /* 矢印(右)2 ここから */
+  > li {
+    > a.menu_inner {
+      padding-right: 60px;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(50% - 7px);
+        right: 18px;
+        transition: all 0.2s;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 0 7px 10px;
+        border-color: transparent transparent transparent #000;
+      }
+
+      &:hover {
+        &::after {
+          right: 10px;
+        }
+      }
+    }
+  }
+  /* 矢印(右)2 ここまで */
+}
+
+@mixin arrow_bottom1 {
+  /* 矢印(下)1 ここから */
+  > li {
+    > span.menu_inner {
+      padding-right: 60px;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(50% - 7px);
+        right: 17px;
+        transition: all 0.2s;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 7px 0 7px;
+        border-color: #000 transparent transparent transparent;
+      }
+    }
+
+    &.is_open {
+      > span.menu_inner {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  /* 矢印(下)1 ここまで */
+}
+
+@mixin arrow_bottom2 {
+  /* 矢印(下)1 ここから */
+  > li {
+    > span.menu_inner {
+      padding-right: 60px;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: calc(50% - 7.5px);
+        right: 18px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        transform: rotate(45deg);
+        transition: all 0.2s;
+      }
+    }
+
+    &.is_open {
+      > span.menu_inner {
+        &::after {
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+  /* 矢印(下)1 ここまで */
+}
+
+.accordion_menu {
+  margin-bottom: 30px;
+
+  > li {
+    &:not(:last-child) {
+      border-bottom: 1px solid #000;
+    }
+
+    > .menu_inner {
+      display: block;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    .sub_menu {
+      padding-left: 30px;
+      margin-bottom: 30px;
+
+      > li {
+        &:not(:last-child) {
+          border-bottom: 1px solid #000;
+        }
+
+        > .menu_inner {
+          display: block;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+#menu1 {
+  @include plus_minus;
+  @include arrow_right1;
+}
+
+#menu2 {
+  @include arrow_bottom1;
+  @include arrow_right2;
+}
+
+#menu3 {
+  @include arrow_bottom2;
+  @include arrow_right1;
+}

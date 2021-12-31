@@ -68,6 +68,10 @@ function add_menu_to_aside(){
       {
         title : "配列からメニュー追加",
         path : "/add_menu_from_arr"
+      },
+      {
+        title : "アコーディオンメニュー",
+        path : "/accordion_menu"
       }
       // submenu
       // {
