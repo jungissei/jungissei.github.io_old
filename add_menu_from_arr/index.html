@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>配列からメニュー追加 - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">配列からメニュー追加</h1>
+        <div class="block">
+          <ul class="block_li">
+            <li>
+              <a
+                href="https://github.com/jungissei/jungissei.github.io/wiki/%E9%85%8D%E5%88%97%E3%81%8B%E3%82%89%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E8%BF%BD%E5%8A%A0"
+                target="_blank"
+                >Wiki</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="area_menu">
+          <div style="font-weight: bold">全メニュー</div>
+          <div id="menu_all"></div>
+          <div style="height: 3em"></div>
+
+          <div style="font-weight: bold">親メニューのみ追加</div>
+          <div id="menu_parents"></div>
+          <div style="height: 3em"></div>
+
+          <div style="font-weight: bold">サブメニュー(商品カテゴリ)</div>
+          <div id="menu_cat"></div>
+          <div style="height: 3em"></div>
+        </div>
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
+
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>
