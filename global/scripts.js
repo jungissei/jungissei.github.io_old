@@ -64,6 +64,10 @@ function add_menu_to_aside(){
       {
         title : "フォーム",
         path : "/form"
+      },
+      {
+        title : "配列からメニュー追加",
+        path : "/add_menu_from_arr"
       }
       // submenu
       // {
