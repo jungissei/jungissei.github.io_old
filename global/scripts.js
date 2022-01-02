@@ -16,34 +16,60 @@ function add_menu_to_aside(){
         title : "基本",
         sub : [
           {
+            title : "グローバルメニュー",
+            path : "/global_menu"
+          },
+          {
+            title : "ハンバーガーメニュー",
+            path : "/hamburger_menu"
+          },
+          {
+            title : "ページトップへ戻る",
+            path : "/page_top"
+          },
+          {
+            title : "スムーススクロール",
+            path : "/smooth_scroll"
+          },
+          {
             title : "ボタンリンク",
             path : "/btn"
-          },
+          }
         ]
       },
       {
-        title : "グローバルメニュー",
-        path : "/global_menu"
+        title : "メニュー関連",
+        sub : [
+          {
+            title : "配列からメニュー追加",
+            path : "/add_menu_from_arr"
+          },
+          {
+            title : "タブメニュー",
+            path : "/tab_menu"
+          },
+          {
+            title : "ホバーメニュー",
+            path : "/hover_menu"
+          },
+          {
+            title : "アコーディオンメニュー",
+            path : "/accordion_menu"
+          }
+        ]
       },
       {
-        title : "ハンバーガーメニュー",
-        path : "/hamburger_menu"
-      },
-      {
-        title : "タブメニュー",
-        path : "/tab_menu"
-      },
-      {
-        title : "ホバーメニュー",
-        path : "/hover_menu"
+        title : "メニュー関連",
+        sub : [
+          {
+            title : "スクロールマジック",
+            path : "/scroll_magic"
+          }
+        ]
       },
       {
         title : "スライドショー",
         path : "/slick"
-      },
-      {
-        title : "スムーススクロール",
-        path : "/smooth_scroll"
       },
       {
         title : "画像アスペクト調整",
@@ -54,39 +80,13 @@ function add_menu_to_aside(){
         path : "/toc"
       },
       {
-        title : "ページトップへ戻る",
-        path : "/page_top"
-      },
-      {
         title : "YouTube",
         path : "/ytp"
       },
       {
         title : "フォーム",
         path : "/form"
-      },
-      {
-        title : "配列からメニュー追加",
-        path : "/add_menu_from_arr"
-      },
-      {
-        title : "アコーディオンメニュー",
-        path : "/accordion_menu"
       }
-      // submenu
-      // {
-      //   title : "サブメニューあり",
-      //   sub : [
-      //     {
-      //       title : "トグル",
-      //       path : "js/tabumenu"
-      //     },
-      //     {
-      //       title : "ボタン",
-      //       path : "js/tabumenu"
-      //     }
-      //   ]
-      // },
     ]
   );
 

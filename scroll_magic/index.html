@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>スクロールマジック - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <section class="sec_demo">
+          <p>本文(フェードアップ)→タイトル(スライドアップ)で表示</p>
+          <div class="area_demo1">
+            <h2 class="area_demo_ttl">
+              <span class="ttl_inner animation_inner">
+                タイトルが入ります。タイトルが入ります。
+              </span>
+            </h2>
+            <div class="area_demo_body">
+              <p>
+                本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="sec_demo">
+          <p>背景が流れる</p>
+          <div class="area_demo2">
+            <h2 class="area_demo_ttl animation_item">
+              <span class="ttl_inner animation_inner">
+                タイトルが入ります。タイトルが入ります。
+              </span>
+            </h2>
+            <div class="area_demo_body animation_item">
+              <div class="animation_inner">
+                <p>
+                  本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                  <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                  <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                  <br />本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+        <!--スクロールマジック ここから-->
+        <section id="js_toc2"></section>
+        <!--スクロールマジック ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
+
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+
+    <script
+      type="text/javascript"
+      src="./scrollmagic/ScrollMagic.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./scrollmagic/plugins/debug.addIndicators.js"
+    ></script>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>
