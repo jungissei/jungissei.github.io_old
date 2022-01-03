@@ -59,11 +59,15 @@ function add_menu_to_aside(){
         ]
       },
       {
-        title : "メニュー関連",
+        title : "アニメーション関連",
         sub : [
           {
             title : "スクロールマジック",
             path : "/scroll_magic"
+          },
+          {
+            title : "CSSスライドショー",
+            path : "/css_slideshow"
           }
         ]
       },
