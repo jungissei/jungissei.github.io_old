@@ -143,6 +143,54 @@
   }
 }
 
+/*---------------------------
+ * タイピング表示
+ *---------------------------*/
+@mixin typing_appear($txt_num, $typing_s: 2s) {
+  .animation_item {
+    .animation_inner {
+      width: #{$txt_num}ch;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 2em;
+      opacity: 0;
+    }
+
+    &.in_view {
+      .animation_inner {
+        opacity: 1;
+        animation-name: typing, blink;
+        animation-duration: #{$typing_s}, #{$typing_s};
+        animation-iteration-count: none, infinite;
+        animation-timing-function: steps(#{$txt_num}), step-end;
+      }
+    }
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+      opacity: 1;
+    }
+
+    100% {
+      width: #{$txt_num}ch;
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      border-right: 3px solid transparent !important;
+    }
+    50% {
+      border-right: 3px solid #333;
+    }
+  }
+}
+
 /*------------------------------------------------------
  * 各デモ要素
  *------------------------------------------------------*/
@@ -192,4 +240,13 @@ main {
       }
     }
   }
+}
+
+.area_demo3 {
+  .area_demo_ttl {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  @include typing_appear(17);
 }

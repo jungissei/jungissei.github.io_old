@@ -24,6 +24,9 @@
  * @param $elem_translate3d_y 要素：Y軸でどの方向から表示させるか調整
  * @param $duration アニメーション表示間隔秒数
  *---------------------------*/
+/*---------------------------
+ * タイピング表示
+ *---------------------------*/
 /*------------------------------------------------------
  * 各デモ要素
  *------------------------------------------------------*/
@@ -285,5 +288,73 @@ main .sec_demo {
 
 .area_demo2 .area_demo_body p:not(:last-child) {
   margin-bottom: 15px;
+}
+
+.area_demo3 .area_demo_ttl {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.area_demo3 .animation_item .animation_inner {
+  width: 17ch;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2em;
+  opacity: 0;
+}
+
+.area_demo3 .animation_item.in_view .animation_inner {
+  opacity: 1;
+  -webkit-animation-name: typing, blink;
+          animation-name: typing, blink;
+  -webkit-animation-duration: 2s, 2s;
+          animation-duration: 2s, 2s;
+  -webkit-animation-iteration-count: none, infinite;
+          animation-iteration-count: none, infinite;
+  -webkit-animation-timing-function: steps(17), step-end;
+          animation-timing-function: steps(17), step-end;
+}
+
+@-webkit-keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 17ch;
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 17ch;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0%,
+  100% {
+    border-right: 3px solid transparent !important;
+  }
+  50% {
+    border-right: 3px solid #333;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-right: 3px solid transparent !important;
+  }
+  50% {
+    border-right: 3px solid #333;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
