@@ -23,4 +23,17 @@ $(window).on('load', function(){
     });
   })
   .addTo(controller);
+
+
+  let demo3 = new ScrollMagic.Scene({
+    triggerElement: '.area_demo3'
+  });
+  demo3.on('enter', function(e) {
+    $('.area_demo3 .animation_item').each(function(i){
+      $(this).delay(2000 * i).queue(function(){
+        $(this).addClass('in_view');
+      });
+    });
+  })
+  .addTo(controller);
 });
