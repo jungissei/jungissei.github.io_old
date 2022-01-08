@@ -1,0 +1,42 @@
+/**----------------------------------------------------------------------------
+ * YouTubeポップアップ再生
+ *----------------------------------------------------------------------------*/
+/**--------------------------------------
+ * プラグイン
+ *--------------------------------------*/
+@import "./_lity.scss";
+
+
+/**--------------------------------------
+ * サムネイル
+ *--------------------------------------*/
+.area_youtube{
+  position: relative;
+
+  .area_youtube_mov{
+    position: relative;
+    width: 100%;
+    padding: 28%;
+
+    iframe{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .area_youtube_anchor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

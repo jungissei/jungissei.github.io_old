@@ -59,6 +59,19 @@ function add_menu_to_aside(){
         ]
       },
       {
+        title : "YouTube関連",
+        sub : [
+          {
+            title : "jQuery.mb.YTPlayer",
+            path : "/ytp"
+          },
+          {
+            title : "lity.js",
+            path : "/lity"
+          }
+        ]
+      },
+      {
         title : "アニメーション関連",
         sub : [
           {
@@ -82,10 +95,6 @@ function add_menu_to_aside(){
       {
         title : "目次生成",
         path : "/toc"
-      },
-      {
-        title : "YouTube",
-        path : "/ytp"
       },
       {
         title : "フォーム",
