@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/global/styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.min.css"
+      type="text/css"
+      media="all"
+    />
+    <title>lity.js - フロントエンド要素</title>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <main>
+        <h1 class="elem_ttl">lity.js</h1>
+
+        <div class="area_youtube">
+          <div class="area_youtube_mov">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CLxntu0QIFA?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <a class="area_youtube_anchor" href="https://www.youtube-nocookie.com/embed/CLxntu0QIFA?controls=0&autoplay=1" data-lity></a>
+        </div>
+
+        <div style="height:3em;"></div>
+
+        <p><a style="text-decoration: underline;" href="https://www.youtube-nocookie.com/embed/CLxntu0QIFA?controls=0&autoplay=1" data-lity>
+          テキストリンクでもOK
+        </a></p>
+
+      </main>
+      <aside>
+        <!--SUMMARY ここから-->
+        <div class="block_sumally">
+          <h2 class="block_sumally_ttl">SUMMARY</h2>
+          <div id="js_sumally" class="block_sumally_body"></div>
+        </div>
+        <!--SUMMARY ここまで-->
+        <!--lity.js ここから-->
+        <section id="js_toc2"></section>
+        <!--lity.js ここまで-->
+      </aside>
+    </div>
+    <script type="text/javascript" src="/global/scripts.js"></script>
+
+    <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./lity.min.js"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>
