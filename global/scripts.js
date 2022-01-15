@@ -99,6 +99,10 @@ function add_menu_to_aside(){
       {
         title : "フォーム",
         path : "/form"
+      },
+      {
+        title : "フィルタリングボタン",
+        path : "/filtering_btn"
       }
     ]
   );
