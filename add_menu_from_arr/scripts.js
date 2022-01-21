@@ -10,33 +10,55 @@
 /**
  * 指定セレクタにメニューHTMLを追加
  * @param {string} menu メニュー配列
- * @param {string} selecter セレクタ
+ * @param {string} selector セレクタ
  * @param {bool} sub サブメニュー真偽
+ * @param {object} menu_rule フィルター・ソート(空の場合は何もしない)
  */
 add_html_menu([
   {
     'menu' : get_menu_from_arr1(),
-    'selecter' : '#menu_all',
-    'sub' : true
+    'selector' : '#menu_all',
+    'sub' : true,
+    'menu_rule' : []
   },
   {
     'menu' : get_menu_from_arr1(),
-    'selecter' : '#menu_parents',
-    'sub' : false
+    'selector' : '#menu_parents',
+    'sub' : false,
+    'menu_rule' : []
+  },
+  {
+    'menu' : get_menu_from_arr1(),
+    'selector' : '#menu_filter_sort',
+    'sub' : false,
+    'menu_rule' : [
+      'external_site',
+      'shop_list',
+      'about',
+      'cat',
+      'top',
+      'shop'
+    ]
   }
 ]);
 
 /**
  * 指定セレクタにサブメニューHTMLを追加
  * @param {string} menu メニュー配列
- * @param {string} selecter セレクタ
- * @param {handle} string 抽出するハンドル名
+ * @param {string} selector セレクタ
+ * @param {string} handle 抽出するハンドル名
  */
 add_html_menu_sub([
   {
     'menu' : get_menu_from_arr1(),
-    'selecter' : '#menu_cat',
-    'handle' : 'cat'
+    'selector' : '#menu_cat',
+    'handle' : 'cat',
+    'sort' : []
+  },
+  {
+    'menu' : get_menu_from_arr1(),
+    'selector' : '#sub_menu_filter_sort',
+    'handle' : 'shop_list'
   }
 ]);
 
@@ -144,25 +166,36 @@ function get_menu_from_arr1() {
  */
 function add_html_menu(arg) {
   $.each(arg, function(){
-    $(this.selecter).append(
-      get_html_menu(this.menu, this.sub)
+
+    let menu = this.menu;
+    if(this.menu_rule.length >= 1){
+      menu = filter_sort_menu(
+        this.menu,
+        this.menu_rule
+      );
+    }
+
+    $(this.selector).append(
+      get_html_menu(menu, this.sub)
     );
   });
 }
 
 /**
- * 指定セレクタにフィルタリングされたサブメニューHTMLを追加
+ * 指定セレクタにサブメニューHTMLを追加
  * @param {object} arg HTML追加情報
  */
 function add_html_menu_sub(arg){
 
   $.each(arg, function(){
     let self = this;
+
+    //サブメニューをハンドル名でフィルタリング抽出
     let filtered_arr = this.menu.filter( function (arr) {
       return arr.handle == self.handle;
     })
 
-    $(this.selecter).append(
+    $(this.selector).append(
       get_html_sub_menu(filtered_arr[0].sub_menu)
     );
   });
@@ -250,4 +283,39 @@ function get_html_list_inner(list) {
   return '<a href="' + list.url + '"' + target_blank + ' class="menu_inner">' + list.ttl + '</a>';
 }
 
+/**
+ * フィルター・ソートされたメニュー配列を返す
+ * @param {object} menu_items メニュー配列
+ * @param {object} menu_rule フィルター・ソートルール
+ * @return {object} フィルター・ソートされたメニュー配列
+ */
+function filter_sort_menu(menu_items, menu_rule){
 
+  menu_items = menu_items.filter(function(menu_item){
+    if(menu_rule.indexOf(menu_item.handle) !== -1){
+      return true;
+    }
+
+    return false;
+  });
+
+  menu_items.sort(function(a, b){
+    let a_key, b_key;
+
+    for (let i = 0; i < menu_rule.length; i++) {
+      if (menu_rule[i] === a.handle) {
+        a_key = i;
+      }
+
+      if (menu_rule[i] === b.handle) {
+        b_key = i;
+      }
+    }
+
+    if(a_key < b_key) return -1;
+    if(a_key > b_key) return 1;
+    return 0;
+  });
+
+  return menu_items;
+}
