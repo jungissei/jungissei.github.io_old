@@ -1,39 +1,49 @@
-
+/**
+ * 一番最初のセクションはページ読み込み後に動作し、
+ * 上記以外はディスプレイの上から高さ90%の位置で動作
+ */
 $(window).on('load', function(){
   let controller = new ScrollMagic.Controller();
+  let first_section = '.animate_first_section';//一番最初のセクション
+  let other_section = '.animate_section';//上記以外のセクション
 
-  let demo1 = new ScrollMagic.Scene({
-    triggerElement: '.area_demo1'
+
+  //一番最初のセクションはページ読み込み後に動作
+  new ScrollMagic.Scene({
+    triggerElement: first_section,
+    reverse: false,
+    triggerHook: 1
+  }).on('enter', function() {
+
+    add_animation_class(first_section);
+
+  }).addTo(controller);
+
+
+  //上記以外はディスプレイの上から高さ90%の位置で動作
+  $(other_section).each(function(i, section_elem){
+    new ScrollMagic.Scene({
+      triggerElement: section_elem,
+      reverse: false,
+      triggerHook: 0.9
+    }).on('enter', function() {
+
+      add_animation_class(section_elem);
+
+    }).addTo(controller);
+
   });
-  demo1.on('enter', function(e) {
-    $('.area_demo1 .area_demo_ttl, .area_demo1 .area_demo_body').addClass('in_view');
-  })
-  .addTo(controller);
 
-
-
-  let demo2 = new ScrollMagic.Scene({
-    triggerElement: '.area_demo2'
-  });
-  demo2.on('enter', function(e) {
-    $('.area_demo2 .animation_item').each(function(i){
-      $(this).delay(300 * i).queue(function(){
-        $(this).addClass('in_view');
-      });
-    });
-  })
-  .addTo(controller);
-
-
-  let demo3 = new ScrollMagic.Scene({
-    triggerElement: '.area_demo3'
-  });
-  demo3.on('enter', function(e) {
-    $('.area_demo3 .animation_item').each(function(i){
-      $(this).delay(2000 * i).queue(function(){
-        $(this).addClass('in_view');
-      });
-    });
-  })
-  .addTo(controller);
 });
+
+
+/**
+ * セクションの要素とその中のアニメーション要素にクラス名を追加
+ * @param {string} section_elem セクションの要素
+ */
+function add_animation_class(section_elem){
+  let class_name = 'is_animated';
+
+  $(section_elem).addClass(class_name);
+  $(section_elem).find('.animate_item').addClass(class_name);
+}

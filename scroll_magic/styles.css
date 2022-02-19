@@ -4,6 +4,8 @@
  *------------------------------------------------------*/
 /*---------------------------
  * スライド
+ * @param $elem アニメーションさせる要素
+ * @param $wrp_elem 囲う要素
  * @param $translate3d_x X軸でどの方向から表示させるか調整
  * @param $translate3d_y Y軸でどの方向から表示させるか調整
  * @param $s アニメーション表示間隔秒数
@@ -11,6 +13,7 @@
  *---------------------------*/
 /*---------------------------
  * フェード
+ * @param $elem アニメーションさせる要素
  * @param $translate3d_x X軸でどの方向から表示させるか調整
  * @param $translate3d_y Y軸でどの方向から表示させるか調整
  * @param $s アニメーション表示間隔秒数
@@ -18,6 +21,8 @@
  *---------------------------*/
 /*---------------------------
  * 背景色が流れる
+ * @param $elem アニメーションさせる要素
+ * @param $wrp_elem アニメーションさせる要素の親要素
  * @param $bg_color 背景色
  * @param $bg_direction 背景色：流れる方向
  * @param $elem_translate3d_x 要素：X軸でどの方向から表示させるか調整
@@ -37,57 +42,79 @@ main .sec_demo {
   border-bottom: 1px solid #000;
 }
 
-.area_demo1 .area_demo_ttl {
+#area_demo1 {
+  /* アニメーション ここから */
+  /* アニメーション ここまで */
+}
+
+#area_demo1 .area_demo_ttl {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+#area_demo1 .area_demo_body p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+#area_demo1 .area_demo_body {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 60px, 0);
+          transform: translate3d(0, 60px, 0);
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+  will-change: transform;
+}
+
+#area_demo1 .area_demo_body.is_animated {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+#area_demo1 .demo_row1 {
   overflow: hidden;
 }
 
-.area_demo1 .area_demo_ttl .animation_inner {
+#area_demo1 .demo_row1 .area_demo_ttl {
   -webkit-transform: translate3d(0, 60px, 0);
           transform: translate3d(0, 60px, 0);
+  -webkit-transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   will-change: transform;
   display: block;
 }
 
-.area_demo1 .area_demo_ttl.in_view .animation_inner {
-  -webkit-transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+#area_demo1 .demo_row1 .area_demo_ttl.is_animated {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  will-change: transform;
 }
 
-.area_demo1 .area_demo_body {
-  opacity: 0;
-  -webkit-transform: translate3d(0, 60px, 0);
-          transform: translate3d(0, 60px, 0);
-  will-change: transform;
+#area_demo2 {
+  /* アニメーション ここから */
+  /* アニメーション ここまで */
 }
 
-.area_demo1 .area_demo_body.in_view {
-  opacity: 1;
-  -webkit-transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
-  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  will-change: transform;
-}
-
-.area_demo1 .area_demo_body p:not(:last-child) {
-  margin-bottom: 15px;
-}
-
-.area_demo2 .area_demo_ttl {
+#area_demo2 .area_demo_ttl {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+#area_demo2 .area_demo_body p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+#area_demo2 .demo_row1 {
   position: relative;
   overflow: hidden;
 }
 
-.area_demo2 .area_demo_ttl::before {
+#area_demo2 .demo_row1 .area_demo_ttl::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -98,16 +125,8 @@ main .sec_demo {
   background-color: #ccc;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-}
-
-.area_demo2 .area_demo_ttl .animation_inner {
-  opacity: 0;
-  display: block;
-}
-
-.area_demo2 .area_demo_ttl.in_view::before {
-  -webkit-animation-name: bg_extend;
-          animation-name: bg_extend;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
   -webkit-animation-duration: 1.2s;
           animation-duration: 1.2s;
   -webkit-animation-timing-function: cubic-bezier(0.35, 1.24, 0.9, 0.77);
@@ -116,15 +135,27 @@ main .sec_demo {
           animation-fill-mode: forwards;
 }
 
-.area_demo2 .area_demo_ttl.in_view .animation_inner {
-  -webkit-animation-name: slide_to_right;
-          animation-name: slide_to_right;
+#area_demo2 .demo_row1 .area_demo_ttl .animate_inner {
+  opacity: 0;
+  display: block;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
   -webkit-animation-duration: 0.48s;
           animation-duration: 0.48s;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+#area_demo2 .demo_row1 .area_demo_ttl.is_animated::before {
+  -webkit-animation-name: bg_extend;
+          animation-name: bg_extend;
+}
+
+#area_demo2 .demo_row1 .area_demo_ttl.is_animated .animate_inner {
+  -webkit-animation-name: slide_to_right;
+          animation-name: slide_to_right;
 }
 
 @-webkit-keyframes bg_extend {
@@ -203,12 +234,12 @@ main .sec_demo {
   }
 }
 
-.area_demo2 .area_demo_body {
+#area_demo2 .demo_row2 {
   position: relative;
   overflow: hidden;
 }
 
-.area_demo2 .area_demo_body::before {
+#area_demo2 .demo_row2 .area_demo_body::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -219,16 +250,8 @@ main .sec_demo {
   background-color: #ccc;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-}
-
-.area_demo2 .area_demo_body .animation_inner {
-  opacity: 0;
-  display: block;
-}
-
-.area_demo2 .area_demo_body.in_view::before {
-  -webkit-animation-name: bg_extend;
-          animation-name: bg_extend;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
   -webkit-animation-duration: 1.2s;
           animation-duration: 1.2s;
   -webkit-animation-timing-function: cubic-bezier(0.35, 1.24, 0.9, 0.77);
@@ -237,15 +260,27 @@ main .sec_demo {
           animation-fill-mode: forwards;
 }
 
-.area_demo2 .area_demo_body.in_view .animation_inner {
-  -webkit-animation-name: slide_to_right;
-          animation-name: slide_to_right;
+#area_demo2 .demo_row2 .area_demo_body .animate_inner {
+  opacity: 0;
+  display: block;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
   -webkit-animation-duration: 0.48s;
           animation-duration: 0.48s;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+#area_demo2 .demo_row2 .area_demo_body.is_animated::before {
+  -webkit-animation-name: bg_extend;
+          animation-name: bg_extend;
+}
+
+#area_demo2 .demo_row2 .area_demo_body.is_animated .animate_inner {
+  -webkit-animation-name: slide_to_right;
+          animation-name: slide_to_right;
 }
 
 @keyframes bg_extend {
@@ -286,74 +321,7 @@ main .sec_demo {
   }
 }
 
-.area_demo2 .area_demo_body p:not(:last-child) {
-  margin-bottom: 15px;
-}
-
 .area_demo3 .area_demo_ttl {
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-.area_demo3 .animation_item .animation_inner {
-  width: 17ch;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 2em;
-  opacity: 0;
-}
-
-.area_demo3 .animation_item.in_view .animation_inner {
-  opacity: 1;
-  -webkit-animation-name: typing, blink;
-          animation-name: typing, blink;
-  -webkit-animation-duration: 2s, 2s;
-          animation-duration: 2s, 2s;
-  -webkit-animation-iteration-count: none, infinite;
-          animation-iteration-count: none, infinite;
-  -webkit-animation-timing-function: steps(17), step-end;
-          animation-timing-function: steps(17), step-end;
-}
-
-@-webkit-keyframes typing {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  100% {
-    width: 17ch;
-    opacity: 1;
-  }
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  100% {
-    width: 17ch;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes blink {
-  0%,
-  100% {
-    border-right: 3px solid transparent !important;
-  }
-  50% {
-    border-right: 3px solid #333;
-  }
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    border-right: 3px solid transparent !important;
-  }
-  50% {
-    border-right: 3px solid #333;
-  }
 }

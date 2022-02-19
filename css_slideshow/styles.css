@@ -104,6 +104,7 @@
 #demo1.css_slideshow {
   margin-bottom: 15px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
@@ -111,6 +112,7 @@
 
 #demo1.css_slideshow .css_slideshow_items {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation: infinity_flow_to_right 20s infinite linear 0.5s both;
@@ -128,6 +130,7 @@
 #demo2.css_slideshow {
   margin-bottom: 15px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
@@ -135,6 +138,7 @@
 
 #demo2.css_slideshow .css_slideshow_items {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation: infinity_flow_to_left 20s infinite linear 0.5s both;

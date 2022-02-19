@@ -4,61 +4,73 @@
 
 /*---------------------------
  * スライド
+ * @param $elem アニメーションさせる要素
+ * @param $wrp_elem 囲う要素
  * @param $translate3d_x X軸でどの方向から表示させるか調整
  * @param $translate3d_y Y軸でどの方向から表示させるか調整
  * @param $s アニメーション表示間隔秒数
  * @param $cubic_bezier_s ペジェ曲線のアニメーション表示間隔秒数
  *---------------------------*/
 @mixin slide_appear(
+  $elem,
+  $wrp_elem,
+  $delay,
   $translate3d_x: 0,
   $translate3d_y: 60px,
   $s: 0.8s,
   $cubic_bezier_s: 0.5s
 ) {
-  overflow: hidden;
+  #{$wrp_elem}{
+    overflow: hidden;
 
-  .animation_inner {
-    transform: translate3d($translate3d_x, $translate3d_y, 0);
-    will-change: transform;
-    display: block;
-  }
-
-  &.in_view {
-    .animation_inner {
+    #{$elem}{
+      transform: translate3d($translate3d_x, $translate3d_y, 0);
       transition: $s cubic-bezier(0.075, 0.82, 0.165, 1) $cubic_bezier_s;
-      transform: translate3d(0, 0, 0);
+      transition-delay: $delay;
       will-change: transform;
+      display: block;
+
+      &.is_animated {
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
 }
 
 /*---------------------------
  * フェード
+ * @param $elem アニメーションさせる要素
  * @param $translate3d_x X軸でどの方向から表示させるか調整
  * @param $translate3d_y Y軸でどの方向から表示させるか調整
  * @param $s アニメーション表示間隔秒数
  * @param $cubic_bezier_s ペジェ曲線のアニメーション表示間隔秒数
  *---------------------------*/
 @mixin fade_appear(
+  $elem,
+  $delay: 0,
   $translate3d_x: 0,
   $translate3d_y: 60px,
   $s: 0.7s,
   $cubic_bezier_s: 0.3s
 ) {
-  opacity: 0;
-  transform: translate3d($translate3d_x, $translate3d_y, 0);
-  will-change: transform;
-
-  &.in_view {
-    opacity: 1;
+  #{$elem}{
+    opacity: 0;
+    transform: translate3d($translate3d_x, $translate3d_y, 0);
+    transition-delay: $delay;
     transition: $s cubic-bezier(0.165, 0.84, 0.44, 1) $cubic_bezier_s;
-    transform: translate3d(0, 0, 0);
     will-change: transform;
+
+    &.is_animated {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
 /*---------------------------
  * 背景色が流れる
+ * @param $elem アニメーションさせる要素
+ * @param $wrp_elem アニメーションさせる要素の親要素
  * @param $bg_color 背景色
  * @param $bg_direction 背景色：流れる方向
  * @param $elem_translate3d_x 要素：X軸でどの方向から表示させるか調整
@@ -66,45 +78,55 @@
  * @param $duration アニメーション表示間隔秒数
  *---------------------------*/
 @mixin flow_bg(
+  $elem,
+  $wrp_elem,
+  $delay: 0,
   $bg_color: #ccc,
   $bg_direction: left,
   $elem_translate3d_x: -15%,
   $elem_translate3d_y: 0,
   $duration: 1.2s
 ) {
-  position: relative;
-  overflow: hidden;
 
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: $bg_color;
-    transform: scaleX(0);
-  }
+  #{$wrp_elem}{
+    position: relative;
+    overflow: hidden;
 
-  .animation_inner {
-    opacity: 0;
-    display: block;
-  }
+    #{$elem}{
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: $bg_color;
+        transform: scaleX(0);
+        animation-delay: $delay;
+        animation-duration: $duration;
+        animation-timing-function: cubic-bezier(0.35, 1.24, 0.9, 0.77);
+        animation-fill-mode: forwards;
+      }
 
-  &.in_view {
-    &::before {
-      animation-name: bg_extend;
-      animation-duration: $duration;
-      animation-timing-function: cubic-bezier(0.35, 1.24, 0.9, 0.77);
-      animation-fill-mode: forwards;
-    }
+      .animate_inner {
+        opacity: 0;
+        display: block;
+        animation-delay: $delay;
+        animation-duration: $duration/2.5;
+        animation-delay: $duration/3;
+        animation-fill-mode: forwards;
+      }
 
-    .animation_inner {
-      animation-name: slide_to_right;
-      animation-duration: $duration/2.5;
-      animation-delay: $duration/3;
-      animation-fill-mode: forwards;
+      &.is_animated {
+        &::before {
+          animation-name: bg_extend;
+        }
+
+        .animate_inner {
+          animation-name: slide_to_right;
+        }
+      }
     }
   }
 
@@ -146,7 +168,12 @@
 /*---------------------------
  * タイピング表示
  *---------------------------*/
-@mixin typing_appear($txt_num, $typing_s: 2s) {
+@mixin typing_appear(
+  $elem,
+  $elem_inner,
+  $txt_num,
+  $typing_s: 2s
+) {
   .animation_item {
     .animation_inner {
       width: #{$txt_num}ch;
@@ -203,44 +230,68 @@ main {
   }
 }
 
-.area_demo1 {
+#area_demo1 {
   .area_demo_ttl {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 8px;
-
-    @include slide_appear;
   }
 
   .area_demo_body {
-    @include fade_appear;
-
     p {
       &:not(:last-child) {
         margin-bottom: 15px;
       }
     }
   }
+
+  /* アニメーション ここから */
+  @include fade_appear(
+    $elem: '.area_demo_body',
+    $delay: 0
+  );
+
+  @include slide_appear(
+    $elem : '.area_demo_ttl',
+    $wrp_elem : '.demo_row1',
+    $delay: 0.5s,
+  );
+  /* アニメーション ここまで */
 }
 
-.area_demo2 {
+
+
+#area_demo2 {
   .area_demo_ttl {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 8px;
-
-    @include flow_bg;
   }
-  .area_demo_body {
-    @include flow_bg;
 
+  .area_demo_body {
     p {
       &:not(:last-child) {
         margin-bottom: 15px;
       }
     }
   }
+
+  /* アニメーション ここから */
+  @include flow_bg(
+    $elem : '.area_demo_ttl',
+    $wrp_elem : '.demo_row1',
+    $delay: 0
+  );
+
+  @include flow_bg(
+    $elem : '.area_demo_body',
+    $wrp_elem : '.demo_row2',
+    $delay: 0.5s
+  );
+  /* アニメーション ここまで */
 }
+
+
 
 .area_demo3 {
   .area_demo_ttl {
@@ -248,5 +299,5 @@ main {
     margin-bottom: 8px;
   }
 
-  @include typing_appear(17);
+  //@include typing_appear(17);
 }

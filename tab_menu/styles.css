@@ -2,9 +2,11 @@
 /*タブメニュー ここから*/
 #tab_menu .tab_menu_btn {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
+  -webkit-justify-content: start;
       -ms-flex-pack: start;
           justify-content: start;
   border-bottom: 1px solid #000;
