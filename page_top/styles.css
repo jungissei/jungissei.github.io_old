@@ -1,8 +1,7 @@
 @charset "UTF-8";
 #wrapper {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header,
@@ -61,3 +60,4 @@ footer {
 }
 
 /* ページトップへ戻る ここまで */
+/*# sourceMappingURL=styles.css.map */

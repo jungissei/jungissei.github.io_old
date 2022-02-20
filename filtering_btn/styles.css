@@ -22,16 +22,13 @@
 
 #area_filtering .post_items {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #area_filtering .post_items::before, #area_filtering .post_items::after {
@@ -42,7 +39,6 @@
 
 #area_filtering .post_items::before {
   -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1;
 }
@@ -51,3 +47,4 @@
   width: calc((100% - 30px) / 3);
   margin-bottom: 30px;
 }
+/*# sourceMappingURL=styles.css.map */

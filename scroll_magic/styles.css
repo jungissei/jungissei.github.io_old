@@ -31,6 +31,11 @@
  *---------------------------*/
 /*---------------------------
  * タイピング表示
+ * @param $elem アニメーションさせる要素
+ * @param $elem_inner 上記の子要素
+ * @param $txt_num 文字数
+ * @param $delay: 遅延秒数
+ * @param $duration 秒数
  *---------------------------*/
 /*------------------------------------------------------
  * 各デモ要素
@@ -138,8 +143,6 @@ main .sec_demo {
 #area_demo2 .demo_row1 .area_demo_ttl .animate_inner {
   opacity: 0;
   display: block;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
   -webkit-animation-duration: 0.48s;
           animation-duration: 0.48s;
   -webkit-animation-delay: 0.4s;
@@ -263,8 +266,6 @@ main .sec_demo {
 #area_demo2 .demo_row2 .area_demo_body .animate_inner {
   opacity: 0;
   display: block;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
   -webkit-animation-duration: 0.48s;
           animation-duration: 0.48s;
   -webkit-animation-delay: 0.4s;
@@ -321,7 +322,136 @@ main .sec_demo {
   }
 }
 
-.area_demo3 .area_demo_ttl {
+#area_demo3 {
+  /* アニメーション ここから */
+  /* アニメーション ここまで */
+}
+
+#area_demo3 .demo_ttl {
   font-weight: bold;
+}
+
+#area_demo3 .demo_ttl .ttl_row {
+  display: block;
+}
+
+#area_demo3 .demo_ttl .ttl_row:not(:last-child) {
   margin-bottom: 8px;
 }
+
+#area_demo3 .demo_ttl .ttl_inner1,
+#area_demo3 .demo_ttl .ttl_inner2 {
+  display: inline-block;
+}
+
+#area_demo3 .demo_ttl .ttl_inner1 {
+  width: 17ch;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2em;
+  opacity: 0;
+  -webkit-animation-delay: 0s, 0s;
+          animation-delay: 0s, 0s;
+  -webkit-animation-duration: 2s, 2s;
+          animation-duration: 2s, 2s;
+  -webkit-animation-iteration-count: none, infinite;
+          animation-iteration-count: none, infinite;
+  -webkit-animation-timing-function: steps(17), step-end;
+          animation-timing-function: steps(17), step-end;
+  -webkit-animation-fill-mode: forwards, none;
+          animation-fill-mode: forwards, none;
+}
+
+#area_demo3 .demo_ttl.is_animated .ttl_inner1 {
+  -webkit-animation-name: typing, blink;
+          animation-name: typing, blink;
+}
+
+@-webkit-keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 17ch;
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 17ch;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0%,
+  100% {
+    border-right: 3px solid transparent !important;
+  }
+  50% {
+    border-right: 3px solid #333;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-right: 3px solid transparent !important;
+  }
+  50% {
+    border-right: 3px solid #333;
+  }
+}
+
+#area_demo3 .demo_ttl .ttl_inner2 {
+  width: 17ch;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2em;
+  opacity: 0;
+  -webkit-animation-delay: 2s, 2s;
+          animation-delay: 2s, 2s;
+  -webkit-animation-duration: 2s, 2s;
+          animation-duration: 2s, 2s;
+  -webkit-animation-iteration-count: none, infinite;
+          animation-iteration-count: none, infinite;
+  -webkit-animation-timing-function: steps(17), step-end;
+          animation-timing-function: steps(17), step-end;
+  -webkit-animation-fill-mode: forwards, none;
+          animation-fill-mode: forwards, none;
+}
+
+#area_demo3 .demo_ttl.is_animated .ttl_inner2 {
+  -webkit-animation-name: typing, blink;
+          animation-name: typing, blink;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 17ch;
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-right: 3px solid transparent !important;
+  }
+  50% {
+    border-right: 3px solid #333;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

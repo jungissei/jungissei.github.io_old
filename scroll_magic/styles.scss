@@ -20,10 +20,10 @@
   $s: 0.8s,
   $cubic_bezier_s: 0.5s
 ) {
-  #{$wrp_elem}{
+  #{$wrp_elem} {
     overflow: hidden;
 
-    #{$elem}{
+    #{$elem} {
       transform: translate3d($translate3d_x, $translate3d_y, 0);
       transition: $s cubic-bezier(0.075, 0.82, 0.165, 1) $cubic_bezier_s;
       transition-delay: $delay;
@@ -53,7 +53,7 @@
   $s: 0.7s,
   $cubic_bezier_s: 0.3s
 ) {
-  #{$elem}{
+  #{$elem} {
     opacity: 0;
     transform: translate3d($translate3d_x, $translate3d_y, 0);
     transition-delay: $delay;
@@ -87,12 +87,11 @@
   $elem_translate3d_y: 0,
   $duration: 1.2s
 ) {
-
-  #{$wrp_elem}{
+  #{$wrp_elem} {
     position: relative;
     overflow: hidden;
 
-    #{$elem}{
+    #{$elem} {
       &::before {
         content: "";
         width: 100%;
@@ -112,7 +111,6 @@
       .animate_inner {
         opacity: 0;
         display: block;
-        animation-delay: $delay;
         animation-duration: $duration/2.5;
         animation-delay: $duration/3;
         animation-fill-mode: forwards;
@@ -167,30 +165,31 @@
 
 /*---------------------------
  * タイピング表示
+ * @param $elem アニメーションさせる要素
+ * @param $elem_inner 上記の子要素
+ * @param $txt_num 文字数
+ * @param $delay: 遅延秒数
+ * @param $duration 秒数
  *---------------------------*/
-@mixin typing_appear(
-  $elem,
-  $elem_inner,
-  $txt_num,
-  $typing_s: 2s
-) {
-  .animation_item {
-    .animation_inner {
+@mixin typing_appear($elem, $elem_inner, $txt_num, $delay: 0s, $duration: 2s) {
+  #{$elem} {
+    #{$elem_inner} {
       width: #{$txt_num}ch;
       display: block;
       white-space: nowrap;
       overflow: hidden;
       font-size: 2em;
       opacity: 0;
+      animation-delay: #{$delay}, #{$delay};
+      animation-duration: #{$duration}, #{$duration};
+      animation-iteration-count: none, infinite;
+      animation-timing-function: steps(#{$txt_num}), step-end;
+      animation-fill-mode: forwards, none;
     }
 
-    &.in_view {
-      .animation_inner {
-        opacity: 1;
+    &.is_animated {
+      #{$elem_inner} {
         animation-name: typing, blink;
-        animation-duration: #{$typing_s}, #{$typing_s};
-        animation-iteration-count: none, infinite;
-        animation-timing-function: steps(#{$txt_num}), step-end;
       }
     }
   }
@@ -246,20 +245,15 @@ main {
   }
 
   /* アニメーション ここから */
-  @include fade_appear(
-    $elem: '.area_demo_body',
-    $delay: 0
-  );
+  @include fade_appear($elem: ".area_demo_body", $delay: 0);
 
   @include slide_appear(
-    $elem : '.area_demo_ttl',
-    $wrp_elem : '.demo_row1',
-    $delay: 0.5s,
+    $elem: ".area_demo_ttl",
+    $wrp_elem: ".demo_row1",
+    $delay: 0.5s
   );
   /* アニメーション ここまで */
 }
-
-
 
 #area_demo2 {
   .area_demo_ttl {
@@ -277,27 +271,48 @@ main {
   }
 
   /* アニメーション ここから */
-  @include flow_bg(
-    $elem : '.area_demo_ttl',
-    $wrp_elem : '.demo_row1',
-    $delay: 0
-  );
+  @include flow_bg($elem: ".area_demo_ttl", $wrp_elem: ".demo_row1", $delay: 0);
 
   @include flow_bg(
-    $elem : '.area_demo_body',
-    $wrp_elem : '.demo_row2',
+    $elem: ".area_demo_body",
+    $wrp_elem: ".demo_row2",
     $delay: 0.5s
   );
   /* アニメーション ここまで */
 }
 
-
-
-.area_demo3 {
-  .area_demo_ttl {
+#area_demo3 {
+  .demo_ttl {
     font-weight: bold;
-    margin-bottom: 8px;
+
+    .ttl_row {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    .ttl_inner1,
+    .ttl_inner2 {
+      display: inline-block;
+    }
   }
 
-  //@include typing_appear(17);
+  /* アニメーション ここから */
+  @include typing_appear(
+    $elem: ".demo_ttl",
+    $elem_inner: ".ttl_inner1",
+    $txt_num: 17,
+    $delay: 0s,
+    $duration: 2s
+  );
+  @include typing_appear(
+    $elem: ".demo_ttl",
+    $elem_inner: ".ttl_inner2",
+    $txt_num: 17,
+    $delay: 2s,
+    $duration: 2s
+  );
+  /* アニメーション ここまで */
 }
