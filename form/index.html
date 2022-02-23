@@ -41,8 +41,11 @@
           <ul class="block_li"></ul>
         </div>
 
-        <div class="form_wrp">
-          <form id="area_form" action="#" method="get">
+        <!-- フォームエリア ここから-->
+        <form id="area_form" class="form_wrp" action="#" method="get">
+          <div class="area_form_row1">
+
+            <!-- フォームテーブル ここから-->
             <table class="form_table">
               <tbody>
                 <tr>
@@ -275,7 +278,6 @@
                               </span>
                             </div>
                           </div>
-
                           <ul class="form_remark">
                             <li>ハイフンなしで入力</li>
                           </ul>
@@ -334,11 +336,55 @@
                 </tr>
               </tbody>
             </table>
-            <div class="btn_submit">
-              <input class="btn_inner" type="submit" value="送信" />
+            <!-- フォームテーブル ここまで-->
+
+          </div>
+          <div class="area_form_row2">
+
+            <!-- プライバシーポリシー ここから-->
+            <div class="form_privacy">
+              <div class="form_privacy_row1">
+
+                <h2 class="privacy_ttl">
+                  <span class="ttl_inner">
+                    プライバシーポリシーについて
+                </span></h2>
+
+              </div>
+              <div class="form_privacy_row2">
+
+                <div class="privacy_txt">
+                  <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
+                  <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
+                  <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
+                  <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
+                </div>
+
+              </div>
+              <div class="form_privacy_row3">
+
+                <ul class="privacy_check form_check form_item_block_pc form_item_block_sp">
+                  <li>
+                    <label>
+                      <input id="privacy_checkbox" type="checkbox"/>
+                      <span class="form_list_item_label">プライバシーポリシーに同意する</span>
+                    </label>
+                  </li>
+                </ul>
+
+              </div>
             </div>
-          </form>
-        </div>
+            <!-- プライバシーポリシー ここまで-->
+
+          </div>
+          <div class="area_form_row3">
+            <div class="btn_submit">
+              <input id="form_submit" disabled class="btn_inner" type="submit" value="送信" />
+            </div>
+          </div>
+        </form>
+        <!-- フォームエリア ここまで-->
+
         <div style="height: 3em"></div>
       </main>
       <aside>

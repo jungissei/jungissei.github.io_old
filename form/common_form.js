@@ -5,7 +5,7 @@
  * ## セレクトボックス 値が空の時 文字色をplaceholderと同色にする
  * ## 住所検索ボタンの動作
  * ## カレンダー
- * ## チェック時にsubmitボタン有効化
+ * ## プライバシーポリシー同意チェック時にsubmitボタン有効化
  * ## バリデーション
  *------------------------------------------------------*/
 
@@ -115,14 +115,14 @@ $('.form_calendar').flatpickr({
 
 
 /**------------------------------------------------------
- * チェック時にsubmitボタン有効化
+ * プライバシーポリシー同意チェック時にsubmitボタン有効化
  *------------------------------------------------------*/
-$('.privacy_check').on('change', function(){
+$('#privacy_checkbox').on('change', function(){
   if($(this).prop('checked')){
-    $('#comfirm_btn').attr('disabled', false)
+    $('#form_submit').attr('disabled', false)
     return;
   }
 
-  $('#comfirm_btn').attr('disabled', true)
+  $('#form_submit').attr('disabled', true)
   return;
 });

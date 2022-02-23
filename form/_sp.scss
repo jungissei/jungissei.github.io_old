@@ -1,6 +1,7 @@
 /**------------------------------------------------------
  * # フォームTOC
  *
+ * ## フォームエリア
  * ## フォームテーブル
  * ## フォームレイアウト
  * - リスト ブロック要素
@@ -16,7 +17,19 @@
  * - submitボタン
  * - エラーメッセージ
  * - カレンダー
+ * ## プライバシーポリシー
  *------------------------------------------------------*/
+
+/**------------------------------------------------------
+ * フォームエリア
+ *------------------------------------------------------*/
+#area_form{
+  >*[class^="area_form_row"]{
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+  }
+}
 
 /**------------------------------------------------------
  * フォームテーブル
@@ -30,7 +43,8 @@ $optional_color: #95cafd;
 .form_wrp {
   .form_table {
     width: 100%;
-    margin: 0 auto 30px;
+    margin-right: auto;
+    margin-left: auto;
 
     tbody {
       tr {
@@ -453,14 +467,19 @@ $border_color: #ced4da;
       font-size: 16px;
       min-width: 200px;
       text-align: center;
-      border: 1px solid $focus_color;
-      background-color: $focus_color;
       color: #fff;
-      transition: opacity 0.2s;
+      transition: all 0.2s;
 
-      &:hover {
-        opacity: 0.7;
+      &:disabled{
+        border: 1px solid #ccc;
+        background-color: #ccc;
       }
+
+      &:not(:disabled){
+        border: 1px solid $focus_color;
+        background-color: $focus_color;
+      }
+
     }
   }
 
@@ -503,4 +522,44 @@ $border_color: #ced4da;
   .flatpickr-days
   .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
   color: blue;
+}
+
+
+
+/**------------------------------------------------------
+ * プライバシーポリシー
+ *------------------------------------------------------*/
+.form_privacy {
+  >*[class^="form_privacy_row"]{
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+
+  .privacy_ttl {
+    .ttl_inner {
+      display: block;
+      font-weight: bold;
+      font-size: 17px;
+    }
+  }
+
+  .privacy_txt{
+    height: 250px;
+    overflow-y: scroll;
+    border: #c0c0c0 1px solid;
+    padding: 15px;
+    box-shadow: inset -1px 2px 4px #dfdfdf;
+    font-size: 13px;
+
+    p{
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .privacy_check{
+    text-align: center;
+  }
 }

@@ -15,6 +15,7 @@ PC
   /**------------------------------------------------------
  * # フォームTOC
  *
+ * ## フォームエリア
  * ## フォームテーブル
  * ## フォームレイアウト
  * - リスト ブロック要素
@@ -30,7 +31,14 @@ PC
  * - submitボタン
  * - エラーメッセージ
  * - カレンダー
+ * ## プライバシーポリシー
  *------------------------------------------------------*/
+  /**------------------------------------------------------
+ * フォームエリア
+ *------------------------------------------------------*/
+  #area_form > *[class^="area_form_row"]:not(:last-child) {
+    margin-bottom: 30px;
+  }
   /**------------------------------------------------------
  * フォームテーブル
  *------------------------------------------------------*/
@@ -38,7 +46,8 @@ PC
   /* 変数定義 ここまで */
   .form_wrp .form_table {
     width: 100%;
-    margin: 0 auto 30px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .form_wrp .form_table tbody tr th,
   .form_wrp .form_table tbody tr td {
@@ -443,13 +452,18 @@ PC
     font-size: 16px;
     min-width: 200px;
     text-align: center;
+    color: #fff;
+    transition: all 0.2s;
+  }
+  .form_wrp .btn_submit .btn_inner:disabled {
+    border: 1px solid #ccc;
+    background-color: #ccc;
+  }
+  .form_wrp .btn_submit .btn_inner:not(:disabled) {
     border: 1px solid #81c3e2;
     background-color: #81c3e2;
-    color: #fff;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
   }
-  .form_wrp .btn_submit .btn_inner:hover {
+  .form_wrp .btn_submit .btn_inner:not(:disabled):hover {
     opacity: 0.7;
   }
   .form_wrp label.error {
@@ -485,6 +499,32 @@ PC
 .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
     color: blue;
   }
+  /**------------------------------------------------------
+ * プライバシーポリシー
+ *------------------------------------------------------*/
+  .form_privacy > *[class^="form_privacy_row"]:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .form_privacy .privacy_ttl .ttl_inner {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .form_privacy .privacy_txt {
+    height: 250px;
+    overflow-y: scroll;
+    border: #c0c0c0 1px solid;
+    padding: 30px;
+    -webkit-box-shadow: inset -1px 2px 4px #dfdfdf;
+            box-shadow: inset -1px 2px 4px #dfdfdf;
+    font-size: 14px;
+  }
+  .form_privacy .privacy_txt p:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .form_privacy .privacy_check {
+    text-align: center;
+  }
 }
 
 /*---------------------------
@@ -494,6 +534,7 @@ SP
   /**------------------------------------------------------
  * # フォームTOC
  *
+ * ## フォームエリア
  * ## フォームテーブル
  * ## フォームレイアウト
  * - リスト ブロック要素
@@ -509,7 +550,14 @@ SP
  * - submitボタン
  * - エラーメッセージ
  * - カレンダー
+ * ## プライバシーポリシー
  *------------------------------------------------------*/
+  /**------------------------------------------------------
+ * フォームエリア
+ *------------------------------------------------------*/
+  #area_form > *[class^="area_form_row"]:not(:last-child) {
+    margin-bottom: 30px;
+  }
   /**------------------------------------------------------
  * フォームテーブル
  *------------------------------------------------------*/
@@ -517,7 +565,8 @@ SP
   /* 変数定義 ここまで */
   .form_wrp .form_table {
     width: 100%;
-    margin: 0 auto 30px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .form_wrp .form_table tbody tr {
     display: block;
@@ -920,14 +969,16 @@ SP
     font-size: 16px;
     min-width: 200px;
     text-align: center;
+    color: #fff;
+    transition: all 0.2s;
+  }
+  .form_wrp .btn_submit .btn_inner:disabled {
+    border: 1px solid #ccc;
+    background-color: #ccc;
+  }
+  .form_wrp .btn_submit .btn_inner:not(:disabled) {
     border: 1px solid #81c3e2;
     background-color: #81c3e2;
-    color: #fff;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-  }
-  .form_wrp .btn_submit .btn_inner:hover {
-    opacity: 0.7;
   }
   .form_wrp label.error {
     color: #cc0000;
@@ -961,5 +1012,31 @@ SP
 .flatpickr-days
 .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
     color: blue;
+  }
+  /**------------------------------------------------------
+ * プライバシーポリシー
+ *------------------------------------------------------*/
+  .form_privacy > *[class^="form_privacy_row"]:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .form_privacy .privacy_ttl .ttl_inner {
+    display: block;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .form_privacy .privacy_txt {
+    height: 250px;
+    overflow-y: scroll;
+    border: #c0c0c0 1px solid;
+    padding: 15px;
+    -webkit-box-shadow: inset -1px 2px 4px #dfdfdf;
+            box-shadow: inset -1px 2px 4px #dfdfdf;
+    font-size: 13px;
+  }
+  .form_privacy .privacy_txt p:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .form_privacy .privacy_check {
+    text-align: center;
   }
 }
