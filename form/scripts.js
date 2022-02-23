@@ -38,10 +38,10 @@ $(function(){
 $(function(){
   let select = $('.form_wrp .form_select select');
 
-  controle_select_txt_color(select);
+  control_select_txt_color(select);
 
   select.on('change', function(){
-    controle_select_txt_color($(this));
+    control_select_txt_color($(this));
   });
 });
 
@@ -49,7 +49,7 @@ $(function(){
  * 値が空の時 文字色をplaceholderと同色にする
  * @param {object} select セレクタ
  */
-function controle_select_txt_color(select) {
+function control_select_txt_color(select) {
   if(select.val() == ''){
     select.css('color', '#ccc');
     return;
