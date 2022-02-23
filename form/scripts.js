@@ -51,7 +51,7 @@ $(function(){
  */
 function control_select_txt_color(select) {
   if(select.val() == ''){
-    select.css('color', '#ccc');
+    select.css('color', '#757575');
     return;
   }
 
