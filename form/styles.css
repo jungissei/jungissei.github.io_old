@@ -4,8 +4,9 @@ PC
 ---------------------------*/
 @media print, screen and (min-width: 768px) {
   #wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   #wrapper main,
   #wrapper aside {
@@ -76,9 +77,11 @@ PC
   }
   .form_wrp .form_table_row1 {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -551,9 +554,11 @@ SP
   }
   .form_wrp .form_table_row1 {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -958,4 +963,3 @@ SP
     color: blue;
   }
 }
-/*# sourceMappingURL=styles.css.map */

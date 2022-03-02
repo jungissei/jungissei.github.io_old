@@ -494,9 +494,11 @@ PC
   #wrapper {
     padding-top: 3em;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -656,4 +658,3 @@ SP
   }
   /*参考スタイル ここまで*/
 }
-/*# sourceMappingURL=styles.css.map */
