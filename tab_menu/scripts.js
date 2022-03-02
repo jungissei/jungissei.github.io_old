@@ -12,8 +12,8 @@ $(function(){
     setTimeout(function(){ flag = true; }, 500);
 
     let index = $('#tab_menu .menu_btn li').index(this);
-    $('#tab_menu .menu_btn li').removeClass('active');
-    $(this).addClass('active');
+    $('#tab_menu .menu_btn li').removeClass('is_active');
+    $(this).addClass('is_active');
     $('#tab_menu .menu_body .menu_items').removeClass('is_show').eq(index).addClass('is_show');
 
   });
