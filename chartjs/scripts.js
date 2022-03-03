@@ -18,13 +18,17 @@ function add_circle_graph() {
                   'rgb(255, 159, 64)',
                   'rgb(240, 240, 240)',
                   'rgb(54, 162, 235)'
-              ]
+              ],
+              borderWidth: 0
           }],
       },
       plugins: [ChartDataLabels],
       options: {
         responsive: true,
         plugins: {
+          legend: {
+            display: false
+          },
           datalabels: {
             align: 'end',
             anchor: 'end',
