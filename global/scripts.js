@@ -103,6 +103,10 @@ function add_menu_to_aside(){
       {
         title : "フィルタリングボタン",
         path : "/filtering_btn"
+      },
+      {
+        title : "NEW付与",
+        path : "/add_new"
       }
     ]
   );
