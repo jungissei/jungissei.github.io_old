@@ -107,6 +107,10 @@ function add_menu_to_aside(){
       {
         title : "NEW付与",
         path : "/add_new"
+      },
+      {
+        title : "chart.js",
+        path : "/chartjs"
       }
     ]
   );
