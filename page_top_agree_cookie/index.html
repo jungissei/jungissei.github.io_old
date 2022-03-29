@@ -17,13 +17,13 @@
       type="text/css"
       media="all"
     />
-    <title>ページトップへ戻る - フロントエンド要素</title>
+    <title>ページトップへ戻る・クッキー同意 - フロントエンド要素</title>
   </head>
   <body>
     <div id="wrapper" class="container">
       <header>ヘッダー</header>
       <main>
-        <h1 class="elem_ttl">ページトップへ戻る</h1>
+        <h1 class="elem_ttl">ページトップへ戻る・クッキー同意</h1>
 
         <div style="height: 1500px"></div>
       </main>
@@ -37,13 +37,43 @@
       </aside>
     </div>
     <footer>
-      <!--ページトップへ戻る ここから-->
+      <!--ページトップへ戻る・クッキー同意 ここから-->
       <div id="arrow_to_top">
         <a href="#wrapper" class="arrow_to_top_inner">
           <img src="./arrow.svg" />
         </a>
       </div>
-      <!--ページトップへ戻る ここまで-->
+      <!--ページトップへ戻る・クッキー同意 ここまで-->
+
+
+      <!-- クッキー同意 ここから -->
+      <section id="area_cookie">
+        <div class="container">
+          <div class="content_width">
+
+            <div class="area_cookie_row1">
+
+              <!-- クッキー同意 テキスト ここから -->
+              <div class="cookie_txt">
+                当サイトではCookieを使用します。Cookieの使用に関する詳細は「<a href="#">プライバシーポリシー</a>」をご覧ください。
+              </div>
+              <!-- クッキー同意 テキスト ここまで -->
+
+            </div>
+
+            <div class="area_cookie_row2">
+
+              <!-- クッキー同意 ボタン ここから -->
+              <button class="cookie_agree">同意</button>
+              <!-- クッキー同意 ボタン ここまで -->
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- クッキー同意 ここまで -->
+
 
       <div>フッター</div>
     </footer>
@@ -52,6 +82,6 @@
     <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./scripts.js"></script>
 
-    <script type="text/javascript" src="../smooth_scroll/scripts.js"></script>
+    <!-- <script type="text/javascript" src="../smooth_scroll/scripts.js"></script> -->
   </body>
 </html>
