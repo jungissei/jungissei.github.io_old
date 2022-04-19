@@ -111,6 +111,10 @@ function add_menu_to_aside(){
       {
         title : "chart.js",
         path : "/chartjs"
+      },
+      {
+        title : "SmartPhoto.js",
+        path : "/smart_photo"
       }
     ]
   );

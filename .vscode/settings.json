@@ -1,0 +1,9 @@
+{
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/",
+    "proxyUri": "http://127.0.0.1:8084/" //<=docker専有port
+  },
+  "liveServer.settings.host": "localhost", //<=ブラウザ表示ホスト
+  "liveServer.settings.port": 8083, //<=ブラウザ表示port
+}
