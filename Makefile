@@ -1,6 +1,6 @@
 up:
 	docker-compose up
-upd:
+dev:
 	docker-compose up -d
 down:
 	docker-compose down --remove-orphans

@@ -6,4 +6,4 @@ services:
     volumes:
       - ./:/var/www/html
     ports:
-      - "8084:80"
+      - "8887:80"
