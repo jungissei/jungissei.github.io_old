@@ -12,7 +12,7 @@ PC
   #wrapper aside {
     width: 100%;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * # フォームTOC
  *
  * ## フォームエリア
@@ -32,16 +32,16 @@ PC
  * - エラーメッセージ
  * - カレンダー
  * ## プライバシーポリシー
- *------------------------------------------------------*/
-  /**------------------------------------------------------
+ *----------------------------------------------------------------------------*/
+  /**----------------------------------------------------------------------------
  * フォームエリア
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   #area_form > *[class^="area_form_row"]:not(:last-child) {
     margin-bottom: 30px;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * フォームテーブル
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   /* 変数定義 ここから */
   /* 変数定義 ここまで */
   .form_wrp .form_table {
@@ -84,7 +84,120 @@ PC
   .form_wrp .form_table tbody tr td {
     width: calc(100% - 215px);
   }
-  .form_wrp .form_table_row1 {
+  .form_wrp .form_table .td_sub_ttl {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+  /**----------------------------------------------------------------------------
+* フォームレイアウト
+*----------------------------------------------------------------------------*/
+  /*--------------------------------------
+ * リスト ブロック要素
+ *--------------------------------------*/
+  .form_item_inline_block_pc li {
+    display: inline-block;
+  }
+  .form_item_inline_block_pc li:not(:last-child) {
+    margin-right: 20px;
+  }
+  /*--------------------------------------
+ * リスト インラインブロック要素
+ *--------------------------------------*/
+  .form_item_block_pc li {
+    display: block;
+  }
+  .form_item_block_pc li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  /*--------------------------------------
+ * フォームグループ：フォームテーブル内のレイアウト
+ *--------------------------------------*/
+  /* 住所
+ *--------------------------------------*/
+  .form_address_group {
+    padding-top: 15px;
+  }
+  .form_address_group .group_row1 {
+    margin-bottom: 3px;
+  }
+  .form_address_group .group_row2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 8px;
+  }
+  .form_address_group .group_row2 .group_col1 {
+    width: 10em;
+  }
+  .form_address_group .group_row2 .group_col2 {
+    padding-left: 0.5em;
+  }
+  .form_address_group .group_row3 {
+    margin-bottom: 3px;
+  }
+  .form_address_group .group_txt {
+    font-size: 14px;
+    display: block;
+  }
+  /* 住所(別々)
+ *--------------------------------------*/
+  .form_separated_address_group .group_row1 {
+    margin-bottom: 3px;
+  }
+  .form_separated_address_group .group_row2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_row2 .group_col2 {
+    padding-left: 0.5em;
+  }
+  .form_separated_address_group .group_row3 {
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_row4 {
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_txt {
+    font-size: 14px;
+    display: block;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col {
+    width: 4.25em;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col:not(:last-child) {
+    position: relative;
+    margin-right: 2em;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col:not(:last-child)::before {
+    content: "\2015";
+    display: block;
+    width: 1em;
+    position: absolute;
+    top: 14px;
+    right: -1.5em;
+    color: #ced4da;
+  }
+  /* お名前 姓名別々
+ *--------------------------------------*/
+  .form_name_group .group_row {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -94,42 +207,47 @@ PC
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .form_wrp .form_table_row1 .form_table_col {
-    width: 50%;
-    padding: 1%;
+  .form_name_group .group_row .group_col {
+    width: calc(50% - 7.5px);
   }
-  /**------------------------------------------------------
-* フォームレイアウト
-*------------------------------------------------------*/
-  /* リスト ブロック要素 */
-  .form_item_inline_block_pc li {
-    display: inline-block;
+  /* お電話番号 別々
+ *--------------------------------------*/
+  .form_tel_group .group_row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
-  .form_item_inline_block_pc li:not(:last-child) {
-    margin-right: 20px;
+  .form_tel_group .group_row .group_col {
+    width: 4.25em;
   }
-  /* リスト インラインブロック要素 */
-  .form_item_block_pc li {
+  .form_tel_group .group_row .group_col:not(:last-child) {
+    position: relative;
+    margin-right: 2em;
+  }
+  .form_tel_group .group_row .group_col:not(:last-child)::before {
+    content: "\2015";
     display: block;
+    width: 1em;
+    position: absolute;
+    top: 14px;
+    right: -1.5em;
+    color: #ced4da;
   }
-  .form_item_block_pc li:not(:last-child) {
-    margin-bottom: 8px;
-  }
-  /* フォームテーブル内のレイアウト */
-  .form_group .form_group_row:not(:last-child) {
+  /* メールアドレス＆確認用
+ *--------------------------------------*/
+  .form_mail_group .group_row1 {
     margin-bottom: 15px;
   }
-  .form_group .form_group_row:first-child .form_group_ttl {
-    padding-top: 15px;
+  .form_mail_group .group_row2 {
+    margin-bottom: 3px;
   }
-  .form_group .form_group_row .form_group_ttl {
+  .form_mail_group .group_txt {
     font-size: 14px;
-    display: block;
   }
-  /* 補足文 */
-  .form_remark {
-    padding-top: 8px;
-  }
+  /*--------------------------------------
+ * 補足文
+ *--------------------------------------*/
   .form_remark li {
     position: relative;
     font-size: 14px;
@@ -146,12 +264,15 @@ PC
     top: 0;
     left: 0;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * フォームアイテム
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   /* 変数定義 ここから */
   /* 変数定義 ここまで */
   .form_wrp {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
     /*---------------------------
    * テキスト入力欄
    *---------------------------*/
@@ -215,7 +336,8 @@ PC
   .form_wrp textarea.form_control::placeholder {
     color: #ccc;
   }
-  .form_wrp input.form_control:focus,
+  .form_wrp input.form_control:hover, .form_wrp input.form_control:focus,
+  .form_wrp textarea.form_control:hover,
   .form_wrp textarea.form_control:focus {
     border: 1px solid #81c3e2;
     -webkit-box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
@@ -249,7 +371,9 @@ PC
     height: 20px;
     border: 1px solid #ced4da;
     border-radius: 50%;
-    background: #fff;
+    background-color: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   .form_wrp .form_radio li label input[type="radio"] + .form_list_item_label::after {
     content: "";
@@ -268,6 +392,11 @@ PC
             transform: scale(0, 0);
     border-radius: 50%;
     background: #81c3e2;
+  }
+  .form_wrp .form_radio li label input[type="radio"] + .form_list_item_label:hover::before {
+    border: 1px solid #81c3e2;
+    -webkit-box-shadow: 0 0 0 3px rgba(129, 195, 226, 0.5);
+            box-shadow: 0 0 0 3px rgba(129, 195, 226, 0.5);
   }
   .form_wrp .form_radio li label input[type="radio"]:checked + .form_list_item_label::after {
     -webkit-transform: scale(1, 1);
@@ -313,6 +442,11 @@ PC
     -webkit-transform: scale(0, 0) rotate(43deg);
             transform: scale(0, 0) rotate(43deg);
   }
+  .form_wrp .form_check li label input[type="checkbox"] + .form_list_item_label:hover::before {
+    border: 1px solid #81c3e2;
+    -webkit-box-shadow: 0 0 0 3px rgba(129, 195, 226, 0.5);
+            box-shadow: 0 0 0 3px rgba(129, 195, 226, 0.5);
+  }
   .form_wrp .form_check li label input[type="checkbox"]:checked + .form_list_item_label::after {
     -webkit-transform: scale(1, 1) rotate(43deg);
             transform: scale(1, 1) rotate(43deg);
@@ -337,7 +471,10 @@ PC
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     display: block;
     width: 100%;
-    position: relative;
+    background-image: url(./img/arrow_down.svg);
+    background-position: right 15px center;
+    background-size: 13px 8px;
+    background-repeat: no-repeat;
   }
   .form_wrp .form_select select::-webkit-input-placeholder {
     color: #ccc;
@@ -351,41 +488,25 @@ PC
   .form_wrp .form_select select::placeholder {
     color: #ccc;
   }
-  .form_wrp .form_select select:focus {
+  .form_wrp .form_select select:hover, .form_wrp .form_select select:focus {
     border: 1px solid #81c3e2;
     -webkit-box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
             box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
   }
-  .form_wrp .form_select:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 8px 0 8px;
-    border-color: #ced4da transparent transparent transparent;
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 8px;
+  .form_wrp .form_select.select_pref {
+    width: 17.25em;
+  }
+  .form_wrp .form_postal_code {
+    position: relative;
+    padding-left: 1.5em;
   }
   .form_wrp .form_postal_code::before {
     content: "\3012";
-    float: left;
-    padding: 14px 8px 0 0;
+    position: absolute;
+    top: 0.8em;
+    left: 0;
   }
-  .form_wrp .form_postal_code::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-  .form_wrp .form_postal_code input {
-    width: 10em;
-    float: left;
-  }
-  .form_wrp #ajaxzip3_btn {
-    padding: 12px 0 0 8px;
-    float: left;
-  }
-  .form_wrp #ajaxzip3_btn .btn_inner {
+  .form_wrp .ajaxzip3_btn .btn_inner {
     font-size: 14px;
     border: 1px solid #ced4da;
     padding: 8px;
@@ -395,7 +516,7 @@ PC
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     cursor: pointer;
   }
-  .form_wrp #ajaxzip3_btn .btn_inner:hover {
+  .form_wrp .ajaxzip3_btn .btn_inner:hover {
     border: 1px solid #81c3e2;
     -webkit-box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
             box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
@@ -404,7 +525,7 @@ PC
     font-size: 14px;
     padding-top: 5px;
   }
-  .form_wrp .form_file::after {
+  .form_wrp .form_file .file_row::after {
     content: "";
     display: block;
     clear: both;
@@ -415,6 +536,7 @@ PC
     opacity: 0;
     width: 0;
     height: 0;
+    position: absolute;
   }
   .form_wrp .form_file .form_file_label {
     border: 1px solid #ced4da;
@@ -468,7 +590,7 @@ PC
   }
   .form_wrp label.error {
     color: #cc0000;
-    padding: 1% 2%;
+    padding: 5px 10px;
     background: #f4e4e4;
     display: block;
     font-size: 0.9em;
@@ -499,9 +621,9 @@ PC
 .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
     color: blue;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * プライバシーポリシー
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   .form_privacy > *[class^="form_privacy_row"]:not(:last-child) {
     margin-bottom: 15px;
   }
@@ -531,7 +653,7 @@ PC
 SP
 ---------------------------*/
 @media screen and (max-width: 767px) {
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * # フォームTOC
  *
  * ## フォームエリア
@@ -551,16 +673,16 @@ SP
  * - エラーメッセージ
  * - カレンダー
  * ## プライバシーポリシー
- *------------------------------------------------------*/
-  /**------------------------------------------------------
+ *----------------------------------------------------------------------------*/
+  /**----------------------------------------------------------------------------
  * フォームエリア
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   #area_form > *[class^="area_form_row"]:not(:last-child) {
     margin-bottom: 30px;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * フォームテーブル
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   /* 変数定義 ここから */
   /* 変数定義 ここまで */
   .form_wrp .form_table {
@@ -578,7 +700,7 @@ SP
     width: 100%;
   }
   .form_wrp .form_table tbody tr:not(:last-child) td {
-    padding-bottom: 30px;
+    padding-bottom: 45px;
   }
   .form_wrp .form_table tbody tr th {
     padding: 0 0 10px 52px;
@@ -601,7 +723,113 @@ SP
     background-color: #fd9495;
     content: "必須";
   }
-  .form_wrp .form_table_row1 {
+  /**----------------------------------------------------------------------------
+ * フォームレイアウト
+ *----------------------------------------------------------------------------*/
+  /*--------------------------------------
+ * リスト ブロック要素
+ *--------------------------------------*/
+  .form_item_inline_block_sp li {
+    display: inline-block;
+  }
+  .form_item_inline_block_sp li:not(:last-child) {
+    margin-right: 20px;
+  }
+  /*--------------------------------------
+ * リスト インラインブロック要素
+ *--------------------------------------*/
+  .form_item_block_sp li {
+    display: block;
+  }
+  .form_item_block_sp li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  /*--------------------------------------
+ * フォームグループ：フォームテーブル内のレイアウト
+ *--------------------------------------*/
+  /* 住所
+ *--------------------------------------*/
+  .form_address_group .group_row1 {
+    margin-bottom: 3px;
+  }
+  .form_address_group .group_row2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 8px;
+  }
+  .form_address_group .group_row2 .group_col1 {
+    width: 10em;
+  }
+  .form_address_group .group_row2 .group_col2 {
+    padding-left: 0.5em;
+  }
+  .form_address_group .group_row3 {
+    margin-bottom: 3px;
+  }
+  .form_address_group .group_txt {
+    font-size: 14px;
+    display: block;
+  }
+  /* 住所(別々)
+ *--------------------------------------*/
+  .form_separated_address_group .group_row1 {
+    margin-bottom: 3px;
+  }
+  .form_separated_address_group .group_row2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_row2 .group_col2 {
+    padding-left: 0.5em;
+  }
+  .form_separated_address_group .group_row3 {
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_row4 {
+    margin-bottom: 8px;
+  }
+  .form_separated_address_group .group_txt {
+    font-size: 14px;
+    display: block;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col {
+    width: 4.25em;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col:not(:last-child) {
+    position: relative;
+    margin-right: 2em;
+  }
+  .form_separated_address_group .group_postal_code .group_postal_code_row .group_postal_code_col:not(:last-child)::before {
+    content: "\2015";
+    display: block;
+    width: 1em;
+    position: absolute;
+    top: 14px;
+    right: -1.5em;
+    color: #ced4da;
+  }
+  /* お名前 姓名別々
+ *--------------------------------------*/
+  .form_name_group .group_row {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -611,39 +839,47 @@ SP
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .form_wrp .form_table_row1 .form_table_col {
-    width: 50%;
-    padding: 1%;
+  .form_name_group .group_row .group_col {
+    width: calc(50% - 7.5px);
   }
-  /**------------------------------------------------------
- * フォームレイアウト
- *------------------------------------------------------*/
-  /* リスト ブロック要素 */
-  .form_item_inline_block_sp li {
-    display: inline-block;
+  /* お電話番号 別々
+ *--------------------------------------*/
+  .form_tel_group .group_row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
-  .form_item_inline_block_sp li:not(:last-child) {
-    margin-right: 20px;
+  .form_tel_group .group_row .group_col {
+    width: 4.25em;
   }
-  /* リスト インラインブロック要素 */
-  .form_item_block_sp li {
+  .form_tel_group .group_row .group_col:not(:last-child) {
+    position: relative;
+    margin-right: 2em;
+  }
+  .form_tel_group .group_row .group_col:not(:last-child)::before {
+    content: "\2015";
     display: block;
+    width: 1em;
+    position: absolute;
+    top: 14px;
+    right: -1.5em;
+    color: #ced4da;
   }
-  .form_item_block_sp li:not(:last-child) {
-    margin-bottom: 8px;
-  }
-  /* フォームテーブル内のレイアウト */
-  .form_group .form_group_row:not(:last-child) {
+  /* メールアドレス＆確認用
+ *--------------------------------------*/
+  .form_mail_group .group_row1 {
     margin-bottom: 15px;
   }
-  .form_group .form_group_row:first-child .form_group_ttl {
-    padding-top: 15px;
+  .form_mail_group .group_row2 {
+    margin-bottom: 3px;
   }
-  .form_group .form_group_row .form_group_ttl {
+  .form_mail_group .group_txt {
     font-size: 14px;
-    display: block;
   }
-  /* 補足文 */
+  /*--------------------------------------
+ * 補足文
+ *--------------------------------------*/
   .form_remark {
     padding-top: 8px;
   }
@@ -663,9 +899,9 @@ SP
     top: 0;
     left: 0;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * フォームアイテム
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   /* 変数定義 ここから */
   /* 変数定義 ここまで */
   .form_wrp {
@@ -854,7 +1090,10 @@ SP
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     display: block;
     width: 100%;
-    position: relative;
+    background-image: url(./img/arrow_down.svg);
+    background-position: right 15px center;
+    background-size: 13px 8px;
+    background-repeat: no-repeat;
   }
   .form_wrp .form_select select::-webkit-input-placeholder {
     color: #ccc;
@@ -873,36 +1112,17 @@ SP
     -webkit-box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
             box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
   }
-  .form_wrp .form_select:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 8px 0 8px;
-    border-color: #ced4da transparent transparent transparent;
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 8px;
+  .form_wrp .form_postal_code {
+    position: relative;
+    padding-left: 1.5em;
   }
   .form_wrp .form_postal_code::before {
     content: "\3012";
-    float: left;
-    padding: 14px 8px 0 0;
+    position: absolute;
+    top: 0.8em;
+    left: 0;
   }
-  .form_wrp .form_postal_code::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-  .form_wrp .form_postal_code input {
-    width: 10em;
-    float: left;
-  }
-  .form_wrp #ajaxzip3_btn {
-    padding: 12px 0 0 8px;
-    float: left;
-  }
-  .form_wrp #ajaxzip3_btn .btn_inner {
+  .form_wrp .ajaxzip3_btn .btn_inner {
     font-size: 14px;
     border: 1px solid #ced4da;
     padding: 8px;
@@ -912,7 +1132,7 @@ SP
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     cursor: pointer;
   }
-  .form_wrp #ajaxzip3_btn .btn_inner:hover {
+  .form_wrp .ajaxzip3_btn .btn_inner:hover {
     border: 1px solid #81c3e2;
     -webkit-box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
             box-shadow: 0 0 0 4px rgba(129, 195, 226, 0.5);
@@ -921,7 +1141,7 @@ SP
     font-size: 14px;
     padding-top: 5px;
   }
-  .form_wrp .form_file::after {
+  .form_wrp .form_file .file_row::after {
     content: "";
     display: block;
     clear: both;
@@ -932,6 +1152,7 @@ SP
     opacity: 0;
     width: 0;
     height: 0;
+    position: absolute;
   }
   .form_wrp .form_file .form_file_label {
     border: 1px solid #ced4da;
@@ -982,7 +1203,7 @@ SP
   }
   .form_wrp label.error {
     color: #cc0000;
-    padding: 1% 2%;
+    padding: 5px 10px;
     background: #f4e4e4;
     display: block;
     font-size: 0.9em;
@@ -1013,9 +1234,9 @@ SP
 .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
     color: blue;
   }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * プライバシーポリシー
- *------------------------------------------------------*/
+ *----------------------------------------------------------------------------*/
   .form_privacy > *[class^="form_privacy_row"]:not(:last-child) {
     margin-bottom: 15px;
   }

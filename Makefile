@@ -1,7 +1,8 @@
 up:
 	docker-compose up
-upd:
+dev:
 	docker-compose up -d
+	open http://localhost:8080
 down:
 	docker-compose down --remove-orphans
 restart:
