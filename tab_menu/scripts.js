@@ -1,9 +1,11 @@
-/* タブメニュー ここから */
-$('#tab_menu .tab_menu_btn li').on('click', function(){
-  let index = $('#tab_menu .tab_menu_btn li').index(this);
-  $('#tab_menu .tab_menu_btn li').removeClass('active');
-  $(this).addClass('active');
-  $('#tab_menu .tab_menu_body_wrp .tab_menu_body').removeClass('show').eq(index).addClass('show');
+/**
+ * タブメニュー
+ */
+$('#tab_menu .menu_btn li').on('click', function(){
+
+  let index = $('#tab_menu .menu_btn li').index(this);
+  $('#tab_menu .menu_btn li').removeClass('is_active');
+  $(this).addClass('is_active');
+  $('#tab_menu .menu_body .menu_items').removeClass('is_show').eq(index).addClass('is_show');
 
 });
-/* タブメニュー ここまで */

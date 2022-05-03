@@ -17,15 +17,20 @@
       type="text/css"
       media="all"
     />
-    <title>ページトップへ戻る - フロントエンド要素</title>
+    <title>SmartPhoto.js - フロントエンド要素</title>
   </head>
   <body>
     <div id="wrapper" class="container">
-      <header>ヘッダー</header>
       <main>
-        <h1 class="elem_ttl">ページトップへ戻る</h1>
+        <h1 class="elem_ttl">SmartPhoto.js</h1>
 
-        <div style="height: 1500px"></div>
+        <div>
+          <a href="/global/img/dog-vertical1.jpg" class="js_smart_photo">
+            <img src="/global/img/dog-vertical1.jpg" />
+          </a>
+        </div>
+
+
       </main>
       <aside>
         <!--SUMMARY ここから-->
@@ -36,22 +41,11 @@
         <!--SUMMARY ここまで-->
       </aside>
     </div>
-    <footer>
-      <!--ページトップへ戻る ここから-->
-      <div id="arrow_to_top">
-        <a href="#wrapper" class="arrow_to_top_inner">
-          <img src="./arrow.svg" />
-        </a>
-      </div>
-      <!--ページトップへ戻る ここまで-->
-
-      <div>フッター</div>
-    </footer>
     <script type="text/javascript" src="/global/scripts.js"></script>
 
     <script src="/global/jquery.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./scripts.js"></script>
 
-    <script type="text/javascript" src="../smooth_scroll/scripts.js"></script>
+    <script type="text/javascript" src="./jquery-smartphoto.min.js"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>

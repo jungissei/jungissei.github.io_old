@@ -2,8 +2,8 @@ version: "3"
 services:
   httpd:
     build: ./apache
-    container_name: apache
+    container_name: jg_apache
     volumes:
       - ./:/var/www/html
     ports:
-      - "8080:80"
+      - "8887:80"

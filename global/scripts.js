@@ -24,8 +24,8 @@ function add_menu_to_aside(){
             path : "/hamburger_menu"
           },
           {
-            title : "ページトップへ戻る",
-            path : "/page_top"
+            title : "ページトップへ戻る・クッキー同意",
+            path : "/page_top_agree_cookie"
           },
           {
             title : "スムーススクロール",
@@ -103,6 +103,18 @@ function add_menu_to_aside(){
       {
         title : "フィルタリングボタン",
         path : "/filtering_btn"
+      },
+      {
+        title : "NEW付与",
+        path : "/add_new"
+      },
+      {
+        title : "chart.js",
+        path : "/chartjs"
+      },
+      {
+        title : "SmartPhoto.js",
+        path : "/smart_photo"
       }
     ]
   );
