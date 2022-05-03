@@ -84,19 +84,9 @@ PC
   .form_wrp .form_table tbody tr td {
     width: calc(100% - 215px);
   }
-  .form_wrp .form_table_row1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .form_wrp .form_table_row1 .form_table_col {
-    width: 50%;
-    padding: 1%;
+  .form_wrp .form_table .td_sub_ttl {
+    font-size: 14px;
+    margin-bottom: 3px;
   }
   /**----------------------------------------------------------------------------
 * フォームレイアウト
@@ -733,21 +723,7 @@ SP
     background-color: #fd9495;
     content: "必須";
   }
-  .form_wrp .form_table_row1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .form_wrp .form_table_row1 .form_table_col {
-    width: 50%;
-    padding: 1%;
-  }
-  /**------------------------------------------------------
+  /**----------------------------------------------------------------------------
  * フォームレイアウト
  *----------------------------------------------------------------------------*/
   /*--------------------------------------
